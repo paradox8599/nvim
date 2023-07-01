@@ -1,6 +1,6 @@
 return {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = { "neovim/nvim-lspconfig" },
+    dependencies = { "neovim/nvim-lspconfig", "hrsh7th/nvim-cmp" },
     event = "VeryLazy",
     config = function()
         require("mason").setup()
@@ -14,6 +14,7 @@ return {
 
         -- Lua
         lsp.lua_ls.setup {
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
             settings = {
                 Lua = {
                     version = "LuaJIT",
