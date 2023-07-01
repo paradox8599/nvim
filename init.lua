@@ -27,9 +27,9 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", opt)
 vim.keymap.set("n", "<C-j>", "<C-w>j", opt)
 vim.keymap.set("n", "<C-k>", "<C-w>k", opt)
 -- window spliting
-vim.keymap.set("n", "<Leader>v", "<C-w>v", opt)
-vim.keymap.set("n", "<Leader>s", "<C-w>s", opt)
-vim.keymap.set("n", "<Leader>c", "<C-w>c", opt)
+-- vim.keymap.set("n", "<Leader>v", "<C-w>v", opt)
+-- vim.keymap.set("n", "<Leader>s", "<C-w>s", opt)
+-- vim.keymap.set("n", "<Leader>c", "<C-w>c", opt)
 
 -- auto gj/gk
 -- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
