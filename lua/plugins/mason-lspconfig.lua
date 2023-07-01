@@ -3,16 +3,19 @@ return {
     dependencies = { "neovim/nvim-lspconfig", "hrsh7th/nvim-cmp" },
     event = "VeryLazy",
     opts = {
-            ensure_installed = {
-                "lua_ls",
-                "pyright",
-            }
+        ensure_installed = {
+            "lua_ls",
+            "pyright",
+            "black",
+            "isort",
+        }
     },
     config = function()
         local lsp = require("lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities(),
 
             -- Lua
+
             lsp.lua_ls.setup {
                 capabilities = capabilities,
                 settings = {
@@ -37,4 +40,3 @@ return {
         }
     end
 }
-
