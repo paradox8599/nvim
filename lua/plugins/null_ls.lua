@@ -10,7 +10,7 @@ return {
                 null_ls.builtins.completion.spell,
                 -- python
                 null_ls.builtins.formatting.black,
-                -- null_ls.builtins.formatting.isrot,
+                null_ls.builtins.formatting.isort,
             },
         })
     end
