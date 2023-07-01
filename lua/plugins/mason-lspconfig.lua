@@ -7,9 +7,12 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "pyright",
             }
         })
         local lsp = require("lspconfig")
+
+        -- Lua
         lsp.lua_ls.setup {
             settings = {
                 Lua = {
@@ -25,5 +28,10 @@ return {
                 }
             }
         }
+
+        -- Python
+        lsp.pyright.setup {}
+
+        require("lsp")
     end
 }
