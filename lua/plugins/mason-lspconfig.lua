@@ -3,6 +3,7 @@ return {
     dependencies = { "neovim/nvim-lspconfig", "hrsh7th/nvim-cmp" },
     event = "VeryLazy",
     config = function()
+        require("neodev").setup()
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -17,6 +18,7 @@ return {
             capabilities = require("cmp_nvim_lsp").default_capabilities(),
             settings = {
                 Lua = {
+                    completion = { callSnippet = "Replace" },
                     version = "LuaJIT",
                     diagnostics = {
                         globals = { "vim" },

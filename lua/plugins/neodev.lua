@@ -1,6 +1,5 @@
 return {
     "folke/neodev.nvim",
-    enabled = false,
-    priority = 10000,
+    -- enabled = false,
     opts = {},
 }
