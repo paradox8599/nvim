@@ -5,15 +5,20 @@ local mappings = {
     -- auto gj/gk
     ["j"] = { [[v:count ? "j" : "gj"]], "Auto gj", expr = true },
     ["k"] = { [[v:count ? "k" : "gk"]], "Auto gk", expr = true },
+    -- tabs
+
+
 
     ["\\"] = { ":noh<cr>", "Clear hightlight" },
     ["<C-s>"] = { ":w<cr>", "Save" },
+
     -- Cursor moves
     ["<C-l>"] = { "<C-w>l", "" },
     ["<C-h>"] = { "<C-w>h", "" },
     ["<C-j>"] = { "<C-w>j", "" },
     ["<C-k>"] = { "<C-w>k", "" },
 
+    -- custom
     ["<leader>"] = {
         ["w"] = { "<C-w>c", "Close window" },
         [","] = { ":Lazy<cr>", "Lazy" },
@@ -23,6 +28,7 @@ local mappings = {
     ["g"] = {
         ["a"] = "Code actions"
     },
+
     -- trouble
     ["<leader>xx"] = { ":TroubleToggle<cr>", "" },
     ["<leader>xw"] = { ":TroubleToggle workspace_diagnostics<cr>", "" },
