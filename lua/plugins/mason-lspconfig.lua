@@ -31,7 +31,5 @@ return {
 
         -- Python
         lsp.pyright.setup {}
-
-        require("lsp")
     end
 }
