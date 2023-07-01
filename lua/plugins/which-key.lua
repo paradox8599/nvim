@@ -5,9 +5,6 @@ local mappings = {
     -- auto gj/gk
     ["j"] = { [[v:count ? "j" : "gj"]], "Auto gj", expr = true },
     ["k"] = { [[v:count ? "k" : "gk"]], "Auto gk", expr = true },
-    -- tabs
-
-
 
     ["\\"] = { ":noh<cr>", "Clear hightlight" },
     ["<C-s>"] = { ":w<cr>", "Save" },
@@ -24,6 +21,10 @@ local mappings = {
         [","] = { ":Lazy<cr>", "Lazy" },
         ["L"] = { ":Explore<cr>", "Explore" },
         ["x"] = "Trouble",
+        -- tabs
+        ["t"] = { "gt", "Next tab" },
+        ["e"] = { "gT", "Prev tab" },
+
     },
     ["g"] = {
         ["a"] = "Code actions"
