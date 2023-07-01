@@ -1,3 +1,24 @@
+-- keymaps 
+local mappings = {
+
+    -- auto gj/gk
+    ["j"] = { [[v:count ? "j" : "gj"]], "Auto gj", expr = true},
+    ["k"] = { [[v:count ? "k" : "gk"]], "Auto gk", expr = true},
+
+    ["<leader>"] = {
+        ["w"] = { "<C-w>c", "Close window" },
+        [","] = { "<cmd>Lazy<cr>", "Lazy" },
+    }
+}
+
+vim.keymap.set("n", "\\", ":noh<cr>", opt)
+
+-- cursor move
+vim.keymap.set("n", "<C-l>", "<C-w>l", opt)
+vim.keymap.set("n", "<C-h>", "<C-w>h", opt)
+vim.keymap.set("n", "<C-j>", "<C-w>j", opt)
+vim.keymap.set("n", "<C-k>", "<C-w>k", opt)
+
 return {
     {
         "folke/which-key.nvim",
@@ -5,6 +26,11 @@ return {
         init = function ()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
+
+            local wk = require("which-key")
+            local opt = { noremap = true, silent = true }
+
+            wk.register(mappings, opt)
         end,
         opts = {}
     }

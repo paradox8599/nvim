@@ -1,12 +1,13 @@
 return {
-    'nvim-telescope/telescope.nvim',
-    event = "VeryLazy",
+    "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    init = function ()
-        vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = "Find files" })
-        vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { desc = "Live grep" })
-        vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = "Buffers" })
-        vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = "Help tags" })
-    end
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+        { "<leader>f", ":Telescope find_files<cr>", desc = "Find files" },
+        { "<leader>g", ":Telescope live_grep<cr>", desc = "Live grep" },
+        { "<leader>b", ":Telescope buffers<cr>", desc = "Buffers" },
+        { "<leader>r", ":Telescope resume<cr>", desc = "resume" },
+        { "<leader>q", ":Telescope oldfiles<cr>", desc = "Recent files" },
+        -- { "<leader>h", ":Telescope help_tags<cr>", desc = "Help tags" },
+    }
 }
