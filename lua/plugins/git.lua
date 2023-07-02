@@ -14,19 +14,31 @@ return {
     },
     {
         "rhysd/conflict-marker.vim",
-        init = function()
+        event = "VeryLazy",
+        priority = 9998,
+        config = function()
+            -- Hex color not working, use terminal color instead
+            -- https://github.com/rhysd/conflict-marker.vim/issues/17
             vim.cmd([[
-                let g:conflict_marker_highlight_group = ''
+            let g:conflict_marker_highlight_group = ''
 
-                let g:conflict_marker_begin = '^<<<<<<< .*$'
-                let g:conflict_marker_end   = '^>>>>>>> .*$'
+            let g:conflict_marker_begin = '^<<<<<<< .*$'
+            let g:conflict_marker_end   = '^>>>>>>> .*$'
 
-                highlight ConflictMarkerBegin guibg=#2f7366
-                highlight ConflictMarkerOurs guibg=#2e5049
-                highlight ConflictMarkerTheirs guibg=#344f69
-                highlight ConflictMarkerEnd guibg=#2f628e
-                highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
-            ]])
+            " https://michurin.github.io/xterm256-color-picker
+            highlight ConflictMarkerBegin ctermbg=29
+            highlight ConflictMarkerOurs ctermbg=22
+            highlight ConflictMarkerTheirs ctermbg=24
+            highlight ConflictMarkerEnd ctermbg=31
+            highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
+
+            " highlight ConflictMarkerSplit guibg=#ffffff
+            " highlight ConflictMarkerBegin guibg=#2f7366
+            " highlight ConflictMarkerOurs guibg=#2e5049
+            " highlight ConflictMarkerTheirs guibg=#344f69
+            " highlight ConflictMarkerEnd guibg=#2f628e
+            " highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
+        ]])
         end
     },
     {
