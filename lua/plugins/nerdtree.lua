@@ -22,6 +22,8 @@ return {
 
             " File type highlight
             " https://github.com/zeorin/dotfiles/blob/e01cebf/.vimrc#L864-L900
+
+            " https://michurin.github.io/xterm256-color-picker
             let g:sol = {
                 \"gui": {
                     \"base03": "#002b36",
@@ -55,39 +57,39 @@ return {
                     \"red": 1,
                     \"magenta": 5,
                     \"violet": 13,
-                    \"blue": 4,
-                    \"cyan": 6,
+                    \"blue": 33,
+                    \"cyan": 45,
                     \"green": 2
                 \}
             \}
             function! DeviconsColors(config)
-                    let colors = keys(a:config)
-                    augroup devicons_colors
-                            autocmd!
-                            for color in colors
-                                    if color == 'normal'
-                                            exec 'autocmd FileType nerdtree,startify if &background == ''dark'' | '.
-                                                    \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base01.' ctermfg='.g:sol.cterm.base01.' | '.
-                                                    \ 'else | '.
-                                                    \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base1.' ctermfg='.g:sol.cterm.base1.' | '.
-                                                    \ 'endif'
-                                    elseif color == 'emphasize'
-                                            exec 'autocmd FileType nerdtree,startify if &background == ''dark'' | '.
-                                                    \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base1.' ctermfg='.g:sol.cterm.base1.' | '.
-                                                    \ 'else | '.
-                                                    \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base01.' ctermfg='.g:sol.cterm.base01.' | '.
-                                                    \ 'endif'
-                                    else
-                                            exec 'autocmd FileType nerdtree,startify highlight devicons_'.color.' guifg='.g:sol.gui[color].' ctermfg='.g:sol.cterm[color]
-                                    endif
-                                    exec 'autocmd FileType nerdtree,startify syntax match devicons_'.color.' /\v'.join(a:config[color], '|').'/ containedin=ALL'
-                            endfor
-                    augroup END
+                let colors = keys(a:config)
+                augroup devicons_colors
+                    autocmd!
+                    for color in colors
+                        if color == 'normal'
+                            exec 'autocmd FileType nerdtree,startify if &background == ''dark'' | '.
+                                \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base01.' ctermfg='.g:sol.cterm.base01.' | '.
+                                \ 'else | '.
+                                \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base1.' ctermfg='.g:sol.cterm.base1.' | '.
+                                \ 'endif'
+                        elseif color == 'emphasize'
+                            exec 'autocmd FileType nerdtree,startify if &background == ''dark'' | '.
+                                \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base1.' ctermfg='.g:sol.cterm.base1.' | '.
+                                \ 'else | '.
+                                \ 'highlight devicons_'.color.' guifg='.g:sol.gui.base01.' ctermfg='.g:sol.cterm.base01.' | '.
+                                \ 'endif'
+                        else
+                            exec 'autocmd FileType nerdtree,startify highlight devicons_'.color.' guifg='.g:sol.gui[color].' ctermfg='.g:sol.cterm[color]
+                        endif
+                        exec 'autocmd FileType nerdtree,startify syntax match devicons_'.color.' /\v'.join(a:config[color], '|').'/ containedin=ALL'
+                    endfor
+                augroup END
             endfunction
             let g:devicons_colors = {
                     \'normal': ['', '', '', '', ''],
-                    \'emphasize': ['', '', '', '', '', '', '', '', '', '', ''],
-                    \'yellow': ['', '', ''],
+                    \'emphasize': ['', '', '', '', '', '', '', '', '', ''],
+                    \'yellow': ['', '', '', ''],
                     \'orange': ['', '', '', 'λ', '', ''],
                     \'red': ['', '', '', '', '', '', '', '', ''],
                     \'magenta': [''],
