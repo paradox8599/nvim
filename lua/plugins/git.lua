@@ -4,6 +4,10 @@ return {
 		cmd = "Git",
 	},
 	{
+		"f-person/git-blame.nvim",
+		event = "VeryLazy",
+	},
+	{
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
 		opts = {
