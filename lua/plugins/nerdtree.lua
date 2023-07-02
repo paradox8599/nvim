@@ -2,8 +2,9 @@ return {
     "preservim/nerdtree",
     cmd = { "NERDTree" },
     keys = {
-        { "<leader>e", ":NERDTreeToggle<cr>", desc = "Nerdtree" },
-        { "<leader>l", ":NERDTreeFind<cr>",   desc = "Locate buffer in Nerdtree" },
+        { "<leader>e", ":NERDTreeFocus<cr>", desc = "NerdTree Focus" },
+        { "<leader>t", ":NERDTreeToggle<cr>",   desc = "NerdTree Toggle" },
+        { "<leader>l", ":NERDTreeFind<cr>",   desc = "NerdTree Locate File" },
     },
     init = function ()
         vim.cmd([[
