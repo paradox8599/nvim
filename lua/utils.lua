@@ -1,9 +1,9 @@
 -- highlight after copy
-vim.api.nvim_create_autocmd({"TextYankPost"}, {
-    pattern = {"*"},
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+    pattern = { "*" },
     callback = function()
         vim.highlight.on_yank({
-            timeout = 300
+            timeout = 300,
         })
-    end
+    end,
 })

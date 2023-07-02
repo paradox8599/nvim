@@ -13,5 +13,5 @@ return {
                 null_ls.builtins.formatting.isort,
             },
         })
-    end
+    end,
 }

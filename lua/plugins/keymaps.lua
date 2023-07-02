@@ -26,10 +26,9 @@ local mappings = {
         ["e"] = { "gT", "Prev tab" },
         -- buffers
         ["-"] = { ":bw<cr>", "Close current buffer" },
-
     },
     ["g"] = {
-        ["a"] = "Code actions"
+        ["a"] = "Code actions",
     },
 
     -- trouble
@@ -47,7 +46,6 @@ local mappings = {
     ["]d"] = { vim.diagnostic.goto_next, "Goto next diagnostic" },
     ["gl"] = { vim.diagnostic.setloclist, "Set diagnostic loc list" },
 }
-
 
 ---------
 -- LSP --
@@ -72,7 +70,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
         vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<A-F>", function()
-            vim.lsp.buf.format { async = true }
+            vim.lsp.buf.format({ async = true })
         end, opts)
 
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -85,7 +83,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gwl", function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts)
-    end
+    end,
 })
 
 return {
@@ -99,5 +97,5 @@ return {
 
         wk.register(mappings, opt)
     end,
-    opts = {}
+    opts = {},
 }

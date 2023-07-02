@@ -5,6 +5,6 @@ return {
         priority = 10000,
         config = function()
             vim.cmd([[colorscheme codedark]])
-        end
-    }
+        end,
+    },
 }
