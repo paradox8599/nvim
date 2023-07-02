@@ -11,7 +11,17 @@ return {
         event = "VeryLazy",
     },
     {
+        "airblade/vim-gitgutter",
+        event = "VeryLazy",
+    },
+    {
+        "tpope/vim-rhubarb",
+        lazy = true,
+        cmd = "GBrowse",
+    },
+    {
         "lewis6991/gitsigns.nvim",
+        enabled = false,
         event = "VeryLazy",
         opts = {
             on_attach = function(bufnr)

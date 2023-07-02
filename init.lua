@@ -3,12 +3,13 @@ vim.g.mapleader = " "
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.autoread = true
-vim.o.expandtab = true
+
+-- https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
+vim.o.tabstop = 8 -- tab chars display width
+vim.o.shiftwidth = 4 -- spaces per tab key
+vim.o.expandtab = true -- insert spaces when press tab
+vim.o.autoindent = true -- align indentation
 vim.o.smarttab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 8
-vim.o.softtabstop = 0
-vim.o.autoindent = true
 
 -- vim.o.clipboard = "unnamed"
 
