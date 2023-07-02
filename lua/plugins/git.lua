@@ -30,6 +30,7 @@ return {
             highlight ConflictMarkerOurs ctermbg=22
             highlight ConflictMarkerTheirs ctermbg=24
             highlight ConflictMarkerEnd ctermbg=31
+            highlight ConflictMarkerSeparator ctermbg=234
             highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
 
             " highlight ConflictMarkerSplit guibg=#ffffff
