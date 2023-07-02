@@ -10,57 +10,69 @@ return {
         },
         config = function()
             vim.cmd([[
-            " Show line numbers
-            let NERDTreeShowLineNumbers=1
-            autocmd FileType nerdtree setlocal relativenumber
+                " Show line numbers
+                let NERDTreeShowLineNumbers=1
+                autocmd FileType nerdtree setlocal relativenumber
 
-            " Exit Vim if NERDTree is the only window remaining in the only tab.
-            autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+                " Exit Vim if NERDTree is the only window remaining in the only tab.
+                autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-            " https://github.com/ryanoasis/vim-devicons/issues/215
-            call webdevicons#refresh()
+                " https://github.com/ryanoasis/vim-devicons/issues/215
+                call webdevicons#refresh()
 
-            " File type highlight
-            " https://github.com/zeorin/dotfiles/blob/e01cebf/.vimrc#L864-L900
+                " File type highlight
+                " https://github.com/zeorin/dotfiles/blob/e01cebf/.vimrc#L864-L900
 
-            " https://michurin.github.io/xterm256-color-picker
-            let g:sol = {
-                \"gui": {
-                    \"base03": "#002b36",
-                    \"base02": "#073642",
-                    \"base01": "#586e75",
-                    \"base00": "#657b83",
-                    \"base0": "#839496",
-                    \"base1": "#93a1a1",
-                    \"base2": "#eee8d5",
-                    \"base3": "#fdf6e3",
-                    \"yellow": "#b58900",
-                    \"orange": "#cb4b16",
-                    \"red": "#dc322f",
-                    \"magenta": "#d33682",
-                    \"violet": "#6c71c4",
-                    \"blue": "#268bd2",
-                    \"cyan": "#2aa198",
-                    \"green": "#719e07"
-                \},
-                \"cterm": {
-                    \"base03": 8,
-                    \"base02": 0,
-                    \"base01": 10,
-                    \"base00": 11,
-                    \"base0": 12,
-                    \"base1": 14,
-                    \"base2": 7,
-                    \"base3": 15,
-                    \"yellow": 3,
-                    \"orange": 9,
-                    \"red": 1,
-                    \"magenta": 5,
-                    \"violet": 13,
+                " https://michurin.github.io/xterm256-color-picker
+                let g:sol = {
+                    \"gui": {
+                        \"base03": "#002b36",
+                        \"base02": "#073642",
+                        \"base01": "#586e75",
+                        \"base00": "#657b83",
+                        \"base0": "#839496",
+                        \"base1": "#93a1a1",
+                        \"base2": "#eee8d5",
+                        \"base3": "#fdf6e3",
+                        \"yellow": "#b58900",
+                        \"orange": "#cb4b16",
+                        \"red": "#dc322f",
+                        \"magenta": "#d33682",
+                        \"violet": "#6c71c4",
+                        \"blue": "#268bd2",
+                        \"cyan": "#2aa198",
+                        \"green": "#719e07"
+                    \},
+                    \"cterm": {
+                        \"base03": 8,
+                        \"base02": 0,
+                        \"base01": 10,
+                        \"base00": 11,
+                        \"base0": 12,
+                        \"base1": 14,
+                        \"base2": 7,
+                        \"base3": 15,
+                        \"yellow": 3,
+                        \"orange": 9,
+                        \"red": 1,
+                        \"magenta": 5,
+                        \"violet": 61,
                     \"blue": 33,
                     \"cyan": 45,
                     \"green": 2
                 \}
+            \}
+            let g:devicons_colors = {
+                    \'normal': ['', '', '', '', ''],
+                    \'emphasize': ['', '', '', '', '', '', '', '', ''],
+                    \'yellow': ['', '', '', ''],
+                    \'orange': ['', '', '', 'λ', '', ''],
+                    \'red': ['', '', '', '', '', '', '', '', ''],
+                    \'magenta': [''],
+                    \'violet': ['', '', '', ''],
+                    \'blue': ['', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+                    \'cyan': ['', '', '', ''],
+                    \'green': ['', '', '', '']
             \}
             function! DeviconsColors(config)
                 let colors = keys(a:config)
@@ -86,18 +98,6 @@ return {
                     endfor
                 augroup END
             endfunction
-            let g:devicons_colors = {
-                    \'normal': ['', '', '', '', ''],
-                    \'emphasize': ['', '', '', '', '', '', '', '', '', ''],
-                    \'yellow': ['', '', '', ''],
-                    \'orange': ['', '', '', 'λ', '', ''],
-                    \'red': ['', '', '', '', '', '', '', '', ''],
-                    \'magenta': [''],
-                    \'violet': ['', '', '', ''],
-                    \'blue': ['', '', '', '', '', '', '', '', '', '', '', '', ''],
-                    \'cyan': ['', '', '', ''],
-                    \'green': ['', '', '', '']
-            \}
             call DeviconsColors(g:devicons_colors)
         ]])
         end
