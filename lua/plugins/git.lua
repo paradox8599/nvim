@@ -13,6 +13,10 @@ return {
         event = "VeryLazy",
     },
     {
+        "rhysd/conflict-marker.vim",
+        event = "VeryLazy",
+    },
+    {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         opts = {
