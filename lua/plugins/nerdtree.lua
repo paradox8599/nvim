@@ -22,4 +22,8 @@ return {
         ]])
         end
     },
+    {
+        "Xuyuanp/nerdtree-git-plugin",
+        event = "VeryLazy",
+    }
 }
