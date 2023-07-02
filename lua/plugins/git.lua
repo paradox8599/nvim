@@ -14,8 +14,7 @@ return {
     },
     {
         "rhysd/conflict-marker.vim",
-        event = "VeryLazy",
-        config = function()
+        init = function()
             vim.cmd([[
                 let g:conflict_marker_highlight_group = ''
 
