@@ -9,7 +9,7 @@ vim.o.tabstop = 8 -- tab chars display width
 vim.o.shiftwidth = 4 -- spaces per tab key
 vim.o.expandtab = true -- insert spaces when press tab
 vim.o.autoindent = true -- align indentation
-vim.o.smarttab = true
+-- vim.o.smarttab = true
 
 -- vim.o.clipboard = "unnamed"
 

@@ -1,7 +1,7 @@
 return {
     {
         "tpope/vim-fugitive",
-        cmd = {"Git", "GBrowse"},
+        cmd = { "Git", "GBrowse" },
         init = function()
             vim.cmd.cnoreabbrev([[git Git]])
             vim.cmd.cnoreabbrev([[gb GBrowse]])
@@ -12,19 +12,27 @@ return {
         event = "VeryLazy",
     },
     {
-        "airblade/vim-gitgutter",
-        event = "VeryLazy",
-    },
-    {
         "tpope/vim-rhubarb",
         dependeicies = { "tpope/vim-fugitive" },
         event = "VeryLazy",
     },
     {
         "lewis6991/gitsigns.nvim",
-        enabled = false,
+        -- enabled = false,
         event = "VeryLazy",
         opts = {
+            signs = {
+                add = { text = "+" },
+                change = { text = "│" },
+                delete = { text = "_" },
+                topdelete = { text = "‾" },
+                changedelete = { text = "~" },
+                untracked = { text = "┆" },
+            },
+            signcolumn = true, -- `:Gitsigns toggle_signs`
+            numhl = false, -- `:Gitsigns toggle_numhl`
+            linehl = false, -- `:Gitsigns toggle_linehl`
+            word_diff = false, -- `:Gitsigns toggle_word_diff`
             on_attach = function(bufnr)
                 local gs = package.loaded.gitsigns
 
