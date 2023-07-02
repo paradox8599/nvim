@@ -1,7 +1,7 @@
 return {
     {
         "preservim/nerdtree",
-        dependencies = { "ryanoasis/vim-devicons" },
+        dependencies = { "ryanoasis/vim-devicons", "Xuyuanp/nerdtree-git-plugin" },
         cmd = { "NERDTree" },
         keys = {
             { "<leader>t", ":NERDTreeFocus<cr>",  desc = "NerdTree Focus" },
@@ -22,8 +22,4 @@ return {
         ]])
         end
     },
-    {
-        "Xuyuanp/nerdtree-git-plugin",
-        event = "VeryLazy",
-    }
 }
