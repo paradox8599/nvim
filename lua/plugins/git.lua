@@ -1,9 +1,10 @@
 return {
     {
         "tpope/vim-fugitive",
-        cmd = "Git",
+        cmd = {"Git", "GBrowse"},
         init = function()
             vim.cmd.cnoreabbrev([[git Git]])
+            vim.cmd.cnoreabbrev([[gb GBrowse]])
         end,
     },
     {
@@ -16,8 +17,8 @@ return {
     },
     {
         "tpope/vim-rhubarb",
-        lazy = true,
-        cmd = "GBrowse",
+        dependeicies = { "tpope/vim-fugitive" },
+        event = "VeryLazy",
     },
     {
         "lewis6991/gitsigns.nvim",
