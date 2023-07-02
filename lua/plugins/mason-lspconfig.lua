@@ -2,22 +2,22 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "neovim/nvim-lspconfig", "hrsh7th/nvim-cmp" },
     event = "VeryLazy",
-    opts = {
-        ensure_installed = {
-            "lua_ls",
-            "pyright",
-        },
-    },
     config = function()
+        require("mason-lspconfig").setup({
+            ensure_installed = {
+                "lua_ls",
+                "pyright",
+            },
+        })
         -- ensore non-lsps are installed (formatter/linter/...)
         -- https://github.com/williamboman/mason-lspconfig.nvim/issues/113
         local registry = require("mason-registry")
-        local nonLSPs = {
+        local pkgs = {
             "black",
             "isort",
             "stylua",
         }
-        for _, pkg_name in pairs(nonLSPs) do
+        for _, pkg_name in pairs(pkgs) do
             local ok, pkg = pcall(registry.get_package, pkg_name)
             if ok then
                 if not pkg:is_installed() then
@@ -35,6 +35,14 @@ return {
             capabilities = capabilities,
             settings = {
                 Lua = {
+                    format = {
+                        enable = true,
+                        defaultConfig = {
+                            indent_style = "space",
+                            indent_size = "4",
+                        },
+                    },
+
                     completion = { callSnippet = "Replace" },
                     version = "LuaJIT",
                     diagnostics = {

@@ -8,17 +8,12 @@ return {
         end,
     },
     {
-        "f-person/git-blame.nvim",
-        event = "VeryLazy",
-    },
-    {
         "tpope/vim-rhubarb",
         dependeicies = { "tpope/vim-fugitive" },
         event = "VeryLazy",
     },
     {
         "lewis6991/gitsigns.nvim",
-        -- enabled = false,
         event = "VeryLazy",
         opts = {
             signs = {
@@ -29,10 +24,12 @@ return {
                 changedelete = { text = "~" },
                 untracked = { text = "┆" },
             },
-            signcolumn = true, -- `:Gitsigns toggle_signs`
-            numhl = false, -- `:Gitsigns toggle_numhl`
-            linehl = false, -- `:Gitsigns toggle_linehl`
-            word_diff = false, -- `:Gitsigns toggle_word_diff`
+            attach_to_untracked = true,
+            current_line_blame = true,
+            current_line_blame_opts = {
+                delay = 500,
+            },
+
             on_attach = function(bufnr)
                 local gs = package.loaded.gitsigns
 
