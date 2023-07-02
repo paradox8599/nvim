@@ -28,10 +28,6 @@ local mappings = {
 
         ["w"] = { "<C-w>c", "Close window" },
 
-        -- tabs
-        ["t"] = { "gt", "Next tab" },
-        ["e"] = { "gT", "Prev tab" },
-
         -- buffers
         ["-"] = { ":bw<cr>", "Close current buffer" },
     },
