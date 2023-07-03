@@ -31,18 +31,15 @@ local mappings = {
 
         -- buffers
         ["q"] = { ":bw<cr>", "Close current buffer" },
-    },
-    ["g"] = {
-        ["a"] = "Code actions",
-    },
 
-    -- trouble
-    ["<leader>xx"] = { ":TroubleToggle<cr>", "" },
-    ["<leader>xw"] = { ":TroubleToggle workspace_diagnostics<cr>", "" },
-    ["<leader>xd"] = { ":TroubleToggle document_diagnostics<cr>", "" },
-    ["<leader>xl"] = { ":TroubleToggle loclist<cr>", "" },
-    ["<leader>xq"] = { ":TroubleToggle quickfix<cr>", "" },
-    ["gr"] = { ":TroubleToggle lsp_references<cr>", "" },
+        -- trouble
+        ["xx"] = { ":TroubleToggle<cr>", "Trouble toggle" },
+        ["xw"] = { ":TroubleToggle workspace_diagnostics<cr>", "Trouble toggle workspace diag" },
+        ["xd"] = { ":TroubleToggle document_diagnostics<cr>", "Trouble toggle document diag" },
+        ["xl"] = { ":TroubleToggle loclist<cr>", "Trouble toggle loc list" },
+        ["xq"] = { ":TroubleToggle quickfix<cr>", "Touble toggle quick fix" },
+    },
+    ["gr"] = { ":TroubleToggle lsp_references<cr>", "Trouble toggle lsp ref" },
 
     -- LSP
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -82,7 +79,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Go to type definition" })
 
         vim.keymap.set("n", "gwa", vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = "Add workspace folder" })
-        vim.keymap.set("n", "gwr", vim.lsp.buf.remove_workspace_folder, { buffer = ev.buf, desc = "Remove workspace folder" })
+        vim.keymap.set("n", "gwr", vim.lsp.buf.remove_workspace_folder,
+            { buffer = ev.buf, desc = "Remove workspace folder" })
         vim.keymap.set("n", "gwl", function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, { buffer = ev.buf, desc = "List workspace folder" })
