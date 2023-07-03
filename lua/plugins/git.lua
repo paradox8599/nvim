@@ -105,16 +105,16 @@ return {
                 map("n", "<leader>hp", gs.preview_hunk, { desc = "Preview hunk" })
                 map("n", "<leader>hb", function()
                     gs.blame_line({ full = true })
-                end)
-                map("n", "<leader>htb", gs.toggle_current_line_blame)
-                map("n", "<leader>hd", gs.diffthis)
+                end, { desc = "Blame line" })
+                map("n", "<leader>htb", gs.toggle_current_line_blame, { desc = "Toggle current line blame" })
+                map("n", "<leader>hd", gs.diffthis, { desc = "Diff this" })
                 map("n", "<leader>hD", function()
                     gs.diffthis("~")
-                end)
-                map("n", "<leader>htd", gs.toggle_deleted)
+                end, { desc = "Diff this ~" })
+                map("n", "<leader>htd", gs.toggle_deleted, { desc = "Toggle deleted" })
 
                 -- Text object
-                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select hunk" })
             end,
         },
     },

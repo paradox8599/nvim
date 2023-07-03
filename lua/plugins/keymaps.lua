@@ -21,6 +21,7 @@ local mappings = {
         ["x"] = "Trouble",
         ["h"] = "Git gutter",
         ["u"] = "Persistent",
+        ["ht"] = "Toggle",
 
         -- UI shortcuts
         [","] = { ":Lazy<cr>", "Lazy" },
