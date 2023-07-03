@@ -20,26 +20,26 @@ return {
             -- Hex color not working, use terminal color instead
             -- https://github.com/rhysd/conflict-marker.vim/issues/17
             vim.cmd([[
-            let g:conflict_marker_highlight_group = ''
+                let g:conflict_marker_highlight_group = ''
 
-            let g:conflict_marker_begin = '^<<<<<<< .*$'
-            let g:conflict_marker_end   = '^>>>>>>> .*$'
+                let g:conflict_marker_begin = '^<<<<<<< .*$'
+                let g:conflict_marker_end   = '^>>>>>>> .*$'
 
-            " https://michurin.github.io/xterm256-color-picker
-            highlight ConflictMarkerBegin ctermbg=29
-            highlight ConflictMarkerOurs ctermbg=22
-            highlight ConflictMarkerTheirs ctermbg=24
-            highlight ConflictMarkerEnd ctermbg=31
-            highlight ConflictMarkerSeparator ctermbg=234
-            highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
+                " https://michurin.github.io/xterm256-color-picker
+                highlight ConflictMarkerBegin ctermbg=29
+                highlight ConflictMarkerOurs ctermbg=22
+                highlight ConflictMarkerTheirs ctermbg=24
+                highlight ConflictMarkerEnd ctermbg=31
+                highlight ConflictMarkerSeparator ctermbg=234
+                highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
 
-            " highlight ConflictMarkerSplit guibg=#ffffff
-            " highlight ConflictMarkerBegin guibg=#2f7366
-            " highlight ConflictMarkerOurs guibg=#2e5049
-            " highlight ConflictMarkerTheirs guibg=#344f69
-            " highlight ConflictMarkerEnd guibg=#2f628e
-            " highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
-        ]])
+                " highlight ConflictMarkerSplit guibg=#ffffff
+                " highlight ConflictMarkerBegin guibg=#2f7366
+                " highlight ConflictMarkerOurs guibg=#2e5049
+                " highlight ConflictMarkerTheirs guibg=#344f69
+                " highlight ConflictMarkerEnd guibg=#2f628e
+                " highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
+            ]])
         end
     },
     {
@@ -78,7 +78,7 @@ return {
                         gs.next_hunk()
                     end)
                     return "<Ignore>"
-                end, { expr = true })
+                end, { expr = true, desc = "Next code update" })
 
                 map("n", "[c", function()
                     if vim.wo.diff then
@@ -88,21 +88,21 @@ return {
                         gs.prev_hunk()
                     end)
                     return "<Ignore>"
-                end, { expr = true })
+                end, { expr = true, desc = "Prev code update" })
 
                 -- Actions
-                map("n", "<leader>hs", gs.stage_hunk)
-                map("n", "<leader>hr", gs.reset_hunk)
+                map("n", "<leader>hs", gs.stage_hunk, { desc = "Stage hunk" })
+                map("n", "<leader>hr", gs.reset_hunk, { desc = "Reset hunk" })
                 map("v", "<leader>hs", function()
                     gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
                 end)
                 map("v", "<leader>hr", function()
                     gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
                 end)
-                map("n", "<leader>hS", gs.stage_buffer)
-                map("n", "<leader>hu", gs.undo_stage_hunk)
-                map("n", "<leader>hR", gs.reset_buffer)
-                map("n", "<leader>hp", gs.preview_hunk)
+                map("n", "<leader>hS", gs.stage_buffer, { desc = "Stage buffer" })
+                map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Undo stage hunk" })
+                map("n", "<leader>hR", gs.reset_buffer, { desc = "Reset buffer" })
+                map("n", "<leader>hp", gs.preview_hunk, { desc = "Preview hunk" })
                 map("n", "<leader>hb", function()
                     gs.blame_line({ full = true })
                 end)

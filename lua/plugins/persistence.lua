@@ -7,11 +7,11 @@ return {
         },
         init = function()
             -- restore the session for the current directory
-            vim.keymap.set("n", "<leader>us", ":lua require('persistence').load()<cr>",
+            vim.keymap.set("n", "<leader>uw", ":lua require('persistence').load()<cr>",
                 { desc = "Restore session for the current directory" })
 
             -- restore the last session
-            vim.keymap.set("n", "<leader>ul", ":lua require('persistence').load({ last = true })<cr>",
+            vim.keymap.set("n", "<leader>ut", ":lua require('persistence').load({ last = true })<cr>",
                 { desc = "Restore last session" })
 
             -- stop Persistence => session won't be saved on exit

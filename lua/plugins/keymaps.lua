@@ -10,10 +10,10 @@ local mappings = {
     ["<C-s>"] = { ":w<cr>", "Save" },
 
     -- Cursor moves
-    ["<C-l>"] = { "<C-w>l", "" },
-    ["<C-h>"] = { "<C-w>h", "" },
-    ["<C-j>"] = { "<C-w>j", "" },
-    ["<C-k>"] = { "<C-w>k", "" },
+    ["<C-l>"] = { "<C-w>l", "Goto window right" },
+    ["<C-h>"] = { "<C-w>h", "Goto window left" },
+    ["<C-j>"] = { "<C-w>j", "Goto window down" },
+    ["<C-k>"] = { "<C-w>k", "Goto window up" },
 
     -- custom
     ["<leader>"] = {

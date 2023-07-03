@@ -2,13 +2,14 @@ return {
     {
         "preservim/nerdtree",
         dependencies = { "ryanoasis/vim-devicons", "Xuyuanp/nerdtree-git-plugin" },
+        event = "VeryLazy",
         cmd = { "NERDTree" },
         keys = {
             { "<leader>t", ":NERDTreeFocus<cr>",  desc = "NerdTree Focus" },
             { "<leader>e", ":NERDTreeToggle<cr>", desc = "NerdTree Toggle" },
             { "<leader>l", ":NERDTreeFind<cr>",   desc = "NerdTree Locate File" },
         },
-        config = function()
+        init = function()
             vim.cmd([[
                 " Show line numbers
                 let NERDTreeShowLineNumbers=1
@@ -17,6 +18,14 @@ return {
                 " Exit Vim if NERDTree is the only window remaining in the only tab.
                 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+                " Start NERDTree. If a file is specified, move the cursor to its window.
+                autocmd StdinReadPre * let s:std_in=1
+                autocmd VimEnter * NERDTree
+                autocmd VimEnter * if argc() > 0 || exists("s:std_in") | wincmd p | endif
+            ]])
+        end,
+        config = function()
+            vim.cmd([[
                 " https://github.com/ryanoasis/vim-devicons/issues/215
                 call webdevicons#refresh()
 
@@ -99,7 +108,7 @@ return {
                 augroup END
             endfunction
             call DeviconsColors(g:devicons_colors)
-        ]])
-        end
+            ]])
+        end,
     },
 }
