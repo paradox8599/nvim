@@ -10,5 +10,9 @@ return
         vim.g.firenvim_config = {
             globalSettings = { takeover = "never" },
         }
+        vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+            pattern = "github.com_*.txt",
+            cmd = "set filetype=markdown"
+        })
     end
 }
