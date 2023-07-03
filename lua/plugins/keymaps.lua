@@ -27,10 +27,10 @@ local mappings = {
         ["M"] = { ":Mason<cr>", "Mason" },
         ["L"] = { ":Explore<cr>", "Explore" },
 
-        ["-"] = { "<C-w>c", "Close window" },
+        ["w"] = { "<C-w>c", "Close window" },
 
         -- buffers
-        ["w"] = { ":bw<cr>", "Close current buffer" },
+        ["q"] = { ":bw<cr>", "Close current buffer" },
     },
     ["g"] = {
         ["a"] = "Code actions",
