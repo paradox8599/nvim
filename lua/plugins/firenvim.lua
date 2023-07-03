@@ -1,7 +1,6 @@
-return {
-    enabled = false,
+return
+{
     'glacambre/firenvim',
-    lazy = false,
     -- Lazy load firenvim
     -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
     cond = not not vim.g.started_by_firenvim,
@@ -9,7 +8,7 @@ return {
         require("lazy").load({ plugins = "firenvim", wait = true })
         vim.fn["firenvim#install"](0)
         vim.g.firenvim_config = {
-            takeover = "never"
+            globalSettings = { takeover = "never" },
         }
     end
 }
