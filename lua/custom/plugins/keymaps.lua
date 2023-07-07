@@ -13,4 +13,7 @@ nmap('<Esc>', ':noh<CR>', 'Remove highlight', { silent = true })
 nmap('<Leader>e', ':Neotree toggle<CR>', '[E]xplorer', { silent = true })
 nmap('<A-F>', ':Format<CR>', 'Format', { silent = true })
 
+nmap('<Leader>,', ':Lazy<CR>', 'lazy.nvim', { silent = true })
+nmap('<Leader>M', ':Mason<CR>', 'Mason', { silent = true })
+
 return {}
