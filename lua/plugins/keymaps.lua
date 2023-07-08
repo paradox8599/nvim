@@ -15,14 +15,17 @@ nmap('<C-h>', '<C-w>h', 'Window left')
 nmap('<C-l>', '<C-w>l', 'Window right')
 
 nmap('<Esc>', ':noh<CR>', 'Remove highlight')
-nmap('<Leader>e', ':Neotree toggle<CR>', '[E]xplorer')
 nmap('<A-F>', ':Format<CR>', 'Format')
 
 nmap('<Leader>,', ':Lazy<CR>', 'lazy.nvim')
 nmap('<Leader>M', ':Mason<CR>', 'Mason')
 
-nmap('<Leader>bd', ':bd | bd #<CR>', 'Buffer delete')
-
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Default opts
 -- {
@@ -42,6 +45,16 @@ local keymaps = {
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
 
   ["<Leader>"] = {
+    s = "[S]earch",
+    c = "[C]ode",
+
+    e = { ":Neotree toggle<CR>", "[E]xplorer" },
+
+    b = {
+      name = "[B]uffer",
+      d = { ":bd | bd #<CR>", "[D]elete" },
+    },
+
     w = {
       name = "[W]indow",
       c = { "<C-w>c", "[C]lose window" }
