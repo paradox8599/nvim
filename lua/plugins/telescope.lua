@@ -3,15 +3,23 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    cmd = {
-      "Telescope find_files",
-      "Telescope grep_string",
-      "Telescope live_grep",
-      "Telescope diagnostics",
-      "Telescope help_tags",
-      "Telescope keymaps",
+    keys = {
+      { "<Leader>sf", ":Telescope find_files<CR>",  desc = "Search [F]iles" },
+      { "<Leader>sw", ":Telescope grep_string<CR>", desc = "Search current [W]ord" },
+      { "<Leader>sg", ":Telescope live_grep<CR>",   desc = "Search by [G]rep" },
+      { "<Leader>sd", ":Telescope diagnostics<CR>", desc = "Search [D]iagnostics" },
+      { "<Leader>sh", ":Telescope help_tags<CR>",   desc = "Search [H]elp" },
+      { "<Leader>sk", ":Telescope keymaps<CR>",     desc = "Search [K]eymaps" },
+      { "<Leader>so", ":Telescope oldfiles<CR>",    desc = "Search [O]ld files" },
+      { "<Leader>sb", ":Telescope buffers<CR>",     desc = "Search [B]uffers" },
+      {
+        "<Leader>sz",
+        ":Telescope current_buffer_fuzzy_find previewer=false<CR>",
+        desc =
+        "[F]uzzily search in current buffer"
+      },
+      { "<Leader>?", ":Telescope git_files<CR>", desc = "Search Git Files" },
     },
     opts = {
       -- [[ Configure Telescope ]]
@@ -29,26 +37,6 @@ return {
       -- Enable telescope fzf native, if installed
       pcall(require('telescope').load_extension, 'fzf')
     end,
-    init = function()
-      -- local tele = require 'telescope.builtin'
-      -- See `:help telescope.builtin`
-      -- vim.keymap.set('n', '<leader>?', tele.oldfiles, { desc = '[?] Find recently opened files' })
-      -- vim.keymap.set('n', '<leader><space>', tele.buffers, { desc = '[ ] Find existing buffers' })
-      --
-      -- -- You can pass additional configuration to telescope to change theme, layout, etc.
-      -- vim.keymap.set('n', '<leader>/', function()
-      --   require('telescope.builtin')
-      --       .current_buffer_fuzzy_find(
-      --         require('telescope.themes')
-      --         .get_dropdown {
-      --           winblend = 10,
-      --           previewer = false,
-      --         }
-      --       )
-      -- end, { desc = '[/] Fuzzily search in current buffer' })
-
-      -- vim.keymap.set('n', '<leader>gf', tele.git_files, { desc = 'Search [G]it [F]iles' })
-    end
   },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.

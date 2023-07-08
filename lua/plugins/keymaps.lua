@@ -46,17 +46,10 @@ local keymaps = {
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
 
   ["<Leader>"] = {
-    s = {
-      name = "[S]earch",
-      f = { ":Telescope find_files<CR>", "[S]earch [F]iles" },
-      w = { ":Telescope grep_string<CR>", "[S]earch current [W]ord" },
-      g = { ":Telescope live_grep<CR>", "[S]earch by [G]rep" },
-      d = { ":Telescope diagnostics<CR>", "[S]earch [D]iagnostics" },
-      h = { ":Telescope help_tags<CR>", "[S]earch [H]elp" },
-      k = { ":Telescope keymaps<CR>", "[S]earch [K]eymaps" },
-    },
+    s = "[S]earch",
     c = "[C]ode",
 
+    -- TODO: toggle if focus, otherwise focus
     e = { ":Neotree toggle<CR>", "[E]xplorer" },
 
     b = {
