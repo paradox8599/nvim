@@ -40,6 +40,13 @@ local keymaps = {
   -- Remap for dealing with word wrap
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
+
+  ["<Leader>"] = {
+    w = {
+      name = "[W]indow",
+      c = { "<C-w>c", "[C]lose window" }
+    }
+  }
 }
 
 return {
