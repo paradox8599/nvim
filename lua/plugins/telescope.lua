@@ -3,6 +3,7 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
+    event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       -- [[ Configure Telescope ]]
@@ -40,7 +41,7 @@ return {
       vim.keymap.set('n', '<leader>sd', tele.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sh', tele.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', tele.keymaps, { desc = '[S]earch [K]keymaps' })
-    end
+    end,
   },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.

@@ -2,7 +2,9 @@ return {
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
+    event = 'VeryLazy',
     priority = 1000,
+    event = 'VeryLazy',
     config = function()
       vim.cmd.colorscheme 'onedark'
     end,
@@ -10,6 +12,7 @@ return {
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
+    event = 'VeryLazy',
     -- See `:help lualine.txt`
     opts = {
       options = {
@@ -23,6 +26,7 @@ return {
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
+    event = 'VeryLazy',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
