@@ -1,8 +1,15 @@
 return {
   -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  {
+    'tpope/vim-sleuth',
+    event = 'VeryLazy',
+  },
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    event = 'VeryLazy',
+    opts = {},
+  },
   {
     'glacambre/firenvim',
     -- Lazy load firenvim

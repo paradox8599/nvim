@@ -39,13 +39,22 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --   nowait = false, -- use `nowait` when creating keymaps
 --   expr = false, -- use `expr` when creating keymaps
 -- }
+
 local keymaps = {
   -- Remap for dealing with word wrap
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
 
   ["<Leader>"] = {
-    s = "[S]earch",
+    s = {
+      name = "[S]earch",
+      f = { ":Telescope find_files<CR>", "[S]earch [F]iles" },
+      w = { ":Telescope grep_string<CR>", "[S]earch current [W]ord" },
+      g = { ":Telescope live_grep<CR>", "[S]earch by [G]rep" },
+      d = { ":Telescope diagnostics<CR>", "[S]earch [D]iagnostics" },
+      h = { ":Telescope help_tags<CR>", "[S]earch [H]elp" },
+      k = { ":Telescope keymaps<CR>", "[S]earch [K]eymaps" },
+    },
     c = "[C]ode",
 
     e = { ":Neotree toggle<CR>", "[E]xplorer" },
@@ -65,6 +74,7 @@ local keymaps = {
 return {
   {
     'folke/which-key.nvim',
+    event = 'VeryLazy',
     config = function()
       local wk = require 'which-key'
       wk.register(keymaps)
