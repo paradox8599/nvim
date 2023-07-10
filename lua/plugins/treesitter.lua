@@ -20,10 +20,10 @@ return {
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = '<c-s>',
-            node_decremental = '<M-space>',
+            init_selection = '<Leader>x',
+            node_incremental = '<Leader>x',
+            scope_incremental = '<Nop>',
+            node_decremental = '<Leader>X',
           },
         },
         textobjects = {
