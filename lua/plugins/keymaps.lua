@@ -59,7 +59,7 @@ local keymaps = {
 
     w = {
       name = "[W]indow",
-      c = { "<C-w>c", "[C]lose window" }
+      d = { "<C-w>c", "Close window" }
     }
   }
 }
