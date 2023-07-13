@@ -1,4 +1,5 @@
 return {
+  -- https://github.com/karb94/neoscroll.nvim
   'karb94/neoscroll.nvim',
   opts = {
     hide_cursor = false,          -- Hide cursor while scrolling
