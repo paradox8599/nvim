@@ -1,6 +1,7 @@
 return {
   -- https://github.com/karb94/neoscroll.nvim
   'karb94/neoscroll.nvim',
+  event = 'VeryLazy',
   opts = {
     hide_cursor = false,          -- Hide cursor while scrolling
     stop_eof = true,             -- Stop at <EOF> when scrolling downwards
