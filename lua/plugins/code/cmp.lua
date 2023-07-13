@@ -5,6 +5,7 @@ return {
       -- Snippet Engine & its associated nvim-cmp source
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
+
       'hrsh7th/cmp-nvim-lsp',         -- Adds LSP completion capabilities
       'rafamadriz/friendly-snippets', -- Adds a number of user-friendly snippets
     },
@@ -24,8 +25,8 @@ return {
         mapping = cmp.mapping.preset.insert {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-e>'] = cmp.mapping.complete {},
           ['<C-q>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm {
