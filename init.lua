@@ -3,7 +3,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('lazy_init')
-
 -- For additional information see:
 -- https://github.com/folke/lazy.nvim#-structuring-your-plugins
 require('lazy').setup({
