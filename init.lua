@@ -7,8 +7,6 @@ require('lazy_init')
 -- https://github.com/folke/lazy.nvim#-structuring-your-plugins
 require('lazy').setup({
   { import = 'plugins' },
-  { import = 'plugins.code' },
-  { import = 'plugins.qol' },
 })
 
 vim.o.hlsearch = true
