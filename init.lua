@@ -1,9 +1,10 @@
-vim.g.mapleader = ' ' -- Set <space> as the leader key
+-- Set <space> as the leader key
+vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('lazy_init')
 
--- For additional information see: 
+-- For additional information see:
 -- https://github.com/folke/lazy.nvim#-structuring-your-plugins
 require('lazy').setup({
   { import = 'plugins' },
@@ -25,7 +26,7 @@ vim.o.updatetime = 250    -- Decrease update time
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
-vim.o.termguicolors = true -- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true             -- NOTE: You should make sure your terminal supports this
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -37,4 +38,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
