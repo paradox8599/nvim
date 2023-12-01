@@ -7,6 +7,7 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "6148b51db945b55b3b725da39eaea6441e59dff8" },
   "mason.nvim": { "branch": "main", "commit": "74eac861b013786bf231b204b4ba9a7d380f4bd9" },
   "neo-tree.nvim": { "branch": "main", "commit": "7951701fd21291ac473ea92d3fd57ec5c8bf10bb" },
+  "neodev.nvim": { "branch": "main", "commit": "1676d2c24186fc30005317e0306d20c639b2351b" },
   "neoscroll.nvim": { "branch": "master", "commit": "4bc0212e9f2a7bc7fe7a6bceb15b33e39f0f41fb" },
   "nui.nvim": { "branch": "main", "commit": "9e3916e784660f55f47daa6f26053ad044db5d6a" },
   "nvim-autopairs": { "branch": "master", "commit": "ae5b41ce880a6d850055e262d6dfebd362bb276e" },

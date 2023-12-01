@@ -1,5 +1,7 @@
 local nmap = function(keys, func, desc, opts)
-  if not opts then opts = {} end
+  if not opts then
+    opts = {}
+  end
   opts['desc'] = desc
   opts['silent'] = true
   vim.keymap.set('n', keys, func, opts)
@@ -21,11 +23,36 @@ nmap('<Leader>,', vim.cmd.Lazy, 'lazy.nvim')
 nmap('<Leader>M', vim.cmd.Mason, 'Mason')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set(
+  'n',
+  '[d',
+  vim.diagnostic.goto_prev,
+  { desc = 'Go to previous diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  ']d',
+  vim.diagnostic.goto_next,
+  { desc = 'Go to next diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  '<F8>',
+  vim.diagnostic.goto_next,
+  { desc = 'Go to next diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>de',
+  vim.diagnostic.open_float,
+  { desc = 'Open floating diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>q',
+  vim.diagnostic.setloclist,
+  { desc = 'Open diagnostics list' }
+)
 
 -- Default opts
 -- {
@@ -45,23 +72,23 @@ local keymaps = {
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
 
-  ["<Leader>"] = {
-    s = "[S]earch",
-    c = "[C]ode",
+  ['<Leader>'] = {
+    s = '[S]earch',
+    c = '[C]ode',
 
     -- TODO: toggle if focus, otherwise focus
-    e = { ":Neotree toggle<CR>", "[E]xplorer" },
+    e = { ':Neotree toggle<CR>', '[E]xplorer' },
 
     b = {
-      name = "[B]uffer",
-      d = { ":bd | bd #<CR>", "[D]elete" },
+      name = '[B]uffer',
+      d = { ':bd | bd #<CR>', '[D]elete' },
     },
 
     w = {
-      name = "[W]indow",
-      d = { "<C-w>c", "Close window" }
-    }
-  }
+      name = '[W]indow',
+      d = { '<C-w>c', 'Close window' },
+    },
+  },
 }
 
 return {
@@ -69,8 +96,8 @@ return {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function()
-      local wk = require 'which-key'
+      local wk = require('which-key')
       wk.register(keymaps)
-    end
+    end,
   },
 }
