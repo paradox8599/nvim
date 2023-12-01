@@ -14,11 +14,11 @@ nmap('<C-k>', '<C-w>k', 'Window up')
 nmap('<C-h>', '<C-w>h', 'Window left')
 nmap('<C-l>', '<C-w>l', 'Window right')
 
-nmap('<Esc>', ':noh<CR>', 'Remove highlight')
-nmap('<A-F>', ':Format<CR>', 'Format')
+nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
+nmap('<A-F>', vim.cmd.Format, 'Format')
 
-nmap('<Leader>,', ':Lazy<CR>', 'lazy.nvim')
-nmap('<Leader>M', ':Mason<CR>', 'Mason')
+nmap('<Leader>,', vim.cmd.Lazy, 'lazy.nvim')
+nmap('<Leader>M', vim.cmd.Mason, 'Mason')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
