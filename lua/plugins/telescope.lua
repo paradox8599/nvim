@@ -17,7 +17,7 @@ return {
         "<Leader>sz",
         ":Telescope current_buffer_fuzzy_find previewer=false<CR>",
         desc =
-        "[F]uzzily search in current buffer"
+        "Fu[z]zily search in current buffer"
       },
       { "<Leader>?", ":Telescope git_files<CR>", desc = "Search Git Files" },
     },

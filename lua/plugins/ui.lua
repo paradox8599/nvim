@@ -1,20 +1,19 @@
 return {
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    enabled = false,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-  {
     'tomasiser/vim-code-dark',
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'codedark'
     end
   },
+  -- {
+  --   'rose-pine/neovim',
+  --   name = 'rose-pine',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'rose-pine'
+  --   end
+  -- },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
