@@ -11,14 +11,14 @@ return {
         ':Telescope grep_string<CR>',
         desc = 'Search current [W]ord',
       },
-      { '<leader>sg', ':Telescope live_grep<CR>', desc = 'Search by [G]rep' },
+      { '<leader>sg', ':Telescope live_grep<CR>',  desc = 'Search by [G]rep' },
       {
         '<leader>sd',
         ':Telescope diagnostics<CR>',
         desc = 'Search [D]iagnostics',
       },
       { '<leader>sh', ':Telescope help_tags<CR>', desc = 'Search [H]elp' },
-      { '<leader>sk', ':Telescope keymaps<CR>', desc = 'Search [K]eymaps' },
+      { '<leader>sk', ':Telescope keymaps<CR>',   desc = 'Search [K]eymaps' },
       {
         '<leader>so',
         ':Telescope oldfiles<CR>',

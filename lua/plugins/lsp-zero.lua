@@ -1,5 +1,4 @@
 return {
-  'folke/neodev.nvim',
   'rafamadriz/friendly-snippets', -- Adds a number of user-friendly snippets
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -31,6 +30,7 @@ return {
       local cmp = require('cmp')
       local cmp_action = lsp_zero.cmp_action()
 
+      ---@diagnostic disable-next-line: missing-fields
       cmp.setup({
         formatting = lsp_zero.cmp_format(),
         snippet = {
@@ -87,6 +87,7 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'j-hui/fidget.nvim',                opts = {} },
+      { 'folke/neodev.nvim',                opts = {} },
     },
     config = function()
       -- This is where all the LSP shenanigans will live
@@ -96,7 +97,12 @@ return {
       lsp_zero.on_attach(function(_, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
-        vim.keymap.set('n', '<C-.>', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
+        vim.keymap.set(
+          { 'n', 'i' },
+          '<C-.>',
+          vim.lsp.buf.code_action,
+          { desc = '[C]ode [A]ction' }
+        )
         lsp_zero.default_keymaps({ buffer = bufnr })
       end)
 

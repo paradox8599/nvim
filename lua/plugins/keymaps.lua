@@ -35,7 +35,7 @@ nmap('<C-k>', '<C-w>k', 'Window up')
 nmap('<C-h>', '<C-w>h', 'Window left')
 nmap('<C-l>', '<C-w>l', 'Window right')
 nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
-nmap('<A-F>', function() vim.lsp.buf.format() end, 'Format')
+nmap('<A-F>', vim.lsp.buf.format, 'Format')
 
 nmap('<leader>L', vim.cmd.Lazy, 'lazy.nvim')
 nmap('<leader>M', vim.cmd.Mason, 'Mason')
@@ -67,6 +67,8 @@ local keymaps = {
   -- Remap for dealing with word wrap
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
+  K = { vim.lsp.buf.hover, 'Hover Documentation' },
+
   ['<leader>'] = {
     s = '[S]earch',
     c = '[C]ode',
@@ -85,7 +87,6 @@ local keymaps = {
     d = { vim.lsp.buf.definition, '[d]efinition' },
     -- r = { require('telescope.builtin').lsp_references, '[R]eferences' },
   },
-  K = { vim.lsp.buf.hover, 'Hover Documentation' }
 }
 
 return {
