@@ -81,6 +81,11 @@ local keymaps = {
       d = { '<C-w>c', 'Close window' },
     },
   },
+  g = {
+    d = { vim.lsp.buf.definition, '[d]efinition' },
+    -- r = { require('telescope.builtin').lsp_references, '[R]eferences' },
+  },
+  K = { vim.lsp.buf.hover, 'Hover Documentation' }
 }
 
 return {
