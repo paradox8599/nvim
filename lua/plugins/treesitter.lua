@@ -31,10 +31,10 @@ return {
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = '<Leader>x',
-            node_incremental = '<Leader>x',
+            init_selection = '<leader>n',
+            node_incremental = '<leader>n',
             scope_incremental = '<Nop>',
-            node_decremental = '<Leader>X',
+            node_decremental = '<leader>N',
           },
         },
         textobjects = {
@@ -74,10 +74,10 @@ return {
           swap = {
             enable = true,
             swap_next = {
-              ['<leader>a'] = '@parameter.inner',
+              ['<leader>ta'] = '@parameter.inner',
             },
             swap_previous = {
-              ['<leader>A'] = '@parameter.inner',
+              ['<leader>tA'] = '@parameter.inner',
             },
           },
         },

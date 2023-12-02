@@ -25,19 +25,19 @@ return {
           'n',
           '<leader>gp',
           require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' }
+          { buffer = bufnr, desc = 'Go to [P]revious Hunk' }
         )
         vim.keymap.set(
           'n',
           '<leader>gn',
           require('gitsigns').next_hunk,
-          { buffer = bufnr, desc = '[G]o to [N]ext Hunk' }
+          { buffer = bufnr, desc = 'Go to [N]ext Hunk' }
         )
         vim.keymap.set(
           'n',
-          '<leader>ph',
+          '<leader>gv',
           require('gitsigns').preview_hunk,
-          { buffer = bufnr, desc = '[P]review [H]unk' }
+          { buffer = bufnr, desc = 'Pre[v]iew Hunk' }
         )
       end,
     },

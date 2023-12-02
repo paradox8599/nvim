@@ -5,32 +5,32 @@ return {
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-      { '<Leader>sf', ':Telescope find_files<CR>', desc = 'Search [F]iles' },
+      { '<leader>sf', ':Telescope find_files<CR>', desc = 'Search [F]iles' },
       {
-        '<Leader>sw',
+        '<leader>sw',
         ':Telescope grep_string<CR>',
         desc = 'Search current [W]ord',
       },
-      { '<Leader>sg', ':Telescope live_grep<CR>', desc = 'Search by [G]rep' },
+      { '<leader>sg', ':Telescope live_grep<CR>', desc = 'Search by [G]rep' },
       {
-        '<Leader>sd',
+        '<leader>sd',
         ':Telescope diagnostics<CR>',
         desc = 'Search [D]iagnostics',
       },
-      { '<Leader>sh', ':Telescope help_tags<CR>', desc = 'Search [H]elp' },
-      { '<Leader>sk', ':Telescope keymaps<CR>', desc = 'Search [K]eymaps' },
+      { '<leader>sh', ':Telescope help_tags<CR>', desc = 'Search [H]elp' },
+      { '<leader>sk', ':Telescope keymaps<CR>', desc = 'Search [K]eymaps' },
       {
-        '<Leader>so',
+        '<leader>so',
         ':Telescope oldfiles<CR>',
         desc = 'Search [O]ld files',
       },
-      { '<Leader>sb', ':Telescope buffers<CR>', desc = 'Search [B]uffers' },
+      { '<leader>sb', ':Telescope buffers<CR>', desc = 'Search [B]uffers' },
       {
-        '<Leader>sz',
+        '<leader>sz',
         ':Telescope current_buffer_fuzzy_find previewer=false<CR>',
         desc = 'Fu[z]zily search in current buffer',
       },
-      -- { '<Leader>?', ':Telescope git_files<CR>', desc = 'Search Git Files' },
+      -- { '<leader>?', ':Telescope git_files<CR>', desc = 'Search Git Files' },
     },
     opts = {
       -- [[ Configure Telescope ]]

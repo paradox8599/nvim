@@ -12,7 +12,9 @@ require('lazy').setup({
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.scrolloff = 8
-vim.o.hlsearch = true
+vim.opt.colorcolumn = "80"
+-- vim.o.hlsearch = true
+-- vim.o.incsearch = true
 vim.o.mouse = 'a' -- Enable mouse mode
 -- vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true -- Enable break indent

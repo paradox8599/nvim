@@ -1,4 +1,5 @@
 return {
+  'folke/neodev.nvim',
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
