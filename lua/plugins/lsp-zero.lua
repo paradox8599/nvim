@@ -30,7 +30,6 @@ return {
       local cmp = require('cmp')
       local cmp_action = lsp_zero.cmp_action()
 
-      ---@diagnostic disable-next-line: missing-fields
       cmp.setup({
         formatting = lsp_zero.cmp_format(),
         snippet = {
