@@ -29,6 +29,7 @@ vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better compl
 vim.o.termguicolors = true             -- NOTE: You should make sure your terminal supports this
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.writebackup = false
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
