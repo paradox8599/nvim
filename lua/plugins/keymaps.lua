@@ -35,7 +35,7 @@ nmap('<C-k>', '<C-w>k', 'Window up')
 nmap('<C-h>', '<C-w>h', 'Window left')
 nmap('<C-l>', '<C-w>l', 'Window right')
 nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
-nmap('<A-F>', vim.cmd.Format, 'Format')
+nmap('<A-F>', function() vim.lsp.buf.format() end, 'Format')
 
 nmap('<leader>L', vim.cmd.Lazy, 'lazy.nvim')
 nmap('<leader>M', vim.cmd.Mason, 'Mason')
