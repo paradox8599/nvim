@@ -6,54 +6,6 @@ local nmap = function(keys, func, desc, opts)
   opts['silent'] = true
   vim.keymap.set('n', keys, func, opts)
 end
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
-nmap('<C-j>', '<C-w>j', 'Window down')
-nmap('<C-k>', '<C-w>k', 'Window up')
-nmap('<C-h>', '<C-w>h', 'Window left')
-nmap('<C-l>', '<C-w>l', 'Window right')
-
-nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
-nmap('<A-F>', vim.cmd.Format, 'Format')
-
-nmap('<Leader>,', vim.cmd.Lazy, 'lazy.nvim')
-nmap('<Leader>M', vim.cmd.Mason, 'Mason')
-
--- Diagnostic keymaps
-vim.keymap.set(
-  'n',
-  '[d',
-  vim.diagnostic.goto_prev,
-  { desc = 'Go to previous diagnostic message' }
-)
-vim.keymap.set(
-  'n',
-  ']d',
-  vim.diagnostic.goto_next,
-  { desc = 'Go to next diagnostic message' }
-)
-vim.keymap.set(
-  'n',
-  '<F8>',
-  vim.diagnostic.goto_next,
-  { desc = 'Go to next diagnostic message' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>de',
-  vim.diagnostic.open_float,
-  { desc = 'Open floating diagnostic message' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>q',
-  vim.diagnostic.setloclist,
-  { desc = 'Open diagnostics list' }
-)
-
 -- Default opts
 -- {
 --   mode = "n", -- NORMAL mode
@@ -66,6 +18,30 @@ vim.keymap.set(
 --   nowait = false, -- use `nowait` when creating keymaps
 --   expr = false, -- use `expr` when creating keymaps
 -- }
+
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+nmap('<C-j>', '<C-w>j', 'Window down')
+nmap('<C-k>', '<C-w>k', 'Window up')
+nmap('<C-h>', '<C-w>h', 'Window left')
+nmap('<C-l>', '<C-w>l', 'Window right')
+nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
+nmap('<A-F>', vim.cmd.Format, 'Format')
+
+nmap('<Leader>,', vim.cmd.Lazy, 'lazy.nvim')
+nmap('<Leader>M', vim.cmd.Mason, 'Mason')
+-- Diagnostic keymaps
+nmap('[d', vim.diagnostic.goto_prev, 'Go to previous diagnostic message')
+nmap(']d', vim.diagnostic.goto_next, 'Go to next diagnostic message')
+nmap('<F8>', vim.diagnostic.goto_next, 'Go to next diagnostic message')
+nmap(
+  '<leader>de',
+  vim.diagnostic.open_float,
+  'Open floating diagnostic message'
+)
+nmap('<leader>1', vim.diagnostic.setloclist, 'Open diagnostics list')
 
 local keymaps = {
   -- Remap for dealing with word wrap

@@ -9,9 +9,9 @@ require('lazy').setup({
   { import = 'plugins' },
 })
 
-vim.o.hlsearch = true
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.o.hlsearch = true
 vim.o.mouse = 'a' -- Enable mouse mode
 -- vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true -- Enable break indent
@@ -36,3 +36,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+

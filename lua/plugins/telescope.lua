@@ -30,7 +30,7 @@ return {
         ':Telescope current_buffer_fuzzy_find previewer=false<CR>',
         desc = 'Fu[z]zily search in current buffer',
       },
-      { '<Leader>?', ':Telescope git_files<CR>', desc = 'Search Git Files' },
+      -- { '<Leader>?', ':Telescope git_files<CR>', desc = 'Search Git Files' },
     },
     opts = {
       -- [[ Configure Telescope ]]
