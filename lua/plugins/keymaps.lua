@@ -17,7 +17,7 @@ nmap('J', 'mzJ`z')
 nmap('n', 'nzzzv')
 nmap('N', 'Nzzzv')
 -- keep vim clipboard after paste
-vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without copy' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dP', { desc = 'Paste without copy' })
 -- copy to system clipboard
 vim.keymap.set(
   { 'n', 'v' },
@@ -39,16 +39,6 @@ nmap('<A-F>', vim.lsp.buf.format, 'Format')
 
 nmap('<leader>L', vim.cmd.Lazy, 'lazy.nvim')
 nmap('<leader>M', vim.cmd.Mason, 'Mason')
--- Diagnostic keymaps
-nmap('[d', vim.diagnostic.goto_prev, 'Go to previous diagnostic message')
-nmap(']d', vim.diagnostic.goto_next, 'Go to next diagnostic message')
-nmap('<F8>', vim.diagnostic.goto_next, 'Go to next diagnostic message')
-nmap(
-  '<leader>de',
-  vim.diagnostic.open_float,
-  'Open floating diagnostic message'
-)
-nmap('<leader>1', vim.diagnostic.setloclist, 'Open diagnostics list')
 
 -- Default opts
 -- {
@@ -67,9 +57,11 @@ local keymaps = {
   -- Remap for dealing with word wrap
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
-  K = { vim.lsp.buf.hover, 'Hover Documentation' },
 
   ['<leader>'] = {
+    g = '[G]it',
+    h = { 'gT', 'Tab left' },
+    l = { 'gt', 'Tab right' },
     s = '[S]earch',
     c = '[C]ode',
     -- TODO: toggle if focus, otherwise focus
@@ -81,6 +73,7 @@ local keymaps = {
     w = {
       name = '[W]indow',
       d = { '<C-w>c', 'Close window' },
+      D = { ':windo bd<CR>', 'Close tab' }
     },
   },
 }

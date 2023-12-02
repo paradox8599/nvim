@@ -37,8 +37,15 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
+        preselect = 'item',
+        completion = { completeopt = 'menu,menuone,noinsert' },
+        -- window = {
+        --   completion = cmp.config.window.bordered(),
+        --   documentation = cmp.config.window.bordered(),
+        -- },
         mapping = cmp.mapping.preset.insert({
           ['<A-Space>'] = cmp.mapping.complete(),
+          ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -46,28 +53,28 @@ return {
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
           ['<C-q>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          }),
-          ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
+          -- behavior = cmp.ConfirmBehavior.Replace,
+          ['<CR>'] = cmp.mapping.confirm({ select = false }),
+          ['<Tab>'] = cmp_action.luasnip_supertab(),
+          ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+          -- ['<Tab>'] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_next_item()
+          --   elseif luasnip.expand_or_locally_jumpable() then
+          --     luasnip.expand_or_jump()
+          --   else
+          --     fallback()
+          --   end
+          -- end, { 'i', 's' }),
+          -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_prev_item()
+          --   elseif luasnip.locally_jumpable(-1) then
+          --     luasnip.jump(-1)
+          --   else
+          --     fallback()
+          --   end
+          -- end, { 'i', 's' }),
         }),
         sources = {
           { name = 'nvim_lsp' },
@@ -96,24 +103,36 @@ return {
       lsp_zero.on_attach(function(_, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
+        lsp_zero.default_keymaps({ buffer = bufnr })
+
         vim.keymap.set(
           { 'n', 'i' },
           '<C-.>',
           vim.lsp.buf.code_action,
           { desc = '[C]ode [A]ction' }
         )
-        lsp_zero.default_keymaps({ buffer = bufnr })
+        -- Diagnostic keymaps
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+        vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+        vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+        vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {},
+        ensure_installed = {
+          'lua_ls',
+          'tsserver',
+          'pyright',
+          'rust_analyzer',
+        },
         handlers = {
           lsp_zero.default_setup,
-          lua_ls = function()
-            -- (Optional) Configure lua language server for neovim
-            local lua_opts = lsp_zero.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
-          end,
+          -- lua_ls = function()
+          --   -- (Optional) Configure lua language server for neovim
+          --   local lua_opts = lsp_zero.nvim_lua_ls()
+          --   require('lspconfig').lua_ls.setup(lua_opts)
+          -- end,
         },
       })
     end,
