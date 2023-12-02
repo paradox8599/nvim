@@ -11,6 +11,7 @@ require('lazy').setup({
 
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.scrolloff = 8
 vim.o.hlsearch = true
 vim.o.mouse = 'a' -- Enable mouse mode
 -- vim.o.clipboard = 'unnamedplus'
@@ -24,6 +25,8 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
 vim.o.termguicolors = true -- NOTE: You should make sure your terminal supports this
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
