@@ -95,20 +95,20 @@ return {
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = bufnr })
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[I]mplementation', buffer = bufnr })
         vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { desc = 'Type definition', buffer = bufnr })
-        vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[R]eferences', buffer = bufnr })
+        -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[R]eferences', buffer = bufnr })
         vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = '[S]ignature help', buffer = bufnr })
         vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end, opts)
         vim.keymap.set({ 'n', 'x' }, '<A-F>', function() vim.lsp.buf.format({ async = true }) end, opts)
         -- Diagnostic keymaps
-        -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
-        --   { desc = 'Go to previous diagnostic message', buffer = bufnr })
-        -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
-        --   { desc = 'Go to next diagnostic message', buffer = bufnr })
-        -- vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
-        --   { desc = 'Go to next diagnostic message', buffer = bufnr })
-        -- vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
-        --   { desc = 'Open floating diagnostic message', buffer = bufnr })
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
+          { desc = 'Go to previous diagnostic message', buffer = bufnr })
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
+          { desc = 'Go to next diagnostic message', buffer = bufnr })
+        vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
+          { desc = 'Go to next diagnostic message', buffer = bufnr })
+        vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
+          { desc = 'Open floating diagnostic message', buffer = bufnr })
         -- vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
         --   { desc = 'Open diagnostics list', buffer = bufnr })
       end)

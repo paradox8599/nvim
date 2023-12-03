@@ -22,7 +22,8 @@ return {
       function() t.toggle("loclist") end,
       { desc = 'Loc list' })
     vim.keymap.set("n", "gR",
-      function() t.toggle("lsp_references") end)
+      function() t.toggle("lsp_references") end,
+      { desc = '[R]eferences (Trouble)' })
   end
 
 }
