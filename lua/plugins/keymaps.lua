@@ -52,9 +52,7 @@ local keymaps = {
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
 
   ['<leader>'] = {
-    g = '[G]it',
-    h = { 'gT', 'Tab left' },
-    l = { 'gt', 'Tab right' },
+    g = '[G]it signs',
     s = '[S]earch',
     c = '[C]ode',
     q = 'Persistence',
