@@ -67,11 +67,13 @@ local keymaps = {
     },
     t = {
       name = '[T]ab',
-      c = { vim.cmd.tabclose, '[C]lose Tab' },
+      d = { vim.cmd.tabclose, 'Close Tab' },
       n = { vim.cmd.tabnew, '[N]ew Tab' },
     },
     w = {
       name = '[W]indow',
+      d = { vim.cmd.close, 'Close window' },
+      n = { vim.cmd.new, '[N]ew window' }
     }
   },
 }
