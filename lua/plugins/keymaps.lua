@@ -10,33 +10,27 @@ end
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
 -- keep cursor position when doing 'J'
-nmap('J', 'mzJ`z')
+vim.keymap.set('n', 'J', 'mzJ`z')
 -- keep search term highlight in the middle
-nmap('n', 'nzzzv')
-nmap('N', 'Nzzzv')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 -- keep vim clipboard after paste
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dP', { desc = 'Paste without copy' })
 -- copy to system clipboard
-vim.keymap.set(
-  { 'n', 'v' },
-  '<leader>y',
-  '"+y',
-  { desc = 'Copy to system clipboard' }
-)
-
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
 -- use J/K to move selected lines
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
-
+-- Ctrl + hjkl to move between windows
 nmap('<C-j>', '<C-w>j', 'Window down')
 nmap('<C-k>', '<C-w>k', 'Window up')
 nmap('<C-h>', '<C-w>h', 'Window left')
 nmap('<C-l>', '<C-w>l', 'Window right')
+-- Action shortcuts
 nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
 nmap('<A-F>', vim.lsp.buf.format, 'Format')
-
+-- UI shortcuts
 nmap('<leader>L', vim.cmd.Lazy, 'lazy.nvim')
 nmap('<leader>M', vim.cmd.Mason, 'Mason')
 
@@ -83,8 +77,7 @@ return {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function()
-      local wk = require('which-key')
-      wk.register(keymaps)
+      require('which-key').register(keymaps)
     end,
   },
 }

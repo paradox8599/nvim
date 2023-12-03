@@ -88,24 +88,18 @@ return {
         lsp_zero.default_keymaps({ buffer = bufnr })
 
         vim.keymap.set({ 'n', 'i' }, '<C-.>', vim.lsp.buf.code_action,
-          { desc = '[C]ode [A]ction', buffer = bufnr }
-        )
+          { desc = '[C]ode [A]ction', buffer = bufnr })
         -- Diagnostic keymaps
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
-          { desc = 'Go to previous diagnostic message', buffer = bufnr }
-        )
+          { desc = 'Go to previous diagnostic message', buffer = bufnr })
         vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
-          { desc = 'Go to next diagnostic message', buffer = bufnr }
-        )
+          { desc = 'Go to next diagnostic message', buffer = bufnr })
         vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
-          { desc = 'Go to next diagnostic message', buffer = bufnr }
-        )
+          { desc = 'Go to next diagnostic message', buffer = bufnr })
         vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
-          { desc = 'Open floating diagnostic message', buffer = bufnr }
-        )
+          { desc = 'Open floating diagnostic message', buffer = bufnr })
         vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
-          { desc = 'Open diagnostics list', buffer = bufnr }
-        )
+          { desc = 'Open diagnostics list', buffer = bufnr })
       end)
 
       require('mason-lspconfig').setup({
@@ -113,7 +107,7 @@ return {
           'lua_ls',
           'tsserver',
           'pyright',
-          'rust_analyzer',
+          'rust_analyzer'
         },
         handlers = {
           lsp_zero.default_setup,
