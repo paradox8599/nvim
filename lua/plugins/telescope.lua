@@ -30,6 +30,18 @@ return {
         ':Telescope current_buffer_fuzzy_find previewer=false<CR>',
         desc = 'Fu[z]zily search in current buffer',
       },
+      {
+        '<leader>sS',
+        ':Telescope file_browser<CR>',
+        noremap = true,
+        desc = 'File browser'
+      },
+      {
+        '<leader>ss',
+        ':Telescope file_browser path=%:p:h select_buffer=true<CR>',
+        noremap = true,
+        desc = 'File browser from current path'
+      }
       -- { '<leader>?', ':Telescope git_files<CR>', desc = 'Search Git Files' },
     },
     opts = {
@@ -46,7 +58,9 @@ return {
     },
     config = function()
       -- Enable telescope fzf native, if installed
-      pcall(require('telescope').load_extension, 'fzf')
+      local t = require('telescope')
+      pcall(t.load_extension, 'fzf')
+      pcall(t.load_extension, 'file_browser')
     end,
   },
 
@@ -63,4 +77,9 @@ return {
       return vim.fn.executable('make') == 1
     end,
   },
+  {
+    -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
+  }
 }
