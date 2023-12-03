@@ -63,11 +63,7 @@ local keymaps = {
       name = '[B]uffer',
       d = { ':bd | bd #<CR>', '[D]elete' },
     },
-    w = {
-      name = '[W]indow',
-      d = { '<C-w>c', 'Close window' },
-      D = { ':windo bd<CR>', 'Close tab' }
-    },
+    T = { ':windo bd<CR>', 'Close [T]ab' },
   },
 }
 
