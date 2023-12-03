@@ -85,10 +85,21 @@ return {
       lsp_zero.on_attach(function(_, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
-        lsp_zero.default_keymaps({ buffer = bufnr })
+        local opts = { buffer = bufnr }
+        lsp_zero.default_keymaps(opts)
 
-        vim.keymap.set({ 'n', 'i' }, '<C-.>', vim.lsp.buf.code_action,
-          { desc = '[C]ode [A]ction', buffer = bufnr })
+        vim.keymap.set('n', '<C-.>', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[D]efinition', buffer = bufnr })
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = bufnr })
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[I]mplementation', buffer = bufnr })
+        vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { desc = 'Type definition', buffer = bufnr })
+        vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[R]eferences', buffer = bufnr })
+        vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = '[S]ignature help', buffer = bufnr })
+        vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
+        vim.keymap.set({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end, opts)
+        vim.keymap.set({ 'n', 'x' }, '<A-F>', function() vim.lsp.buf.format({ async = true }) end, opts)
         -- Diagnostic keymaps
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
           { desc = 'Go to previous diagnostic message', buffer = bufnr })

@@ -29,7 +29,6 @@ nmap('<C-h>', '<C-w>h', 'Window left')
 nmap('<C-l>', '<C-w>l', 'Window right')
 -- Action shortcuts
 nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
-nmap('<A-F>', vim.lsp.buf.format, 'Format')
 -- UI shortcuts
 nmap('<leader>L', vim.cmd.Lazy, 'lazy.nvim')
 nmap('<leader>M', vim.cmd.Mason, 'Mason')
