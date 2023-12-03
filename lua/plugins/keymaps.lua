@@ -70,6 +70,9 @@ local keymaps = {
       c = { vim.cmd.tabclose, '[C]lose Tab' },
       n = { vim.cmd.tabnew, '[N]ew Tab' },
     },
+    w = {
+      name = '[W]indow',
+    }
   },
 }
 

@@ -26,6 +26,5 @@ return {
     vim.keymap.set("n", "<leader>qd", p.stop,
       { desc = "[D]isable current session persistence" })
 
-    p.load()
   end
 }

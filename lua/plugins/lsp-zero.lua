@@ -101,16 +101,16 @@ return {
         vim.keymap.set({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end, opts)
         vim.keymap.set({ 'n', 'x' }, '<A-F>', function() vim.lsp.buf.format({ async = true }) end, opts)
         -- Diagnostic keymaps
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
-          { desc = 'Go to previous diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
-          { desc = 'Go to next diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
-          { desc = 'Go to next diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
-          { desc = 'Open floating diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
-          { desc = 'Open diagnostics list', buffer = bufnr })
+        -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
+        --   { desc = 'Go to previous diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
+        --   { desc = 'Go to next diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
+        --   { desc = 'Go to next diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
+        --   { desc = 'Open floating diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
+        --   { desc = 'Open diagnostics list', buffer = bufnr })
       end)
 
       require('mason-lspconfig').setup({
