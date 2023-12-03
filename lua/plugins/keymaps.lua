@@ -57,6 +57,8 @@ local keymaps = {
     l = { 'gt', 'Tab right' },
     s = '[S]earch',
     c = '[C]ode',
+    q = 'Persistence',
+    T = 'Parameters',
     -- TODO: toggle if focus, otherwise focus
     e = { ':Neotree toggle<CR>', '[E]xplorer' },
     b = {
