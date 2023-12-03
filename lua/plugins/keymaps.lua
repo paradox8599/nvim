@@ -63,7 +63,11 @@ local keymaps = {
       name = '[B]uffer',
       d = { ':bd | bd #<CR>', '[D]elete' },
     },
-    T = { ':windo bd<CR>', 'Close [T]ab' },
+    t = {
+      name = '[T]ab',
+      c = { vim.cmd.tabclose, '[C]lose Tab' },
+      n = { vim.cmd.tabnew, '[N]ew Tab' },
+    },
   },
 }
 
