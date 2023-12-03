@@ -50,9 +50,17 @@ local keymaps = {
   -- Remap for dealing with word wrap
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
+  c = {
+    t = '[T]heirs',
+    o = '[O]urs',
+    b = '[B]oth',
+    n = '[N]one',
+  },
 
   ['<leader>'] = {
-    g = '[G]it signs',
+    g = {
+      name = '[G]it signs',
+    },
     s = '[S]earch',
     c = '[C]ode',
     q = 'Persistence',
@@ -72,7 +80,7 @@ local keymaps = {
       name = '[W]indow',
       d = { vim.cmd.close, 'Close window' },
       n = { vim.cmd.new, '[N]ew window' }
-    }
+    },
   },
 }
 
