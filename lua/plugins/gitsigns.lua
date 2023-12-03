@@ -29,7 +29,7 @@ return {
         ignore_whitespace = false,
         virt_text_priority = 100,
       },
-      current_line_blame_formatter = '<author>,<author_time:%Y-%m-%d>-<summary>',
+      current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
       sign_priority = 6,
       update_debounce = 100,
       status_formatter = nil,  --Usedefault
@@ -76,11 +76,12 @@ return {
         map('n', '<leader>gu', gs.undo_stage_hunk, { desc = '[U]ndo stage hunk' })
         map('n', '<leader>gR', gs.reset_buffer, { desc = '[R]eset buffer' })
         map('n', '<leader>gp', gs.preview_hunk, { desc = '[P]review hunk' })
-        map('n', '<leader>gb', function() gs.blame_line { full = true } end, { desc = '[B]lame' })
         map('n', '<leader>gB', gs.toggle_current_line_blame, { desc = '[B]lame current line toogle' })
         -- map('n', '<leader>gd', gs.diffthis, { desc = '[D]iff' })
-        -- map('n', '<leader>gD', function() gs.diffthis('~') end, { desc = '[D]iff file' })
-        -- map('n', '<leader>gG', gs.toggle_deleted )
+        -- map('n', '<leader>gd', function() gs.diffthis('~') end, { desc = '[D]iff file' })
+        map('n', '<leader>gd', gs.toggle_deleted, { desc = 'Toggle deleted' })
+
+        gs.toggle_current_line_blame()
       end
     })
   end
