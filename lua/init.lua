@@ -31,6 +31,10 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
+-- window width
+-- vim.opt.winwidth = 999
+-- vim.opt.winminwidth = 15
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group =

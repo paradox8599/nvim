@@ -1,7 +1,9 @@
+local is_not_vscode = function() return vim.g.vscode == nil end
 return {
   {
     'tomasiser/vim-code-dark',
     priority = 1000,
+    enabled = is_not_vscode,
     config = function()
       vim.cmd.colorscheme('codedark')
     end,
@@ -18,6 +20,7 @@ return {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
+    enabled = is_not_vscode,
     -- See `:help lualine.txt`
     opts = {
       options = {
