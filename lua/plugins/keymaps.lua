@@ -62,7 +62,6 @@ local keymaps = {
       name = '[G]it signs',
     },
     s = '[S]earch',
-    c = '[C]ode',
     q = 'Persistence',
     T = 'Parameters',
     -- TODO: toggle if focus, otherwise focus
