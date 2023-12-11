@@ -57,13 +57,15 @@ local keymaps = {
     n = '[N]one',
   },
 
+  g = {
+    p = '[P]eek',
+  },
   ['<leader>'] = {
     g = {
       name = '[G]it signs',
     },
     s = '[S]earch',
     q = 'Persistence',
-    T = 'Parameters',
     x = 'Trouble',
     -- TODO: toggle if focus, otherwise focus
     e = { ':Neotree toggle<CR>', '[E]xplorer' },

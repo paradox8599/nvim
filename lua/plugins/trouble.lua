@@ -25,5 +25,4 @@ return {
       function() t.toggle("lsp_references") end,
       { desc = '[R]eferences (Trouble)' })
   end
-
 }

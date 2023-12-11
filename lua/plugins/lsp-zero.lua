@@ -1,4 +1,5 @@
 return {
+  -- https://nvimdev.github.io/guard
   -- {
   --   "nvimdev/guard.nvim",
   --   -- Builtin configuration, optional
@@ -7,7 +8,14 @@ return {
   --   },
   --   opts = {},
   -- },
-
+  {
+    'nvimdev/lspsaga.nvim',
+    event = 'LspAttach',
+    config = function() require('lspsaga').setup({}) end,
+    dependencies = {}
+    -- 'nvim-treesitter/nvim-treesitter', -- optional
+    -- 'nvim-tree/nvim-web-devicons'      -- optional
+  },
   {
     'onsails/lspkind.nvim',
     config = function()
@@ -87,7 +95,7 @@ return {
           fields = { 'menu', 'abbr', 'kind' },
           expandable_indicator = true,
           format = lspkind.cmp_format({
-            mode = 'symbol_text',       -- show only symbol annotations
+            mode = 'symbol_text',  -- show only symbol annotations
             maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
             ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
@@ -111,8 +119,9 @@ return {
         --   documentation = cmp.config.window.bordered(),
         -- },
         mapping = cmp.mapping.preset.insert({
-          ['<A-leader>'] = cmp.mapping.complete(), -- mac
-          ['<C-leader>'] = cmp.mapping.complete(),
+          ['<A-Space>'] = cmp.mapping.complete(), -- mac
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<F3>'] = cmp.mapping.complete(),
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -153,30 +162,48 @@ return {
         -- to learn the available actions
         local opts = { buffer = bufnr }
         lsp_zero.default_keymaps(opts)
+        -- LSPSaga
+        vim.keymap.set('n', '<F4>', [[<cmd>Lspsaga code_action<cr>]], opts)
+        vim.keymap.set({ 'n', 't' }, '<leader>T', [[<cmd>Lspsaga term_toggle<cr>]], opts)
+        vim.keymap.set('n', 'K', [[<cmd>Lspsaga hover_doc<cr>]], opts)
+        vim.keymap.set('n', 'gpd', [[<cmd>Lspsaga peek_definition<cr>]], { desc = '[D]efinition', buffer = bufnr })
+        vim.keymap.set('n', 'gd', [[<cmd>Lspsaga goto_definition<cr>]], { desc = '[D]efinition', buffer = bufnr })
+        vim.keymap.set('n', 'gpD', [[<cmd>Lspsaga peek_type_definition<cr>]], { desc = '[D]eclaration', buffer = bufnr })
+        vim.keymap.set('n', 'gD', [[<cmd>Lspsaga goto_type_definition<cr>]], { desc = '[D]eclaration', buffer = bufnr })
+        vim.keymap.set('n', 'gi', [[<cmd>Lspsaga finder imp<cr>]], { desc = '[I]mplementation', buffer = bufnr })
 
-        vim.keymap.set('n', '<C-.>', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[D]efinition', buffer = bufnr })
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = bufnr })
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[I]mplementation', buffer = bufnr })
-        vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { desc = 'Type definition', buffer = bufnr })
-        -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[R]eferences', buffer = bufnr })
-        vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = '[S]ignature help', buffer = bufnr })
-        vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end, opts)
-        vim.keymap.set({ 'n', 'x' }, '<A-F>', function() vim.lsp.buf.format({ async = true }) end, opts)
-        -- Diagnostic keymaps
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
+        vim.keymap.set('n', '[e', [[<cmd>Lspsaga diagnostic_jump_prev<cr>]],
           { desc = 'Go to previous diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
+        vim.keymap.set('n', ']e', [[<cmd>Lspsaga diagnostic_jump_next<cr>]],
           { desc = 'Go to next diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
+        vim.keymap.set('n', '<F8>', [[<cmd>Lspsaga diagnostic_jump_next<cr>]],
           { desc = 'Go to next diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
-          { desc = 'Open floating diagnostic message', buffer = bufnr })
-        -- vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
-        --   { desc = 'Open diagnostics list', buffer = bufnr })
+        vim.keymap.set({ 'n', 'i' }, '<A-F>', vim.lsp.buf.format, opts)
+        vim.keymap.set({ 'n' }, 'go', [[<cmd>Lspsaga outline<cr>]], { desc = '[O]utline', buffer = bufnr })
+        vim.keymap.set('n', '<F2>', [[<cmd>Lspsaga rename<cr>]], opts)
+
+        -- vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
+        -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[D]efinition', buffer = bufnr })
+        -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = bufnr })
+        -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[I]mplementation', buffer = bufnr })
+        -- vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, { desc = 'Type definition', buffer = bufnr })
+        -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[R]eferences', buffer = bufnr })
+        -- vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = '[S]ignature help', buffer = bufnr })
+        -- vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
+        -- vim.keymap.set({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end, opts)
+        -- vim.keymap.set({ 'n', 'x' }, '<A-F>', function() vim.lsp.buf.format({ async = true }) end, opts)
+        -- Diagnostic keymaps
+        -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
+        --   { desc = 'Go to previous diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
+        --   { desc = 'Go to next diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', '<F8>', vim.diagnostic.goto_next,
+        --   { desc = 'Go to next diagnostic message', buffer = bufnr })
+        -- vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
+        --   { desc = 'Open floating diagnostic message', buffer = bufnr })
+        vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
+          { desc = 'Open diagnostics list', buffer = bufnr })
       end)
 
       require('mason-lspconfig').setup({
