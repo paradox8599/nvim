@@ -64,6 +64,7 @@ local keymaps = {
     s = '[S]earch',
     q = 'Persistence',
     T = 'Parameters',
+    x = 'Trouble',
     -- TODO: toggle if focus, otherwise focus
     e = { ':Neotree toggle<CR>', '[E]xplorer' },
     b = {
@@ -78,7 +79,8 @@ local keymaps = {
     w = {
       name = '[W]indow',
       d = { vim.cmd.close, 'Close window' },
-      n = { vim.cmd.new, '[N]ew window' }
+      n = { vim.cmd.new, '[N]ew window' },
+      r = { [[<cmd>vs#<cr>]], '[R]estore closed window' },
     },
   },
 }

@@ -45,8 +45,8 @@ return {
         --   documentation = cmp.config.window.bordered(),
         -- },
         mapping = cmp.mapping.preset.insert({
-          ['<A-Space>'] = cmp.mapping.complete(),
-          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<A-leader>'] = cmp.mapping.complete(), -- mac
+          ['<C-leader>'] = cmp.mapping.complete(),
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
