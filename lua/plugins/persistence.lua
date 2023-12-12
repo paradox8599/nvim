@@ -15,15 +15,15 @@ return {
   init = function()
     local p = require('persistence')
     -- restore the session for the current directory
-    vim.keymap.set("n", "<leader>qL", p.load,
+    vim.keymap.set("n", "<leader>sL", p.load,
       { desc = "[L]oad session for current dir" })
     -- restore the last session
-    vim.keymap.set("n", "<leader>ql",
+    vim.keymap.set("n", "<leader>sl",
       function() p.load({ last = true }) end,
       { desc = "[L]oad last session" })
 
     -- stop Persistence => session won't be saved on exit
-    vim.keymap.set("n", "<leader>qd", p.stop,
+    vim.keymap.set("n", "<leader>sx", p.stop,
       { desc = "[D]isable current session persistence" })
 
   end
