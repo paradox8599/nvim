@@ -1,3 +1,4 @@
+-- :help options
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.number = true
@@ -6,8 +7,10 @@ vim.o.scrolloff = 8
 vim.o.colorcolumn = "80"
 vim.o.hlsearch = true
 vim.o.incsearch = true
-vim.o.mouse = 'a'        -- Enable mouse mode
+vim.o.mouse = 'a' -- Enable mouse mode
 -- vim.o.clipboard = 'unnamedplus'
+vim.o.splitbelow = true
+vim.o.splitright = true
 vim.o.breakindent = true -- Enable break indent
 vim.o.undofile = true
 vim.o.ignorecase = true  -- Case-insensitive searching UNLESS \C or capital in search
@@ -29,6 +32,11 @@ vim.o.signcolumn = 'yes'
 -- list
 vim.o.list = true
 -- vim.o.listchars = ''
+
+-- window width
+-- vim.o.winwidth = 999
+-- vim.o.winminwidth = 15
+
 -- indentationt
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -37,10 +45,6 @@ vim.o.expandtab = true
 vim.o.smarttab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
-
--- window width
--- vim.o.winwidth = 999
--- vim.o.winminwidth = 15
 
 -- set tab width to 4 for specific file extensions
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "FileType" }, {
@@ -68,7 +72,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ highlight_group = "Visual", timeout = 200 })
   end
 })
-
+vim.cmd([[set whichwrap+=<,>,[,],h,l]])
+vim.cmd([[set iskeyword+=-]])
 
 require('lazy_init')
 -- https://github.com/folke/lazy.nvim#-structuring-your-plugins
