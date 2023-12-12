@@ -168,10 +168,10 @@ return {
               and vim.fn.reg_recording() == ""
 
           -- Show jump labels only in operator-pending mode
-          -- opts.jump_labels = vim.v.count == 0 and vim.fn.mode(true):find("o")
+          opts.jump_labels = vim.v.count == 0 and vim.fn.mode(true):find("o")
         end,
         -- hide after jump when not using jump labels
-        autohide = false,
+        autohide = true,
         -- show jump labels
         jump_labels = false,
         -- set to `false` to use the current line only
@@ -183,17 +183,17 @@ return {
         -- by removing them from the list.
         -- If you rather use another key, you can map them
         -- to something else, e.g., { [";"] = "L", [","] = H }
-        keys = { "f", "F" },
+        keys = { "f", "F", ",", ";" },
         --[[ ---@alias Flash.CharActions table<string, "next" | "prev" | "right" | "left">
         -- The direction for `prev` and `next` is determined by the motion.
         -- `left` and `right` are always left and right. ]]
         char_actions = function(motion)
           return {
-            [";"] = "next", -- set to `right` to always go right
-            [","] = "prev", -- set to `left` to always go left
+            [";"] = "left", -- set to `right` to always go right
+            [","] = "right", -- set to `left` to always go left
             -- clever-f style
-            [motion:lower()] = "next",
-            [motion:upper()] = "prev",
+            [motion:lower()] = "right",
+            [motion:upper()] = "left",
             -- jump2d style: same case goes next, opposite case goes prev
             -- [motion] = "next",
             -- [motion:match("%l") and motion:upper() or motion:lower()] = "prev",
