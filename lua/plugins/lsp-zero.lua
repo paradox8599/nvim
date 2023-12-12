@@ -120,15 +120,15 @@ return {
         -- },
         mapping = cmp.mapping.preset.insert({
           ['<A-Space>'] = cmp.mapping.complete(), -- mac
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<F3>'] = cmp.mapping.complete(),
+          ['<C-a>'] = cmp.mapping.complete(),     -- windows terminal
+          ['<C-Space>'] = cmp.mapping.complete(), -- neovide
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-          ['<C-q>'] = cmp.mapping.abort(),
+          -- ['<C-Q>'] = cmp.mapping.abort(), -- no need as <C-q> will abort already
           ['<CR>'] = cmp.mapping.confirm({ select = false }),
           ['<Tab>'] = cmp_action.luasnip_supertab(),
           ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
