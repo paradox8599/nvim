@@ -181,6 +181,7 @@ return {
         vim.keymap.set({ 'n', 'i' }, '<A-F>', vim.lsp.buf.format, opts)
         vim.keymap.set({ 'n' }, 'go', [[<cmd>Lspsaga outline<cr>]], { desc = '[O]utline', buffer = bufnr })
         vim.keymap.set('n', '<F2>', [[<cmd>Lspsaga rename<cr>]], opts)
+        vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[R]eferences', buffer = bufnr })
 
         -- vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, opts)
         -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
