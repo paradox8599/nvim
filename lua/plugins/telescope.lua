@@ -24,7 +24,7 @@ return {
         ':Telescope oldfiles<CR>',
         desc = 'Search [O]ld files',
       },
-      { '<leader>sb', ':Telescope buffers<CR>', desc = 'Search [B]uffers' },
+      { '<leader>bb', ':Telescope buffers<CR>', desc = 'Search [B]uffers' },
       {
         '<leader>sz',
         ':Telescope current_buffer_fuzzy_find previewer=false<CR>',

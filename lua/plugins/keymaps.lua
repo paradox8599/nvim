@@ -1,12 +1,3 @@
-local nmap = function(keys, func, desc, opts)
-  if not opts then
-    opts = {}
-  end
-  opts['desc'] = desc
-  opts['silent'] = true
-  vim.keymap.set('n', keys, func, opts)
-end
-
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -23,15 +14,20 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipbo
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- Ctrl + hjkl to move between windows
-nmap('<C-j>', '<C-w>j', 'Window down')
-nmap('<C-k>', '<C-w>k', 'Window up')
-nmap('<C-h>', '<C-w>h', 'Window left')
-nmap('<C-l>', '<C-w>l', 'Window right')
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
+-- Ctrl + Shift + hjkl to move between buffers
+vim.keymap.set('n', '<leader>bj', vim.cmd.bfirst, { desc = 'Buffer first' })
+vim.keymap.set('n', '<leader>bk', vim.cmd.blast, { desc = 'Buffer last' })
+vim.keymap.set('n', '<leader>bh', vim.cmd.bprevious, { desc = 'Buffer previous' })
+vim.keymap.set('n', '<leader>bl', vim.cmd.bnext, { desc = 'Buffer next' })
 -- Action shortcuts
-nmap('<Esc>', vim.cmd.noh, 'Remove highlight')
+vim.keymap.set('n', '<Esc>', vim.cmd.noh, { desc = 'Remove highlight' })
 -- UI shortcuts
-nmap('<leader>L', vim.cmd.Lazy, 'lazy.nvim')
-nmap('<leader>M', vim.cmd.Mason, 'Mason')
+vim.keymap.set('n', '<leader>L', vim.cmd.Lazy, { desc = 'lazy.nvim' })
+vim.keymap.set('n', '<leader>M', vim.cmd.Mason, { desc = 'Mason' })
 
 -- Default opts
 -- {
@@ -58,7 +54,7 @@ local keymaps = {
   },
 
   g = {
-    p = '[P]eek',
+    p = '[P]eek definition~',
   },
   ['<leader>'] = {
     g = '[G]it signs',
