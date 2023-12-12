@@ -25,7 +25,8 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'codedark',
+        -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
