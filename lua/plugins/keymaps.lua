@@ -61,9 +61,7 @@ local keymaps = {
     p = '[P]eek',
   },
   ['<leader>'] = {
-    g = {
-      name = '[G]it signs',
-    },
+    g = '[G]it signs',
     s = '[S]earch/[S]ession',
     q = 'Persistence',
     x = 'Trouble',

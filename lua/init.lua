@@ -15,7 +15,7 @@ vim.o.smartcase = true
 vim.o.signcolumn = 'yes' -- Keep signcolumn on by default
 vim.o.updatetime = 300   -- Decrease update time
 vim.o.timeout = true
-vim.o.timeoutlen = 150
+vim.o.timeoutlen = 250
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
 vim.o.termguicolors = true             -- NOTE: You should make sure your terminal supports this
 vim.o.swapfile = false
@@ -37,6 +37,11 @@ vim.o.expandtab = true
 vim.o.smarttab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
+
+-- window width
+-- vim.o.winwidth = 999
+-- vim.o.winminwidth = 15
+
 -- set tab width to 4 for specific file extensions
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "FileType" }, {
   pattern = {},
@@ -46,6 +51,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "FileType" }, {
     vim.opt_local.softtabstop = 4
   end
 })
+
+-- keep cursor position when reopen a file
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
     local line = vim.fn.line
@@ -54,16 +61,14 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end
 })
--- window width
--- vim.o.winwidth = 999
--- vim.o.winminwidth = 15
 
--- Highlight on yank
+-- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ highlight_group = "Visual", timeout = 200 })
   end
 })
+
 
 require('lazy_init')
 -- https://github.com/folke/lazy.nvim#-structuring-your-plugins

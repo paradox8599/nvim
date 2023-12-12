@@ -11,7 +11,10 @@ return {
   {
     'nvimdev/lspsaga.nvim',
     event = 'LspAttach',
-    config = function() require('lspsaga').setup({}) end,
+    config = function()
+      require('lspsaga').setup({})
+      vim.keymap.set({ 'n', 't' }, '<C-\\>', '<cmd>Lspsaga term_toggle<cr>')
+    end,
     dependencies = {}
     -- 'nvim-treesitter/nvim-treesitter', -- optional
     -- 'nvim-tree/nvim-web-devicons'      -- optional
