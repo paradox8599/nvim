@@ -18,17 +18,6 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
--- Ctrl + Shift + hjkl to move between buffers
-vim.keymap.set('n', '<leader>bj', vim.cmd.bfirst, { desc = 'Buffer first' })
-vim.keymap.set('n', '<leader>bk', vim.cmd.blast, { desc = 'Buffer last' })
-vim.keymap.set('n', '<leader>bh', vim.cmd.bprevious, { desc = 'Buffer previous' })
-vim.keymap.set('n', '<leader>bl', vim.cmd.bnext, { desc = 'Buffer next' })
--- Action shortcuts
-vim.keymap.set('n', '<Esc>', vim.cmd.noh, { desc = 'Remove highlight' })
--- UI shortcuts
-vim.keymap.set('n', '<leader>L', vim.cmd.Lazy, { desc = 'lazy.nvim' })
-vim.keymap.set('n', '<leader>M', vim.cmd.Mason, { desc = 'Mason' })
-
 -- Default opts
 -- {
 --   mode = "n", -- NORMAL mode
@@ -41,18 +30,18 @@ vim.keymap.set('n', '<leader>M', vim.cmd.Mason, { desc = 'Mason' })
 --   nowait = false, -- use `nowait` when creating keymaps
 --   expr = false, -- use `expr` when creating keymaps
 -- }
-
 local keymaps = {
-  -- Remap for dealing with word wrap
+  ['<Esc>'] = { vim.cmd.noh, 'Remove highlight' },
+  -- word wrap
   k = { "v:count == 0 ? 'gk' : 'k'", 'Auto gk', expr = true },
   j = { "v:count == 0 ? 'gj' : 'j'", 'Auto gj', expr = true },
+  -- git conflict
   c = {
     t = '[T]heirs',
     o = '[O]urs',
     b = '[B]oth',
     n = '[N]one',
   },
-
   g = {
     p = '[P]eek definition~',
   },
@@ -61,11 +50,16 @@ local keymaps = {
     s = '[S]earch/[S]ession',
     q = 'Persistence',
     x = 'Trouble',
-    -- TODO: toggle if focus, otherwise focus
-    e = { ':Neotree toggle<CR>', '[E]xplorer' },
+    L = { vim.cmd.Lazy, 'Lazy.nvim' },
+    M = { vim.cmd.Mason, 'Mason' },
+    e = { ':Neotree toggle<CR>', '[E]xplorer' }, -- TODO: toggle if focus, otherwise focus
     b = {
       name = '[B]uffer',
       d = { ':bd | bd #<CR>', '[D]elete' },
+      j = { vim.cmd.bfirst, 'Buffer first' },
+      k = { vim.cmd.blast, 'Buffer last' },
+      h = { vim.cmd.bprevious, 'Buffer previous' },
+      l = { vim.cmd.bnext, 'Buffer next' },
     },
     t = {
       name = '[T]ab',
@@ -80,6 +74,7 @@ local keymaps = {
     },
   },
 }
+
 
 return {
   {
