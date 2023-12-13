@@ -168,7 +168,6 @@ return {
         lsp_zero.default_keymaps(opts)
         -- LSPSaga
         vim.keymap.set('n', '<F4>', [[<cmd>Lspsaga code_action<cr>]], opts)
-        vim.keymap.set('n', '<C-a>', [[<cmd>Lspsaga code_action<cr>]], opts)
         vim.keymap.set({ 'n', 't' }, '<leader>T', [[<cmd>Lspsaga term_toggle<cr>]], opts)
         vim.keymap.set('n', 'K', [[<cmd>Lspsaga hover_doc<cr>]], opts)
         vim.keymap.set('n', 'gpd', [[<cmd>Lspsaga peek_definition<cr>]], { desc = '[D]efinition', buffer = bufnr })
