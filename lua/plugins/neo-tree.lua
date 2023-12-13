@@ -11,5 +11,20 @@ return {
       '3rd/image.nvim'
     },
     cmd = { 'Neotree', 'Neotree toggle' },
+    opts = {
+      open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = true,
+          hide_by_name = {
+            "node_modules",
+          },
+          never_show = {
+            ".DS_Store",
+          },
+        }
+      }
+    }
   },
 }
