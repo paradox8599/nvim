@@ -1,6 +1,6 @@
 return {
   -- { 'tpope/vim-fugitive', cmd = { 'Git' }, },
-  { 'tpope/vim-rhubarb',  event = 'VeryLazy', },
+  -- { 'tpope/vim-rhubarb',  event = 'VeryLazy', },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
