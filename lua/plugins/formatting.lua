@@ -28,4 +28,8 @@ return {
     'tpope/vim-sleuth',
     event = 'VeryLazy',
   },
+  {
+    'tpope/vim-surround',
+    config = function() end
+  }
 }
