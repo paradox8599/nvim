@@ -123,16 +123,16 @@ return {
         --   documentation = cmp.config.window.bordered(),
         -- },
         mapping = cmp.mapping.preset.insert({
+          ['<C-j>'] = cmp.mapping.complete(),     -- windows terminal
           ['<A-Space>'] = cmp.mapping.complete(), -- mac
-          ['<C-a>'] = cmp.mapping.complete(),     -- windows terminal
-          ['<C-Space>'] = cmp.mapping.complete(), -- neovide
+          ['<C-Space>'] = cmp.mapping.complete(), -- vscode
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-          -- ['<C-Q>'] = cmp.mapping.abort(), -- no need as <C-q> will abort already
+          ['<C-q>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = false }),
           ['<Tab>'] = cmp_action.luasnip_supertab(),
           ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
@@ -168,6 +168,7 @@ return {
         lsp_zero.default_keymaps(opts)
         -- LSPSaga
         vim.keymap.set('n', '<F4>', [[<cmd>Lspsaga code_action<cr>]], opts)
+        vim.keymap.set('n', '<C-a>', [[<cmd>Lspsaga code_action<cr>]], opts)
         vim.keymap.set({ 'n', 't' }, '<leader>T', [[<cmd>Lspsaga term_toggle<cr>]], opts)
         vim.keymap.set('n', 'K', [[<cmd>Lspsaga hover_doc<cr>]], opts)
         vim.keymap.set('n', 'gpd', [[<cmd>Lspsaga peek_definition<cr>]], { desc = '[D]efinition', buffer = bufnr })

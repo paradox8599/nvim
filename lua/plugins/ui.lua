@@ -42,8 +42,5 @@ return {
         diagnostics_update_in_insert = true,
       }
     },
-    -- config = function()
-    --   require('bufferline').setup({})
-    -- end
   }
 }
