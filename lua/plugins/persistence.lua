@@ -15,10 +15,10 @@ return {
   init = function()
     local p = require('persistence')
     -- restore the session for the current directory
-    vim.keymap.set("n", "<leader>sL", p.load,
+    vim.keymap.set("n", "<leader>sl", p.load,
       { desc = "[L]oad session for current dir" })
     -- restore the last session
-    vim.keymap.set("n", "<leader>sl",
+    vim.keymap.set("n", "<leader>sL",
       function() p.load({ last = true }) end,
       { desc = "[L]oad last session" })
 
