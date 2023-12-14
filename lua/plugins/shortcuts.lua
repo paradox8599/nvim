@@ -30,5 +30,9 @@ return {
   {
     'tpope/vim-repeat',
     config = function() end
-  }
+  },
+  {
+    'tetzng/open-github-url.nvim',
+    opts = {}
+  },
 }

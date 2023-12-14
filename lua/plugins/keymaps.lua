@@ -45,7 +45,10 @@ local keymaps = {
     p = '[P]eek definition~',
   },
   ['<leader>'] = {
-    g = '[G]it signs',
+    g = {
+      name = '[G]it',
+      x = { ':silent! OpenGitHubUrlUnderCursor<cr>', 'Open plugin github page' }
+    },
     s = '[S]earch/[S]ession',
     q = 'Persistence',
     x = 'Trouble',
