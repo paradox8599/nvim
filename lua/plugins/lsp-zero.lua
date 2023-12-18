@@ -13,7 +13,7 @@ return {
     event = 'VeryLazy',
     opts = {},
     init = function()
-      vim.keymap.set({ 'n', 't' }, '<C-\\>', '<cmd>Lspsaga term_toggle<cr>')
+      vim.keymap.set({ 'n', 't' }, '<C-`>', '<cmd>Lspsaga term_toggle<cr>')
     end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
@@ -207,8 +207,8 @@ return {
         --   { desc = 'Go to next diagnostic message', buffer = bufnr })
         -- vim.keymap.set('n', 'gl', vim.diagnostic.open_float,
         --   { desc = 'Open floating diagnostic message', buffer = bufnr })
-        vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
-          { desc = 'Open diagnostics list', buffer = bufnr })
+        -- vim.keymap.set('n', '<leader>1', vim.diagnostic.setloclist,
+        --   { desc = 'Open diagnostics list', buffer = bufnr })
       end)
 
       require('mason-lspconfig').setup({
