@@ -31,6 +31,8 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
+map({ 'n' }, '<C-n>', ':Neotree toggle<cr>')
+
 -- Default opts
 -- {
 --   mode = "n", -- NORMAL mode
