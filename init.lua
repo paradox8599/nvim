@@ -1,19 +1,21 @@
-vim.o.number = true
-vim.o.relativenumber = true
+require "core"
 
--- vim.o.clipboard = "unnamed"
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
--- highlight after copy
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-     pattern = { "*" },
-     callback = function ()
-             vim.highlight.on_yank({
-                     timeout = 300,
-             })
-     end,
-})
+if custom_init_path then
+  dofile(custom_init_path)
+end
 
-vim.keymap.set("n", "<C-l>", "<C-w>l", opt)
-vim.keymap.set("n", "<C-h>", "<C-w>h", opt)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opt)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opt)
+require("core.utils").load_mappings()
+
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
+
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"
