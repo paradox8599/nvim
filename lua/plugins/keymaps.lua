@@ -1,22 +1,36 @@
+local map = vim.keymap.set
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+map({ 'n', 'i' }, '<C-s>', '<Esc> | <cmd>w<cr>', { silent = true })
+
 -- keep cursor position when doing 'J'
-vim.keymap.set('n', 'J', 'mzJ`z')
+map('n', 'J', 'mzJ`z')
+
 -- keep search term highlight in the middle
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+map('n', 'n', 'nzzzv')
+map('n', 'N', 'Nzzzv')
+
 -- keep vim clipboard after paste
-vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dP', { desc = 'Paste without copy' })
+map({ 'n', 'v' }, '<leader>p', '"_dP', { desc = 'Paste without copy' })
+
 -- copy to system clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
+map({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
+
 -- use J/K to move selected lines
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+map('v', 'J', ":m '>+1<CR>gv=gv")
+map('v', 'K', ":m '<-2<CR>gv=gv")
+
 -- Ctrl + hjkl to move between windows
-vim.keymap.set('n', '<C-h>', vim.cmd.bprevious, { desc = 'Buffer prev' })
-vim.keymap.set('n', '<C-l>', vim.cmd.bnext, { desc = 'Buffer next' })
-vim.keymap.set('n', '<C-k>', ':b#<cr>', { desc = 'Last buffer' })
+map('n', '<Tab>', vim.cmd.bnext, { desc = 'Buffer next' })
+map('n', '<S-Tab>', ':b#<cr>', { desc = 'Buffer prev' })
+-- map('n', '<C-k>', ':b#<cr>', { desc = 'Last buffer' })
+
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+
 -- Default opts
 -- {
 --   mode = "n", -- NORMAL mode
@@ -54,7 +68,7 @@ local keymaps = {
     x = 'Trouble',
     L = { vim.cmd.Lazy, 'Lazy.nvim' },
     M = { vim.cmd.Mason, 'Mason' },
-    e = { ':Neotree toggle<cr>', '[E]xplorer' }, -- TODO: toggle if focus, otherwise focus
+    e = { ':Neotree focus<cr>', '[E]xplorer' },
     b = {
       name = '[B]uffer',
       d = { ':bd<cr>', '[D]elete' },
@@ -68,9 +82,10 @@ local keymaps = {
       l = { ':gt<cr>', 'Tab next' },
     },
     w = {
-      name = '[W]indow',
+      name = '[W]indow / [W]hich key',
       d = { vim.cmd.close, 'Close window' },
-      r = { [[<cmd>vs#<cr>]], '[R]estore closed window' },
+      r = { '<cmd>vs#<cr>', '[R]estore closed window' },
+      k = { vim.cmd.WhichKey, 'Which [K]ey' },
     },
   },
 }
