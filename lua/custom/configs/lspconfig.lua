@@ -1,6 +1,7 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
+---@diagnostic disable-next-line: different-requires
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
@@ -13,5 +14,5 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+--
 -- lspconfig.pyright.setup { blabla}
