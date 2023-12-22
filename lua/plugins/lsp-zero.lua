@@ -13,7 +13,7 @@ return {
     event = 'VeryLazy',
     opts = {},
     init = function()
-      vim.keymap.set({ 'n', 't' }, '<C-`>', '<cmd>Lspsaga term_toggle<cr>')
+      vim.keymap.set({ 'n', 't' }, '<C-\\>', '<cmd>Lspsaga term_toggle<cr>')
     end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
@@ -96,7 +96,7 @@ return {
 
       cmp.setup({
         formatting = {
-          fields = { 'menu', 'abbr', 'kind' },
+          fields = { 'abbr', 'kind' },
           expandable_indicator = true,
           format = lspkind.cmp_format({
             mode = 'symbol_text',  -- show only symbol annotations
