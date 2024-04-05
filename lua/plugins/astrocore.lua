@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -29,9 +27,18 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
+        scrolloff = 15,
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-        wrap = false, -- sets vim.opt.wrap
+        signcolumn = "yes", -- sets vim.opt.signcolumn to auto
+        wrap = true, -- sets vim.opt.wrap
+        clipboard = "",
+        conceallevel = 0,
+        list = true,
+        swapfile = true,
+        backup = false,
+        writebackup = false,
+        -- mouse = "",
+        laststatus = 3,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -42,38 +49,46 @@ return {
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
-      -- first key is the mode
       n = {
+        ["<Esc>"] = { ":noh<cr>" },
         -- second key is the lefthand side of the map
+        k = { "v:count == 0 ? 'gk' : 'k'", desc = "Auto gk", expr = true },
+        j = { "v:count == 0 ? 'gj' : 'j'", desc = "Auto gj", expr = true },
+        J = { "mzJ`z", desc = "Keep cursor position when J" },
+        n = { "nzzzv", desc = "Keep search term highlight in the middle" },
+        N = { "Nzzzv", desc = "Keep search term highlight in the middle" },
 
-        -- navigate buffer tabs with `H` and `L`
-        -- L = {
-        --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-        --   desc = "Next buffer",
-        -- },
-        -- H = {
-        --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-        --   desc = "Previous buffer",
-        -- },
+        ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
+        ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
+        ["<Leader>k"] = { ":b#<cr>", desc = "Last buffer" },
+        ["<Leader>lc"] = { ":LspRestart<cr>", desc = "Restart LSP" },
 
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Pick to close",
-        },
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        -- navigate buffer tabs with `<tab>` and `<S-tab>`
+        -- ["<tab>"] = { "]b", desc = "Next buffer" },
+        -- ["<S-tab>"] = { "[b", desc = "Previous buffer" },
+
+        -- ["<Leader>bD"] = {
+        --   function()
+        --     require("astronvim.utils.status").heirline.buffer_picker(
+        --       function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        --     )
+        --   end,
+        --   desc = "Pick to close",
+        -- },
+        ["<Leader>bm"] = { ":PeekOpen<CR>", desc = "Toggle Markdown preview" },
+        ["<Leader>ub"] = { ":HexToggle<cr>", desc = "Toggle Hex Editor" },
+
+        -- UI
+        ["<Leader>L"] = { ":Lazy<cr>", desc = "[L]azy" },
+        ["<Leader>M"] = { ":Mason<cr>", desc = "[M]ason" },
+
+        -- ["<Leader><Leader>"] = { name = "Mappings" },
       },
-      t = {
-        -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
+      i = {},
+      t = {},
+      v = {
+        ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
+        ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
       },
     },
   },
