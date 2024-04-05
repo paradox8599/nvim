@@ -10,7 +10,7 @@ return {
       vim.keymap.set(
         "n",
         "<leader><leader>a",
-        function() harpoon:list():append() end,
+        function() harpoon:list():add() end,
         { desc = "[Marks] Add file to marks" }
       )
       vim.keymap.set(

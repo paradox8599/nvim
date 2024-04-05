@@ -125,6 +125,7 @@ return {
   },
   {
     "stevearc/profile.nvim",
+    enabled = false,
     -- chrome://tracing/
     -- https://ui.perfetto.dev/
     keys = {
