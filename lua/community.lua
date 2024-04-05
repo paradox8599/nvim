@@ -7,7 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
 
-{ import = "astrocommunity/bars-and-lines/vim-illuminate" }, -- highlight word under cursor
+  { import = "astrocommunity/bars-and-lines/vim-illuminate" }, -- highlight word under cursor
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" },
 
   { import = "astrocommunity/code-runner/overseer-nvim" }, -- task runner
@@ -37,7 +37,6 @@ return {
   -- { import = "astrocommunity/editing-support/yanky-nvim" }, -- more yank operations
   -- { import = "astrocommunity/editing-support/vim-move" }, -- Alt + hjkl https://github.com/matze/vim-move
 
-
   { import = "astrocommunity/git/git-blame-nvim" },
   { import = "astrocommunity/git/diffview-nvim" },
   { import = "astrocommunity/git/openingh-nvim" },
@@ -51,7 +50,6 @@ return {
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
   -- { import = "astrocommunity/media/presence-nvim" }, -- display discord status
-
 
   -- { import = "astrocommunity/motion/mini-surround" },
   -- { import = "astrocommunity/motion/mini-ai" },
