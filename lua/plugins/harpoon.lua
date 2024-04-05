@@ -4,35 +4,38 @@ return {
     branch = "harpoon2",
     requires = { { "nvim-lua/plenary.nvim" } },
     event = "VeryLazy",
-    config = function()
-      local harpoon = require "harpoon"
-      harpoon:setup {}
-      vim.keymap.set(
-        "n",
+    opts = {},
+    keys = {
+      {
         "<leader><leader>a",
-        function() harpoon:list():add() end,
-        { desc = "[Marks] Add file to marks" }
-      )
-      vim.keymap.set(
-        "n",
+        function() require("harpoon"):list():add() end,
+        desc = "[Marks] Add file to marks",
+      },
+      {
         "<leader><leader>d",
-        function() harpoon:list():remove() end,
-        { desc = "[Marks] Remove file from marks" }
-      )
-      vim.keymap.set("n", "<leader><leader>c", function() harpoon:list():clear() end, { desc = "[Marks] Clear marks" })
-      vim.keymap.set(
-        "n",
+        function() require("harpoon"):list():remove() end,
+        desc = "[Marks] Remove file from marks",
+      },
+      {
+        "<leader><leader>c",
+        function() require("harpoon"):list():clear() end,
+        desc = "[Marks] Clear marks",
+      },
+      {
         "<leader><leader>m",
-        function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-        { desc = "[Marks] Toggle harpoon marks menu" }
-      )
-      vim.keymap.set(
-        "n",
+        function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end,
+        desc = "[Marks] Toggle harpoon marks menu",
+      },
+      {
         "<C-p>",
         function() require("harpoon"):list():prev() end,
-        { desc = "[Marks] Goto previous mark" }
-      )
-      vim.keymap.set("n", "<C-n>", function() require("harpoon"):list():next() end, { desc = "[Marks] Goto next mark" })
-    end,
+        desc = "[Marks] Goto previous mark",
+      },
+      {
+        "<C-n>",
+        function() require("harpoon"):list():next() end,
+        desc = "[Marks] Goto next mark",
+      },
+    },
   },
 }

@@ -6,6 +6,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
+  dependencies = { "WhoIsSethDaniel/mason-tool-installer.nvim" },
   ---@type AstroLSPOpts
   opts = {
     -- Configuration table of features provided by AstroLSP
