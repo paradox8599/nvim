@@ -65,17 +65,9 @@ return {
         ["<Leader>lc"] = { ":LspRestart<cr>", desc = "Restart LSP" },
 
         -- navigate buffer tabs with `<tab>` and `<S-tab>`
-        -- ["<tab>"] = { "]b", desc = "Next buffer" },
-        -- ["<S-tab>"] = { "[b", desc = "Previous buffer" },
+        ["<tab>"] = { ":bnext<cr>", desc = "Next buffer" },
+        ["<S-tab>"] = { ":bprev<cr>", desc = "Previous buffer" },
 
-        -- ["<Leader>bD"] = {
-        --   function()
-        --     require("astronvim.utils.status").heirline.buffer_picker(
-        --       function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        --     )
-        --   end,
-        --   desc = "Pick to close",
-        -- },
         ["<Leader>bm"] = { ":PeekOpen<CR>", desc = "Toggle Markdown preview" },
         ["<Leader>ub"] = { ":HexToggle<cr>", desc = "Toggle Hex Editor" },
 
