@@ -70,7 +70,7 @@ return {
 
   { import = "astrocommunity/programming-language-support/csv-vim" },
   { import = "astrocommunity/programming-language-support/nvim-jqx" }, -- json, requires [ jq ]
-  { import = "astrocommunity/programming-language-support/rest-nvim" }, -- requires [ curl ], optional: [ jq, tidy ]
+  -- { import = "astrocommunity/programming-language-support/rest-nvim" }, -- requires [ curl ], optional: [ jq, tidy ]
 
   { import = "astrocommunity/scrolling/nvim-scrollbar" },
   -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar, requires neovim 0.10+
