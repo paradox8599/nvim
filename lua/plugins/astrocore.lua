@@ -65,8 +65,8 @@ return {
         ["<Leader>lc"] = { ":LspRestart<cr>", desc = "Restart LSP" },
 
         -- navigate buffer tabs with `<tab>` and `<S-tab>`
-        ["<tab>"] = { ":bnext<cr>", desc = "Next buffer" },
-        ["<S-tab>"] = { ":bprev<cr>", desc = "Previous buffer" },
+        -- ["<tab>"] = { ":bnext<cr>", desc = "Next buffer" },
+        -- ["<S-tab>"] = { ":bprev<cr>", desc = "Previous buffer" },
 
         ["<Leader>bm"] = { ":PeekOpen<CR>", desc = "Toggle Markdown preview" },
         ["<Leader>ub"] = { ":HexToggle<cr>", desc = "Toggle Hex Editor" },
