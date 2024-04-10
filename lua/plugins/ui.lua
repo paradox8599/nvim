@@ -111,6 +111,7 @@ return {
 
   {
     "folke/noice.nvim",
+    -- enabled = false,
     event = "VeryLazy",
     opts = {
       lsp = { hover = { enabled = false }, signature = { enabled = false } },

@@ -38,7 +38,6 @@ return {
         swapfile = true,
         backup = false,
         writebackup = false,
-        -- mouse = "",
         laststatus = 3,
       },
       g = { -- vim.g.<key>

@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     event = "BufEnter",
     opts = {
-      max_lines = 7,
+      max_lines = 5,
       line_numbers = true,
       mode = "cursor",
       trim_scope = "outer",
