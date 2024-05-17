@@ -12,7 +12,7 @@ return {
   },
 
   -- Detect tabstop and shiftwidth automatically
-  { "tpope/vim-sleuth", event = "VeryLazy" },
+  -- { "tpope/vim-sleuth", event = "VeryLazy" },
 
   -- <C-a/x> for date
   { "tpope/vim-speeddating", event = "VeryLazy", config = function() end },
