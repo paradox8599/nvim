@@ -32,13 +32,14 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to auto
         wrap = true, -- sets vim.opt.wrap
-        clipboard = "",
+        clipboard = "", -- separate system & nvim clipboards
         conceallevel = 0,
         list = true,
         swapfile = true,
         backup = false,
         writebackup = false,
         laststatus = 3,
+        shiftwidth = 2,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
