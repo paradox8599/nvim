@@ -66,6 +66,7 @@ return {
       -- langs = {}, -- See the default presets in lua/treesj/langs
     },
   },
+
   {
     "RaafatTurki/hex.nvim",
     cmd = { "HexDump", "HexToggle", "HexAssemble" },
@@ -86,7 +87,7 @@ return {
     event = { "User AstroFile", "InsertEnter" },
     keys = {
       {
-        "<leader>I",
+        "<leader>i",
         function() require("nvim-toggler").toggle() end,
         desc = "Toggle CursorWord",
       },
