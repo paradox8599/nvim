@@ -65,8 +65,8 @@ return {
         ["<Leader>lc"] = { ":LspRestart<cr>", desc = "Restart LSP" },
 
         -- navigate buffer tabs with `<tab>` and `<S-tab>`
-        -- ["<tab>"] = { ":bnext<cr>", desc = "Next buffer" },
-        -- ["<S-tab>"] = { ":bprev<cr>", desc = "Previous buffer" },
+        ["<tab>"] = { function() vim.cmd [[bnext]] end, desc = "Next buffer", noremap = true },
+        ["<S-tab>"] = { function() vim.cmd [[bprev]] end, desc = "Previous buffer", noremap = true },
 
         ["<Leader>bm"] = { ":PeekOpen<CR>", desc = "Toggle Markdown preview" },
         ["<Leader>ub"] = { ":HexToggle<cr>", desc = "Toggle Hex Editor" },
