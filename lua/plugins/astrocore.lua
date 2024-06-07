@@ -75,7 +75,11 @@ return {
         ["<Leader>L"] = { ":Lazy<cr>", desc = "[L]azy" },
         ["<Leader>M"] = { ":Mason<cr>", desc = "[M]ason" },
 
-        -- ["<Leader><Leader>"] = { name = "Mappings" },
+        ["<Leader><Leader>"] = { desc = "Marks / Undo Tree" },
+        ["gr"] = { vim.lsp.buf.references, desc = "references" },
+        ["gra"] = false,
+        ["grr"] = false,
+        ["grn"] = false,
       },
       i = {},
       t = {},
