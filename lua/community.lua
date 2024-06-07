@@ -43,7 +43,6 @@ return {
 
   { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
-  { import = "astrocommunity/lsp/lsp-inlayhints-nvim" },
   { import = "astrocommunity/lsp/lsp-signature-nvim" },
   { import = "astrocommunity/lsp/nvim-lsp-file-operations" },
 
