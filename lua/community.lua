@@ -29,17 +29,17 @@ return {
   { import = "astrocommunity/diagnostics/lsp_lines-nvim" }, -- display virtual diagnostic lines
   { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
 
-  { import = "astrocommunity/editing-support/todo-comments-nvim" }, -- highlight todos
-  { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
-  { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring
+  -- { import = "astrocommunity/editing-support/todo-comments-nvim" }, -- highlight todos
+  -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
+  { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
   -- keymaps: https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/editing-support/yanky-nvim/init.lua
   -- { import = "astrocommunity/editing-support/yanky-nvim" }, -- more yank operations
   -- { import = "astrocommunity/editing-support/vim-move" }, -- Alt + hjkl https://github.com/matze/vim-move
 
-  { import = "astrocommunity/git/git-blame-nvim" },
-  { import = "astrocommunity/git/diffview-nvim" },
-  { import = "astrocommunity/git/openingh-nvim" },
+  -- { import = "astrocommunity/git/git-blame-nvim" },
+  -- { import = "astrocommunity/git/diffview-nvim" },
+  -- { import = "astrocommunity/git/openingh-nvim" },
 
   { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
@@ -71,14 +71,14 @@ return {
   { import = "astrocommunity/programming-language-support/nvim-jqx" }, -- json, requires [ jq ]
   -- { import = "astrocommunity/programming-language-support/rest-nvim" }, -- requires [ curl ], optional: [ jq, tidy ]
 
-  { import = "astrocommunity/scrolling/nvim-scrollbar" },
+  -- { import = "astrocommunity/scrolling/nvim-scrollbar" },
   -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar, requires neovim 0.10+
   { import = "astrocommunity/scrolling/vim-smoothie" },
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
   -- { import = "astrocommunity/search/sad-nvim" }, -- requires [ sad, fzf, fd-find, delta (pager tool) ]
 
-  { import = "astrocommunity/syntax/hlargs-nvim" }, -- function arguments highlight
+  -- { import = "astrocommunity/syntax/hlargs-nvim" }, -- function arguments highlight
 
   -- { import = "astrocommunity/terminal-integration/vim-tpipeline" }, -- tmux
   { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal

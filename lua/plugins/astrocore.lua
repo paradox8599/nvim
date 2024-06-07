@@ -51,7 +51,7 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
-        ["<Esc>"] = { ":noh<cr>" },
+        ["<Esc>"] = { vim.cmd [[noh]] },
         -- second key is the lefthand side of the map
         k = { "v:count == 0 ? 'gk' : 'k'", desc = "Auto gk", expr = true },
         j = { "v:count == 0 ? 'gj' : 'j'", desc = "Auto gj", expr = true },
@@ -61,19 +61,19 @@ return {
 
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
         ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
-        ["<Leader>k"] = { ":b#<cr>", desc = "Last buffer" },
-        ["<Leader>lc"] = { ":LspRestart<cr>", desc = "Restart LSP" },
+        ["<Leader>k"] = { function() vim.cmd [[b#]] end, desc = "Last buffer" },
+        ["<Leader>lc"] = { function() vim.cmd [[LspRestart]] end, desc = "Restart LSP" },
 
         -- navigate buffer tabs with `<tab>` and `<S-tab>`
-        ["<tab>"] = { function() vim.cmd [[bnext]] end, desc = "Next buffer", noremap = true },
-        ["<S-tab>"] = { function() vim.cmd [[bprev]] end, desc = "Previous buffer", noremap = true },
+        -- ["<tab>"] = { function() vim.cmd [[bnext]] end, desc = "Next buffer", noremap = true },
+        -- ["<S-tab>"] = { function() vim.cmd [[bprev]] end, desc = "Previous buffer", noremap = true },
 
-        ["<Leader>bm"] = { ":PeekOpen<CR>", desc = "Toggle Markdown preview" },
-        ["<Leader>ub"] = { ":HexToggle<cr>", desc = "Toggle Hex Editor" },
+        ["<Leader>bm"] = { function() vim.cmd [[PeekOpen]] end, desc = "Toggle Markdown preview" },
+        ["<Leader>ub"] = { function() vim.cmd [[HexToggle]] end, desc = "Toggle Hex Editor" },
 
         -- UI
-        ["<Leader>L"] = { ":Lazy<cr>", desc = "[L]azy" },
-        ["<Leader>M"] = { ":Mason<cr>", desc = "[M]ason" },
+        ["<Leader>L"] = { function() vim.cmd [[Lazy]] end, desc = "[L]azy" },
+        ["<Leader>M"] = { function() vim.cmd [[Mason]] end, desc = "[M]ason" },
 
         ["<Leader><Leader>"] = { desc = "Marks / Undo Tree" },
         ["gr"] = { vim.lsp.buf.references, desc = "references" },
