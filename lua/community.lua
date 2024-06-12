@@ -43,7 +43,7 @@ return {
 
   { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
-  { import = "astrocommunity/lsp/lsp-signature-nvim" },
+  { import = "astrocommunity/lsp/lsp-signature-nvim" }, -- function parameters hint
   { import = "astrocommunity/lsp/nvim-lsp-file-operations" },
 
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]

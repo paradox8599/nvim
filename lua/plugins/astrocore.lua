@@ -51,7 +51,7 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
-        ["<Esc>"] = { vim.cmd [[noh]] },
+        ["<Esc>"] = { function() vim.cmd [[noh]] end },
         -- second key is the lefthand side of the map
         k = { "v:count == 0 ? 'gk' : 'k'", desc = "Auto gk", expr = true },
         j = { "v:count == 0 ? 'gj' : 'j'", desc = "Auto gj", expr = true },
