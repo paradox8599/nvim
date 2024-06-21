@@ -11,13 +11,12 @@ return {
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" },
 
   { import = "astrocommunity/code-runner/overseer-nvim" }, -- task runner
-
-  -- { import = "astrocommunity/color/ccc-nvim" }, -- color picker
+  { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/mini-hipatterns" }, -- highlight patterns（comments, colors
   -- { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
   -- { import = "astrocommunity/color/transparent-nvim" },
 
-  { import = "astrocommunity/completion/cmp-cmdline" },
+  -- { import = "astrocommunity/completion/cmp-cmdline" },
   { import = "astrocommunity/completion/codeium-nvim" },
 
   -- persistent-breakpoints-nvim loaded in dap.lua
@@ -37,7 +36,7 @@ return {
   -- { import = "astrocommunity/editing-support/yanky-nvim" }, -- more yank operations
   -- { import = "astrocommunity/editing-support/vim-move" }, -- Alt + hjkl https://github.com/matze/vim-move
 
-  { import = "astrocommunity/lsp/garbage-day-nvim" },
+  -- { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
   { import = "astrocommunity/lsp/lsp-signature-nvim" }, -- function parameters hint
   { import = "astrocommunity/lsp/nvim-lsp-file-operations" },
@@ -50,9 +49,9 @@ return {
   -- { import = "astrocommunity/motion/mini-ai" },
 
   { import = "astrocommunity/pack/rust" },
-  { import = "astrocommunity/pack/cpp" },
-  { import = "astrocommunity/pack/bash" },
-  { import = "astrocommunity/pack/dart" },
+  -- { import = "astrocommunity/pack/cpp" },
+  -- { import = "astrocommunity/pack/bash" },
+  -- { import = "astrocommunity/pack/dart" },
   { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/tailwindcss" },
   -- { import = "astrocommunity/pack/typescript" },
@@ -67,8 +66,7 @@ return {
   { import = "astrocommunity/programming-language-support/nvim-jqx" }, -- json, requires [ jq ]
   -- { import = "astrocommunity/programming-language-support/rest-nvim" }, -- requires [ curl ], optional: [ jq, tidy ]
 
-  -- { import = "astrocommunity/scrolling/nvim-scrollbar" },
-  -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar, requires neovim 0.10+
+  { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar, requires neovim 0.10+
   { import = "astrocommunity/scrolling/vim-smoothie" },
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
@@ -77,7 +75,7 @@ return {
   -- { import = "astrocommunity/syntax/hlargs-nvim" }, -- function arguments highlight
 
   -- { import = "astrocommunity/terminal-integration/vim-tpipeline" }, -- tmux
-  { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
+  -- { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
 
   -- { import = "astrocommunity/test/neotest" },
 
