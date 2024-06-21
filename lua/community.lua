@@ -37,10 +37,6 @@ return {
   -- { import = "astrocommunity/editing-support/yanky-nvim" }, -- more yank operations
   -- { import = "astrocommunity/editing-support/vim-move" }, -- Alt + hjkl https://github.com/matze/vim-move
 
-  -- { import = "astrocommunity/git/git-blame-nvim" },
-  -- { import = "astrocommunity/git/diffview-nvim" },
-  -- { import = "astrocommunity/git/openingh-nvim" },
-
   { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
   { import = "astrocommunity/lsp/lsp-signature-nvim" }, -- function parameters hint
@@ -59,7 +55,7 @@ return {
   { import = "astrocommunity/pack/dart" },
   { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/tailwindcss" },
-  { import = "astrocommunity/pack/typescript" },
+  -- { import = "astrocommunity/pack/typescript" },
   { import = "astrocommunity/pack/html-css" },
   { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/docker" },
