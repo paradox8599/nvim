@@ -1,5 +1,6 @@
 return {
   {
+    enabled = false,
     "akinsho/git-conflict.nvim",
     version = "*",
     config = true,
@@ -26,11 +27,5 @@ return {
         current = "DiffText",
       },
     },
-  },
-
-  {
-    "NeogitOrg/neogit",
-    optional = true,
-    opts = { integrations = { diffview = true } },
   },
 }
