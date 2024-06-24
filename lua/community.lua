@@ -27,8 +27,8 @@ return {
 
   { import = "astrocommunity/diagnostics/lsp_lines-nvim" }, -- display virtual diagnostic lines
   { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
+  -- { import = "astrocommunity/editing-support/todo-comments-nvim" }, -- highlight todos, trouble.nvim dependency (already included by astronvim)
 
-  -- { import = "astrocommunity/editing-support/todo-comments-nvim" }, -- highlight todos
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
