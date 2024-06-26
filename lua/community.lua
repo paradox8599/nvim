@@ -48,6 +48,7 @@ return {
   -- { import = "astrocommunity/motion/mini-surround" },
   -- { import = "astrocommunity/motion/mini-ai" },
 
+  { import = "astrocommunity/pack/cs" },
   { import = "astrocommunity/pack/rust" },
   -- { import = "astrocommunity/pack/cpp" },
   -- { import = "astrocommunity/pack/bash" },
