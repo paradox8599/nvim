@@ -17,7 +17,7 @@ return {
   -- { import = "astrocommunity/color/transparent-nvim" },
 
   -- { import = "astrocommunity/completion/cmp-cmdline" },
-  { import = "astrocommunity/completion/codeium-nvim" },
+  { import = "astrocommunity/completion/codeium-vim" },
 
   -- persistent-breakpoints-nvim loaded in dap.lua
   -- { import = "astrocommunity/debugging/persistent-breakpoints-nvim" },
@@ -54,7 +54,7 @@ return {
   -- { import = "astrocommunity/pack/dart" },
   { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/tailwindcss" },
-  -- { import = "astrocommunity/pack/typescript" },
+  { import = "astrocommunity/pack/typescript" },
   { import = "astrocommunity/pack/html-css" },
   { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/docker" },

@@ -8,31 +8,36 @@ return {
       mode = "cursor",
       trim_scope = "outer",
     },
+  },
 
-    {
-      "cameron-wags/rainbow_csv.nvim",
-      config = true,
-      ft = {
-        "csv",
-        "tsv",
-        "csv_semicolon",
-        "csv_whitespace",
-        "csv_pipe",
-        "rfc_csv",
-        "rfc_semicolon",
-      },
-      cmd = {
-        "RainbowDelim",
-        "RainbowDelimSimple",
-        "RainbowDelimQuoted",
-        "RainbowMultiDelim",
-      },
+  {
+    "cameron-wags/rainbow_csv.nvim",
+    config = true,
+    ft = {
+      "csv",
+      "tsv",
+      "csv_semicolon",
+      "csv_whitespace",
+      "csv_pipe",
+      "rfc_csv",
+      "rfc_semicolon",
     },
+    cmd = {
+      "RainbowDelim",
+      "RainbowDelimSimple",
+      "RainbowDelimQuoted",
+      "RainbowMultiDelim",
+    },
+  },
 
-    {
-      "fei6409/log-highlight.nvim",
-      ft = { "log" },
-      opts = {},
-    },
+  {
+    "fei6409/log-highlight.nvim",
+    ft = { "log" },
+    opts = {},
+  },
+
+  {
+    "VidocqH/lsp-lens.nvim",
+    config = true,
   },
 }
