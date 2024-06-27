@@ -48,7 +48,10 @@ return {
   -- { import = "astrocommunity/motion/mini-surround" },
   -- { import = "astrocommunity/motion/mini-ai" },
 
-  { import = "astrocommunity/pack/cs" },
+  {
+    import = "astrocommunity/pack/cs",
+    enabled = function() return (vim.loop.os_uname().sysname == "Windows_NT") end,
+  },
   { import = "astrocommunity/pack/rust" },
   -- { import = "astrocommunity/pack/cpp" },
   -- { import = "astrocommunity/pack/bash" },
