@@ -89,7 +89,7 @@ return {
       {
         "<leader>i",
         function() require("nvim-toggler").toggle() end,
-        desc = "Toggle CursorWord",
+        desc = "Toggle word under cursor",
       },
     },
     opts = {},
