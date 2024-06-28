@@ -124,6 +124,7 @@ return {
       { "<leader>lF", ":Sad<cr>", desc = "Find and replace (Sad)" },
     },
   },
+
   {
     "stevearc/profile.nvim",
     enabled = false,

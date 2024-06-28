@@ -45,7 +45,6 @@ return {
 
   -- { import = "astrocommunity/media/presence-nvim" }, -- display discord status
 
-  -- { import = "astrocommunity/motion/mini-surround" },
   -- { import = "astrocommunity/motion/mini-ai" },
 
   {
