@@ -4,6 +4,4 @@
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
-if vim.g.neovide then
-   vim.o.guifont = "JetBrainsMono Nerd Font:h12"
-end
+if vim.g.neovide then vim.o.guifont = "JetBrainsMono Nerd Font:h12" end
