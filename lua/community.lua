@@ -70,7 +70,7 @@ return {
   -- { import = "astrocommunity/programming-language-support/rest-nvim" }, -- requires [ curl ], optional: [ jq, tidy ]
 
   { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar, requires neovim 0.10+
-  { import = "astrocommunity/scrolling/vim-smoothie" },
+  { import = "astrocommunity/scrolling/vim-smoothie", cond = function() return not vim.g.neovide end },
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
   -- { import = "astrocommunity/search/sad-nvim" }, -- requires [ sad, fzf, fd-find, delta (pager tool) ]
