@@ -7,14 +7,13 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
 
-  { import = "astrocommunity/bars-and-lines/vim-illuminate" }, -- highlight word under cursor
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" },
 
   { import = "astrocommunity/code-runner/overseer-nvim" }, -- task runner
   { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/mini-hipatterns" }, -- highlight patterns（comments, colors
   -- { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
-  -- { import = "astrocommunity/color/transparent-nvim" },
+  { import = "astrocommunity/color/transparent-nvim" },
 
   { import = "astrocommunity/completion/cmp-cmdline" },
   { import = "astrocommunity/completion/codeium-vim" },
@@ -27,7 +26,6 @@ return {
 
   { import = "astrocommunity/diagnostics/lsp_lines-nvim" }, -- display virtual diagnostic lines
   { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
-  -- { import = "astrocommunity/editing-support/todo-comments-nvim" }, -- highlight todos, trouble.nvim dependency (already included by astronvim)
 
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
