@@ -1,4 +1,5 @@
 return {
+  -- firenvim
   {
     "glacambre/firenvim",
     lazy = not vim.g.started_by_firenvim,
@@ -11,12 +12,10 @@ return {
     end,
   },
 
-  -- Detect tabstop and shiftwidth automatically
-  -- { "tpope/vim-sleuth", event = "VeryLazy" },
-
-  -- <C-a/x> for date
+  -- speeddating: <C-a/x> for date
   { "tpope/vim-speeddating", event = "VeryLazy", config = function() end },
 
+  -- undotree
   {
     "mbbill/undotree",
     keys = {
@@ -36,6 +35,7 @@ return {
     end,
   },
 
+  -- treesj
   {
     "Wansmer/treesj",
     keys = {
@@ -67,6 +67,7 @@ return {
     },
   },
 
+  -- hex.nvim
   {
     "RaafatTurki/hex.nvim",
     cmd = { "HexDump", "HexToggle", "HexAssemble" },
@@ -76,12 +77,14 @@ return {
     opts = {},
   },
 
+  -- vim-repeat
   {
     "tpope/vim-repeat",
     event = "User AstroFile",
     config = function() end,
   },
 
+  -- nvim-toggler
   {
     "nguyenvukhang/nvim-toggler",
     event = { "User AstroFile", "InsertEnter" },
@@ -95,6 +98,7 @@ return {
     opts = {},
   },
 
+  -- hardtime
   {
     "m4xshen/hardtime.nvim",
     event = "User AstroFile",
@@ -114,6 +118,7 @@ return {
     end,
   },
 
+  -- sad
   {
     "ray-x/sad.nvim",
     dependencies = { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
@@ -125,6 +130,7 @@ return {
     },
   },
 
+  -- nvim-surround
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -132,6 +138,7 @@ return {
     config = function() require("nvim-surround").setup {} end,
   },
 
+  -- profile
   {
     "stevearc/profile.nvim",
     enabled = false,
