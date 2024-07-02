@@ -16,7 +16,7 @@ return {
   -- { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
   -- { import = "astrocommunity/color/transparent-nvim" },
 
-  -- { import = "astrocommunity/completion/cmp-cmdline" },
+  { import = "astrocommunity/completion/cmp-cmdline" },
   { import = "astrocommunity/completion/codeium-vim" },
 
   -- persistent-breakpoints-nvim loaded in dap.lua
