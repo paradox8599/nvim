@@ -22,6 +22,7 @@ return {
     diagnostics = {
       virtual_text = true,
       underline = true,
+      signs = false,
     },
     -- vim options can be configured here
     options = {
@@ -52,7 +53,7 @@ return {
     mappings = {
       n = {
         ["<Esc>"] = { function() vim.cmd [[noh]] end },
-        ["<Leader>-"] = { function() vim.cmd [[Noice dismiss]] end, desc = "Dismiss notifications" },
+        -- ["<Leader>-"] = { function() vim.cmd [[Noice dismiss]] end, desc = "Dismiss notifications" },
         -- second key is the lefthand side of the map
         k = { "v:count == 0 ? 'gk' : 'k'", desc = "Auto gk", expr = true },
         j = { "v:count == 0 ? 'gj' : 'j'", desc = "Auto gj", expr = true },

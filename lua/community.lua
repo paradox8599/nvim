@@ -16,7 +16,7 @@ return {
   { import = "astrocommunity/color/transparent-nvim" },
 
   { import = "astrocommunity/completion/cmp-cmdline" },
-  { import = "astrocommunity/completion/codeium-vim" },
+  -- { import = "astrocommunity/completion/codeium-vim" },
 
   -- persistent-breakpoints-nvim loaded in dap.lua
   -- { import = "astrocommunity/debugging/persistent-breakpoints-nvim" },
@@ -24,7 +24,7 @@ return {
   -- { import = "astrocommunity/debugging/nvim-dap-repl-highlights" },
   -- { import = "astrocommunity/debugging/telescope-dap-nvim" },
 
-  { import = "astrocommunity/diagnostics/lsp_lines-nvim" }, -- display virtual diagnostic lines
+  -- { import = "astrocommunity/diagnostics/lsp_lines-nvim" }, -- display virtual diagnostic lines
   { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
 
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
