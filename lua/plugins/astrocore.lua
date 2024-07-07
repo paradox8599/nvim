@@ -74,8 +74,8 @@ return {
         ["<Leader>ub"] = { function() vim.cmd [[HexToggle]] end, desc = "Toggle Hex Editor" },
 
         -- UI
-        ["<Leader>L"] = { function() vim.cmd [[Lazy]] end, desc = "[L]azy" },
-        ["<Leader>M"] = { function() vim.cmd [[Mason]] end, desc = "[M]ason" },
+        ["<Leader><Leader>L"] = { function() vim.cmd [[Lazy]] end, desc = "[L]azy" },
+        ["<Leader><Leader>M"] = { function() vim.cmd [[Mason]] end, desc = "[M]ason" },
 
         ["<Leader><Leader>"] = { desc = "Marks / Undo Tree" },
         ["gr"] = { vim.lsp.buf.references, desc = "references" },
