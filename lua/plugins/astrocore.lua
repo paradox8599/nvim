@@ -3,6 +3,8 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+local is_win = vim.loop.os_uname().sysname == "Windows_NT"
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -41,6 +43,14 @@ return {
         writebackup = false,
         laststatus = 3,
         shiftwidth = 2,
+        shellcmdflag = is_win
+            and "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+          or "",
+        shellredir = is_win and "-RedirectStandardOutput %s -NoNewWindow -Wait" or "",
+        shellpipe = is_win and "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode" or "",
+        shellquote = "",
+        shellxquote = "",
+        shell = (is_win and vim.fn.executable "pwsh" == 1) and "pwsh" or "",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
