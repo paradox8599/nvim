@@ -3,7 +3,7 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local is_win = vim.loop.os_uname().sysname == "Windows_NT"
+local is_shell_cmd = not string.find(vim.o.shell, "cmd.exe") == nil
 
 ---@type LazySpec
 return {
@@ -43,14 +43,14 @@ return {
         writebackup = false,
         laststatus = 3,
         shiftwidth = 2,
-        shellcmdflag = is_win
+        shell = (is_shell_cmd and vim.fn.executable "pwsh" == 1) and "pwsh" or nil,
+        shellcmdflag = is_shell_cmd
             and "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-          or "",
-        shellredir = is_win and "-RedirectStandardOutput %s -NoNewWindow -Wait" or "",
-        shellpipe = is_win and "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode" or "",
-        shellquote = "",
-        shellxquote = "",
-        shell = (is_win and vim.fn.executable "pwsh" == 1) and "pwsh" or "",
+          or nil,
+        shellredir = is_shell_cmd and "-RedirectStandardOutput %s -NoNewWindow -Wait" or nil,
+        shellpipe = is_shell_cmd and "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode" or nil,
+        shellquote = is_shell_cmd and "" or nil,
+        shellxquote = is_shell_cmd and "" or nil,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
