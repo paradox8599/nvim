@@ -3,7 +3,7 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local is_shell_cmd = not string.find(vim.o.shell, "cmd.exe") == nil
+local is_shell_cmd = not (string.find(vim.o.shell, "cmd.exe") == nil)
 
 ---@type LazySpec
 return {
