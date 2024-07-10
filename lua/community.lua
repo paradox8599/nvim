@@ -35,7 +35,7 @@ return {
   -- { import = "astrocommunity/editing-support/vim-move" }, -- Alt + hjkl https://github.com/matze/vim-move
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
-  { import = "astrocommunity/lsp/inc-rename-nvim" },
+  -- { import = "astrocommunity/lsp/inc-rename-nvim" },
   { import = "astrocommunity/lsp/lsp-signature-nvim" }, -- function parameters hint
   { import = "astrocommunity/lsp/nvim-lsp-file-operations" },
 
