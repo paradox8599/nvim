@@ -1,3 +1,4 @@
+local is_win = require("util").is_win
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
@@ -43,7 +44,7 @@ return {
 
   {
     import = "astrocommunity/pack/cs",
-    enabled = function() return (vim.loop.os_uname().sysname == "Windows_NT") end,
+    enabled = is_win,
   },
   { import = "astrocommunity/pack/rust" },
   -- { import = "astrocommunity/pack/cpp" },
