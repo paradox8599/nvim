@@ -39,8 +39,6 @@ return {
 
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
-  { import = "astrocommunity/media/presence-nvim" }, -- display discord status
-
   -- { import = "astrocommunity/motion/mini-ai" },
 
   {
