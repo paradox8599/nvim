@@ -27,4 +27,20 @@ return {
       },
     },
   },
+  {
+    -- Added this plugin only for discord rich presence
+    -- toggleterm lazygit won't be recognized
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 }

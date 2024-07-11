@@ -92,6 +92,8 @@ return {
         ["gra"] = false,
         ["grr"] = false,
         ["grn"] = false,
+
+        ["<Leader>gg"] = { function() vim.cmd [[LazyGit]] end, desc = "Lazygit" },
       },
       i = {},
       t = {},
