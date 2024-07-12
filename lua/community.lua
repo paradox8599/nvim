@@ -29,7 +29,7 @@ return {
 
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
-  -- { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
+  { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
   -- keymaps: https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/editing-support/yanky-nvim/init.lua
   -- { import = "astrocommunity/editing-support/yanky-nvim" }, -- more yank operations
 
