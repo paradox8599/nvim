@@ -23,14 +23,14 @@ return {
         show_time = true, -- Display start timestamp
         show_repository = true, -- Display 'View repository' button linked to repository url, if any
         show_cursor_position = true, -- Display line and column number of cursor's position
-        swap_fields = true, -- If enabled, workspace is displayed first
+        swap_fields = false, -- If enabled, workspace is displayed first
         swap_icons = false, -- If enabled, editor is displayed on the main image
         workspace_blacklist = {}, -- List of workspace names to hide
       },
       lsp = {
         show_problem_count = true, -- Display number of diagnostics problems
         severity = 4, -- 1 = Error, 2 = Warning, 3 = Info, 4 = Hint
-        scope = "workspace", -- buffer or workspace
+        scope = "buffer", -- buffer or workspace
       },
       idle = {
         enable = true, -- Enable idle status
