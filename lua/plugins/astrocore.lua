@@ -33,7 +33,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = true, -- sets vim.opt.wrap
-        clipboard = "", -- separate system & nvim clipboards
+        -- clipboard = "", -- separate system & nvim clipboards
         conceallevel = 0,
         list = true,
         -- swapfile = true,

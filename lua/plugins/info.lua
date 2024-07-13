@@ -50,4 +50,10 @@ return {
     "VidocqH/lsp-lens.nvim",
     config = true,
   },
+
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    opts = {},
+  },
 }
