@@ -62,21 +62,21 @@ return {
     mappings = {
       -- first key is the mode
       n = {
-        -- second key is the lefthand side of the map
+        ["<Esc>"] = { "<cmd>nohlsearch<CR>", desc = "No Highlight" },
 
         J = { "mzJ`z", desc = "Keep cursor position when J" },
         -- n = { "nzzzv", desc = "Keep search term highlight in the middle" },
         -- N = { "Nzzzv", desc = "Keep search term highlight in the middle" },
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
         ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
-        ["<Leader>k"] = { function() vim.cmd [[b#]] end, desc = "Last buffer" },
-        ["<Leader>lc"] = { function() vim.cmd [[LspRestart]] end, desc = "Restart LSP" },
+        ["<Leader>k"] = { "<cmd>b#<cr>", desc = "Last buffer" },
+        ["<Leader>lc"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
 
-        ["<Leader>bm"] = { function() vim.cmd [[PeekOpen]] end, desc = "Toggle Markdown preview" },
-        ["<Leader>ub"] = { function() vim.cmd [[HexToggle]] end, desc = "Toggle Hex Editor" },
+        ["<Leader>bm"] = { "<cmd>PeekOpen<cr>", desc = "Toggle Markdown preview" },
+        ["<Leader>ub"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
 
-        ["<Leader><Leader>L"] = { function() vim.cmd [[Lazy]] end, desc = "[L]azy" },
-        ["<Leader><Leader>M"] = { function() vim.cmd [[Mason]] end, desc = "[M]ason" },
+        ["<Leader><Leader>L"] = { "<cmd>Lazy<cr>", desc = "[L]azy" },
+        ["<Leader><Leader>M"] = { "<cmd>Mason<cr>", desc = "[M]ason" },
 
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
@@ -97,7 +97,7 @@ return {
         ["grr"] = false,
         ["grn"] = false,
 
-        ["<Leader>gg"] = { function() vim.cmd [[LazyGit]] end, desc = "Lazygit" },
+        ["<Leader>gg"] = { "<cmd>LazyGit<cr>", desc = "Lazygit" },
       },
       v = {
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
