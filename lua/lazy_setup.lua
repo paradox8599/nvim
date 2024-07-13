@@ -15,6 +15,8 @@ require("lazy").setup({
   { import = "plugins" },
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
+
+  concurrency = (vim.uv.available_parallelism() * 2),
   install = { colorscheme = { "astrotheme", "habamax" } },
   ui = { backdrop = 100 },
   performance = {
