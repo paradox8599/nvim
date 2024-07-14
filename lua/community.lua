@@ -21,36 +21,32 @@ return {
 
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
-  -- keymaps: https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/editing-support/yanky-nvim/init.lua
-  -- { import = "astrocommunity/editing-support/yanky-nvim" }, -- more yank operations
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
-  -- { import = "astrocommunity/lsp/lsp-signature-nvim" }, -- floating function parameters hint
-  { import = "astrocommunity/lsp/nvim-lsp-file-operations" },
 
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
-  { import = "astrocommunity/pack/cs", enabled = is_win },
   { import = "astrocommunity/pack/rust" },
-  -- { import = "astrocommunity/pack/cpp" },
-  -- { import = "astrocommunity/pack/bash" },
-  -- { import = "astrocommunity/pack/dart" },
-  { import = "astrocommunity/pack/python" },
-  { import = "astrocommunity/pack/tailwindcss" },
   { import = "astrocommunity/pack/typescript" },
+  { import = "astrocommunity/pack/tailwindcss" },
+  { import = "astrocommunity/pack/cs", enabled = is_win },
   { import = "astrocommunity/pack/html-css" },
-  { import = "astrocommunity/pack/markdown" },
+  { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/docker" },
+  { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
+  -- { import = "astrocommunity/pack/cpp" },
+  -- { import = "astrocommunity/pack/bash" },
+  -- { import = "astrocommunity/pack/dart" },
 
   { import = "astrocommunity/programming-language-support/csv-vim" },
   { import = "astrocommunity/programming-language-support/nvim-jqx" }, -- json, requires [ jq ]
 
   -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar
-  { import = "astrocommunity/scrolling/vim-smoothie", cond = function() return not vim.g.neovide end },
+  { import = "astrocommunity/scrolling/vim-smoothie", cond = not vim.g.neovide },
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
