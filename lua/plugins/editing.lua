@@ -138,7 +138,7 @@ return {
     -- event = "User AstroFile",
     cmd = { "Sad" },
     keys = {
-      { "<leader>lF", ":Sad<cr>", desc = "Find and replace (Sad)" },
+      { "<leader>lF", "<cmd>Sad<cr>", desc = "Find and replace (Sad)" },
     },
   },
 }
