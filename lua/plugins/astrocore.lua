@@ -75,9 +75,6 @@ return {
         ["<Leader>bm"] = { "<cmd>PeekOpen<cr>", desc = "Toggle Markdown preview" },
         ["<Leader>ub"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
 
-        ["<Leader><Leader>L"] = { "<cmd>Lazy<cr>", desc = "[L]azy" },
-        ["<Leader><Leader>M"] = { "<cmd>Mason<cr>", desc = "[M]ason" },
-
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
