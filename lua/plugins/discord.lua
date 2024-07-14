@@ -35,7 +35,7 @@ return {
       idle = {
         enable = true, -- Enable idle status
         show_status = true, -- Display idle status, disable to hide the rich presence on idle
-        timeout = 15 * 60 * 1000, -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
+        timeout = 5 * 60 * 1000, -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
         disable_on_focus = false, -- Do not display idle status when neovim is focused
         text = "Idle", -- Text to display when idle
         tooltip = "💤", -- Text to display when hovering over the idle image
