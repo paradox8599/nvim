@@ -8,7 +8,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" }, -- line max characters indicator
-  { import = "astrocommunity/code-runner/overseer-nvim" }, -- task runner
+  -- { import = "astrocommunity/code-runner/overseer-nvim" }, -- task runner
   { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
 
