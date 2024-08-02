@@ -37,9 +37,9 @@ return {
   {
     "RaafatTurki/hex.nvim",
     cmd = { "HexDump", "HexToggle", "HexAssemble" },
-    keys = {
-      { "<leader>bh", "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
-    },
+    -- keys = {
+    --   { "<leader>bh", "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
+    -- },
     opts = {},
   },
 
