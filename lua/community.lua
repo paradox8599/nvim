@@ -27,18 +27,18 @@ return {
 
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
-  { import = "astrocommunity/pack/rust" },
-  { import = "astrocommunity/pack/typescript" },
-  { import = "astrocommunity/pack/tailwindcss" },
   { import = "astrocommunity/pack/cs", enabled = is_win },
-  { import = "astrocommunity/pack/html-css" },
+  -- { import = "astrocommunity/pack/cpp" },
+  { import = "astrocommunity/pack/rust" },
+  -- { import = "astrocommunity/pack/typescript" },
+  { import = "astrocommunity/pack/tailwindcss" },
+  -- { import = "astrocommunity/pack/html-css" },
   { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/docker" },
   { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
-  { import = "astrocommunity/pack/cpp" },
   -- { import = "astrocommunity/pack/bash" },
   -- { import = "astrocommunity/pack/dart" },
 
