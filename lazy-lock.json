@@ -25,6 +25,7 @@
   "codeium.vim": { "branch": "main", "commit": "fc5a68d6273715f13a1257f02a63d668604d9f27" },
   "cord.nvim": { "branch": "master", "commit": "bfaca148979b6be757106deb22af471b09089007" },
   "crates.nvim": { "branch": "main", "commit": "b3b9ac6ed9618955b24bf9adede7530ef608495b" },
+  "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "5a474b06743bb20a90191994457f5e62f444976b" },
   "csv.vim": { "branch": "master", "commit": "bddfcbadd788ab11eb3dbba4550a38a412fe3705" },
   "dressing.nvim": { "branch": "master", "commit": "71349f24c6e07b39f33600985843c289ca735308" },
   "firenvim": { "branch": "master", "commit": "c5ea28ffaa02e3c6829896f24b80e01440875b03" },
