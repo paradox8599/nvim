@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
 
   -- { import = "astrocommunity/color/mini-hipatterns" }, -- highlight patterns（comments, colors
-  -- { import = "astrocommunity/color/transparent-nvim" },
+  { import = "astrocommunity/color/transparent-nvim" },
 
   { import = "astrocommunity/completion/cmp-cmdline" }, -- command auto completion
   -- { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
