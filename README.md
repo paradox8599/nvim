@@ -4,13 +4,31 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ## 🛠️ Installation
 
-#### Make a backup of your current nvim configs
+### Install Dependencies
+
+- sad
+- fd-find
+- ripgrep
+- fzf
+- jq
+- gdu-go
+- bottom
+
+### Make a backup of your current nvim configs
+
+- Linux & MacOS
 
 ```shell
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
-#### Clone the repository
+-Windows
+
+```powershell
+mv ~\AppData\Local\nvim ~\AppData\Local\nvim.bak
+```
+
+### Clone the repository
 
 - Linux & MacOS
 
