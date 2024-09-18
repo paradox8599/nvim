@@ -42,6 +42,7 @@ return {
     opts = {
       enable_git_status = true,
       filesystem = {
+        hijack_netrw_behavior = "disabled",
         filtered_items = {
           hide_dotfiles = true,
           hide_by_name = {},
