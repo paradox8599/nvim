@@ -6,13 +6,14 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ### Install Dependencies
 
-- sad
-- fd-find
-- ripgrep
-- fzf
-- jq
-- gdu-go
 - bottom
+- fd-find
+- fzf
+- gdu-go
+- jq
+- ripgrep
+- sad
+- yazi
 
 ### Make a backup of your current nvim configs
 
