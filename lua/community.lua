@@ -1,7 +1,4 @@
-local is_win = require("utils").is_win
--- AstroCommunity: import any community modules here
--- We import this file in `lazy_setup.lua` before the `plugins/` folder.
--- This guarantees that the specs are processed before any user plugins.
+-- local is_win = require("utils").is_win
 
 ---@type LazySpec
 return {
@@ -27,7 +24,7 @@ return {
 
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
-  { import = "astrocommunity/pack/cs", enabled = is_win },
+  -- { import = "astrocommunity/pack/cs", enabled = is_win },
   { import = "astrocommunity/pack/cpp" },
   { import = "astrocommunity/pack/rust" },
   -- { import = "astrocommunity/pack/typescript" },
