@@ -16,6 +16,7 @@ return {
   -- { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
 
+  { import = "astrocommunity/docker/lazydocker" },
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
 
