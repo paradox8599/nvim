@@ -64,6 +64,8 @@ return {
       -- first key is the mode
       n = {
         ["<Esc>"] = { "<cmd>nohlsearch<CR>", desc = "No Highlight" },
+        ["<Leader>z"] = "Color",
+        ["<Leader><Leader>"] = "Other",
 
         J = { "mzJ`z", desc = "Keep cursor position when J" },
         -- n = { "nzzzv", desc = "Keep search term highlight in the middle" },
@@ -74,11 +76,23 @@ return {
         ["<Leader>lc"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
 
         ["<Leader>bm"] = { "<cmd>PeekOpen<cr>", desc = "Toggle Markdown preview" },
-        ["<Leader>ub"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
+        ["<Leader>uB"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
 
         -- navigate buffer tabs
-        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        -- ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+
+        ["<Leader><Leader>f"] = "Neoconf",
+        -- :Neoconf: will show a ui to select one of the local/global json config files to edit
+        ["<Leader><Leader>ff"] = { "<cmd>Neoconf<cr>", desc = "Neocon[f]" },
+        -- :Neoconf local: will show a ui to select one of the local json config files to edit
+        ["<Leader><Leader>fl"] = { "<cmd>Neoconf local<cr>", desc = "Neoconf [L]ocal" },
+        -- :Neoconf global: will show a ui to select one of the global json config files to edit
+        ["<Leader><Leader>fg"] = { "<cmd>Neoconf global<cr>", desc = "Neoconf [G]lobal" },
+        -- :Neoconf show: opens a floating window with the merged config
+        ["<Leader><Leader>fs"] = { "<cmd>Neoconf show<cr>", desc = "Neoconf [S]how" },
+        -- :Neoconf lsp: opens a floating window with your merged lsp config
+        ["<Leader><Leader>fp"] = { "<cmd>Neoconf lsp<cr>", desc = "Neoconf LS[P]" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
