@@ -19,6 +19,7 @@ return {
   opts = function(_, opts)
     local astrocore = require "astrocore"
     if astrocore.is_available "toggleterm.nvim" then opts.strategy = "toggleterm" end
+    opts.dap = false
     opts.task_list = {
       direction = "bottom",
       bindings = {

@@ -24,6 +24,7 @@ return {
         -- add more arguments for adding more null-ls sources
       },
     },
+    config = function() require("overseer").enable_dap() end,
   },
   -- {
   --   "jay-babu/mason-nvim-dap.nvim",
