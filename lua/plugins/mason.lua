@@ -24,16 +24,16 @@ return {
         -- add more arguments for adding more null-ls sources
       },
     },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    -- overrides `require("mason-nvim-dap").setup(...)`
+    opts = {
+      ensure_installed = {
+        "python",
+        -- add more arguments for adding more debuggers
+      },
+    },
     config = function() require("overseer").enable_dap() end,
   },
-  -- {
-  --   "jay-babu/mason-nvim-dap.nvim",
-  --   -- overrides `require("mason-nvim-dap").setup(...)`
-  --   opts = {
-  --     ensure_installed = {
-  --       "python",
-  --       -- add more arguments for adding more debuggers
-  --     },
-  --   },
-  -- },
 }
