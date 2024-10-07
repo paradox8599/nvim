@@ -57,8 +57,7 @@ return {
     {
       "catppuccin",
       optional = true,
-      ---@type CatppuccinOptions
-      opts = { integrations = { overseer = true } },
+      opts = { integrations = { overseer = true }, },
     },
   },
 }
