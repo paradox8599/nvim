@@ -111,5 +111,5 @@
   "vim-smoothie": { "branch": "master", "commit": "df1e324e9f3395c630c1c523d0555a01d2eb1b7e" },
   "vim-speeddating": { "branch": "master", "commit": "c17eb01ebf5aaf766c53bab1f6592710e5ffb796" },
   "which-key.nvim": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" },
-  "yazi.nvim": { "branch": "main", "commit": "0a3c852a9541511d58409059cc01c642539b3712" }
+  "yazi.nvim": { "branch": "main", "commit": "55e66733a7d05e761f97fa11589f569233be6616" }
 }
