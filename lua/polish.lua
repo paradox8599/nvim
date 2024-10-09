@@ -5,5 +5,5 @@
 -- set font for neovide
 if vim.g.neovide then vim.o.guifont = "JetBrainsMono Nerd Font:h12" end
 
-local dap = require"dap"
+local dap = require "dap"
 dap.adapters.lldb = dap.adapters.codelldb
