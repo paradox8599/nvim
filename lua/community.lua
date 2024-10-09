@@ -5,7 +5,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" }, -- line max characters indicator
-  -- { import = "astrocommunity/code-runner/overseer-nvim" }, -- task runner
   { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
 
@@ -19,6 +18,7 @@ return {
   { import = "astrocommunity/docker/lazydocker" },
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
+  -- { import = "astrocommunity/git/diffview-nvim" }, -- git diff view
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },
@@ -49,7 +49,7 @@ return {
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
-  -- { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
+  { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
 
   -- { import = "astrocommunity/test/neotest" },
 }

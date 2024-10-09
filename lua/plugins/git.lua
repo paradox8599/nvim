@@ -27,6 +27,7 @@ return {
       },
     },
   },
+
   {
     -- Added this plugin only for discord rich presence
     -- toggleterm lazygit won't be recognized
@@ -41,6 +42,14 @@ return {
     -- optional for floating window border decoration
     dependencies = {
       "nvim-lua/plenary.nvim",
+    },
+  },
+
+  {
+    "tetzng/open-github-url.nvim",
+    opts = {},
+    keys = {
+      { "<leader>gh", "<cmd>OpenGitHubUrlUnderCursor<cr>", desc = "Open github url" },
     },
   },
 }

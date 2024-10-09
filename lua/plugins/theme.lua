@@ -101,6 +101,7 @@ return {
   {
     "folke/noice.nvim",
     -- enabled = false,
+    cond = not vim.g.started_by_firenvim,
     event = "VeryLazy",
     opts = {
       lsp = { hover = { enabled = false }, signature = { enabled = false } },
