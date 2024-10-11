@@ -14,6 +14,7 @@ return {
         callback = function()
           if vim.o.lines < 16 then vim.o.lines = 16 end
           if vim.o.columns < 80 then vim.o.columns = 80 end
+          vim.cmd [[set background=light]]
         end,
       })
       -- autosave
