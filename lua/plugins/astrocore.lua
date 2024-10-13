@@ -67,6 +67,9 @@ return {
         ["<Leader>z"] = "Color",
         ["<Leader><Leader>"] = "Other",
 
+        ["<tab>"] = { "<cmd>bnext<cr>", desc = "next buffer" },
+        ["<S-tab>"] = { "<cmd>bprev<cr>", desc = "prev buffer" },
+
         J = { "mzJ`z", desc = "Keep cursor position when J" },
         -- n = { "nzzzv", desc = "Keep search term highlight in the middle" },
         -- N = { "Nzzzv", desc = "Keep search term highlight in the middle" },
