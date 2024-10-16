@@ -1,3 +1,4 @@
+local utils = require "../utils"
 return {
   -- firenvim
   {
@@ -36,8 +37,8 @@ return {
       },
     },
     config = function()
-      if jit.os == "Windows" then vim.opt.undodir = os.getenv "UserProfile" .. "/.vim/undodir" end
-      if jit.os == "OSX" then vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir" end
+      if utils.is_win then vim.opt.undodir = os.getenv "UserProfile" .. "/.vim/undodir" 
+      else vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir" end
       vim.opt.undofile = true
     end,
   },
