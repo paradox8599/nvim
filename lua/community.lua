@@ -38,6 +38,7 @@ return {
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
+  -- { import = "astrocommunity/pack/nix" },
   -- { import = "astrocommunity/pack/bash" },
   -- { import = "astrocommunity/pack/dart" },
 
