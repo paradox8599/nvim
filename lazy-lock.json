@@ -5,7 +5,7 @@
   "SchemaStore.nvim": { "branch": "main", "commit": "6796194ae7db1c4c79c904e31ba2f8cfd7b0cd12" },
   "aerial.nvim": { "branch": "master", "commit": "9c29a1a66eb31384888e413e510ba72496e06770" },
   "alpha-nvim": { "branch": "main", "commit": "bf3c8bb8c02ed3d9644cc5bbc48e2bdc39349cd7" },
-  "astrocommunity": { "branch": "main", "commit": "d5dde44c711859cc2446304de2347230083f43cd" },
+  "astrocommunity": { "branch": "main", "commit": "8a35bc6b7bbef6b57e5fdea3dbc07410911a07e4" },
   "astrocore": { "branch": "main", "commit": "d687e4b66b93783dfdafee1e64d363b7706056ff" },
   "astrolsp": { "branch": "main", "commit": "376e2676121b32d8fb8063560bb1e4ceb017ec4a" },
   "astrotheme": { "branch": "main", "commit": "b1405cc96823d5f6cdd5a2f7ebeb137183220840" },
@@ -113,5 +113,5 @@
   "vim-smoothie": { "branch": "master", "commit": "df1e324e9f3395c630c1c523d0555a01d2eb1b7e" },
   "vim-speeddating": { "branch": "master", "commit": "c17eb01ebf5aaf766c53bab1f6592710e5ffb796" },
   "which-key.nvim": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" },
-  "yazi.nvim": { "branch": "main", "commit": "519940019913a5e742e2dd2f04712d9ff8869a10" }
+  "yazi.nvim": { "branch": "main", "commit": "5119c81598eb4cfe53dc7ee0e851b15619e0323d" }
 }
