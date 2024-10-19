@@ -47,6 +47,8 @@ return {
 
   -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar
   -- { import = "astrocommunity/scrolling/vim-smoothie", cond = not vim.g.neovide },
+  { import = "astrocommunity/scrolling/neoscroll-nvim", cond = not vim.g.neovide },
+
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
