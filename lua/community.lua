@@ -3,7 +3,6 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" }, -- line max characters indicator
   { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
@@ -26,6 +25,7 @@ return {
   { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
   -- { import = "astrocommunity/pack/cs", enabled = is_win },
+  { import = "astrocommunity/pack/lua" },
   { import = "astrocommunity/pack/cpp" },
   { import = "astrocommunity/pack/rust" },
   -- { import = "astrocommunity/pack/typescript" },
@@ -46,7 +46,7 @@ return {
   { import = "astrocommunity/programming-language-support/nvim-jqx" }, -- json, requires [ jq ]
 
   -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar
-  { import = "astrocommunity/scrolling/vim-smoothie", cond = not vim.g.neovide },
+  -- { import = "astrocommunity/scrolling/vim-smoothie", cond = not vim.g.neovide },
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
