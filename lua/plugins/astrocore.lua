@@ -67,9 +67,6 @@ return {
         ["<Leader>z"] = "Color",
         ["<Leader><Leader>"] = "Other",
 
-        ["<tab>"] = { "<cmd>bnext<cr>", desc = "next buffer" },
-        ["<S-tab>"] = { "<cmd>bprev<cr>", desc = "prev buffer" },
-
         J = { "mzJ`z", desc = "Keep cursor position when J" },
         -- n = { "nzzzv", desc = "Keep search term highlight in the middle" },
         -- N = { "Nzzzv", desc = "Keep search term highlight in the middle" },
@@ -82,8 +79,8 @@ return {
         ["<Leader>uB"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
 
         -- navigate buffer tabs
-        -- ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        -- ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<tab>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<S-tab>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         ["<Leader><Leader>f"] = "Neoconf",
         -- :Neoconf: will show a ui to select one of the local/global json config files to edit
@@ -97,22 +94,12 @@ return {
         -- :Neoconf lsp: opens a floating window with your merged lsp config
         ["<Leader><Leader>fp"] = { "<cmd>Neoconf lsp<cr>", desc = "Neoconf LS[P]" },
 
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bd"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Close buffer from tabline",
-        },
-
         ["gr"] = { vim.lsp.buf.references, desc = "references" },
         ["gra"] = false,
         ["grr"] = false,
         ["grn"] = false,
 
-        ["<Leader>gg"] = { "<cmd>LazyGit<cr>", desc = "Lazygit" },
+        -- ["<Leader>gg"] = { "<cmd>LazyGit<cr>", desc = "Lazygit" },
       },
       v = {
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
