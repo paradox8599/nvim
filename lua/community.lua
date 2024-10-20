@@ -30,7 +30,7 @@ return {
   { import = "astrocommunity/pack/rust" },
   -- { import = "astrocommunity/pack/typescript" },
   { import = "astrocommunity/pack/tailwindcss" },
-  { import = "astrocommunity/pack/svelte" },
+  -- { import = "astrocommunity/pack/svelte" },
   -- { import = "astrocommunity/pack/html-css" },
   { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/docker" },
