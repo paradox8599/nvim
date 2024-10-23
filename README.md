@@ -34,11 +34,11 @@ mv ~\AppData\Local\nvim ~\AppData\Local\nvim.bak
 - Linux & MacOS
 
   ```shell
-  git clone https://github.com/paradox8599/astro ~/.config/nvim
+  git clone https://github.com/paradox8599/nvim ~/.config/nvim
   ```
 
 - Windows
 
   ```powershell
-  git clone https://github.com/paradox8599/astro ~/AppData/Local/nvim
+  git clone https://github.com/paradox8599/nvim ~/AppData/Local/nvim
   ```
