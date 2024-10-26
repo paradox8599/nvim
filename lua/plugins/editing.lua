@@ -1,3 +1,4 @@
+local utils = require "utils"
 return {
 
   {
@@ -68,7 +69,7 @@ return {
       },
     },
     config = function()
-      if vim.loop.os_uname().sysname == "Windows_NT" then
+      if utils.is_win then
         vim.opt.undodir = os.getenv "UserProfile" .. "/.vim/undodir"
       else
         vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
