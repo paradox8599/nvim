@@ -64,8 +64,8 @@ return {
       -- first key is the mode
       n = {
         ["<Esc>"] = { "<cmd>nohlsearch<CR>", desc = "No Highlight" },
-        ["<Leader>z"] = "Color",
-        ["<Leader><Leader>"] = "Other",
+        ["<Leader>z"] = { desc = "Color" },
+        ["<Leader><Leader>"] = { desc = "Other" },
 
         J = { "mzJ`z", desc = "Keep cursor position when J" },
         -- n = { "nzzzv", desc = "Keep search term highlight in the middle" },
@@ -82,7 +82,7 @@ return {
         ["<tab>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<S-tab>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        ["<Leader><Leader>f"] = "Neoconf",
+        ["<Leader><Leader>f"] = { desc = "Neoconf" },
         -- :Neoconf: will show a ui to select one of the local/global json config files to edit
         ["<Leader><Leader>ff"] = { "<cmd>Neoconf<cr>", desc = "Neocon[f]" },
         -- :Neoconf local: will show a ui to select one of the local json config files to edit
