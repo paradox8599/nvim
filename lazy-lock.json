@@ -22,7 +22,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp-tailwind-colors": { "branch": "main", "commit": "91b2621827ef19a374ad7d1e60d567dd2e4b3823" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
-  "codeium.vim": { "branch": "main", "commit": "8c01979323b2b480c8bf160d3ff85bd1668baa49" },
+  "codeium.nvim": { "branch": "main", "commit": "a7196bf9472b56ecac5c93c8b6eefba932b14492" },
   "cord.nvim": { "branch": "master", "commit": "a26b00d58c42174aadf975917b49cec67650545f" },
   "crates.nvim": { "branch": "main", "commit": "8bf8358ee326d5d8c11dcd7ac0bcc9ff97dbc785" },
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "b647e1bd1f9c0410f5ef4a1517a331cbac322d9a" },
