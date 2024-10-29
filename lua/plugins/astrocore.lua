@@ -65,6 +65,7 @@ return {
       n = {
         ["<Esc>"] = { "<cmd>nohlsearch<CR>", desc = "No Highlight" },
         ["<Leader>z"] = { desc = "Color" },
+        ["<Leader>i"] = { desc = "Toggle word under cursor" },
         ["<Leader><Leader>"] = { desc = "Other" },
 
         J = { "mzJ`z", desc = "Keep cursor position when J" },
