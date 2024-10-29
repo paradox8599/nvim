@@ -1,6 +1,5 @@
 local utils = require "utils"
 return {
-
   {
     "Exafunction/codeium.nvim",
     opts = {

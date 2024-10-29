@@ -41,7 +41,7 @@ return {
         -- writebackup = false,
         laststatus = 3,
         -- shiftwidth = 2,
-        mouse = "",
+        -- mouse = "",
 
         -- shell = (is_shell_cmd and vim.fn.executable "pwsh" == 1) and "pwsh" or nil,
         -- shellcmdflag = is_shell_cmd
