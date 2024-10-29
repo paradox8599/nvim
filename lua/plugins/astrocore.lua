@@ -68,8 +68,8 @@ return {
         ["<Leader><Leader>"] = { desc = "Other" },
 
         J = { "mzJ`z", desc = "Keep cursor position when J" },
-        -- n = { "nzzzv", desc = "Keep search term highlight in the middle" },
-        -- N = { "Nzzzv", desc = "Keep search term highlight in the middle" },
+        n = { "nzzzv", desc = "Keep search term highlight in the middle" },
+        N = { "Nzzzv", desc = "Keep search term highlight in the middle" },
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
         ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
         ["<Leader>k"] = { "<cmd>b#<cr>", desc = "Last buffer" },
@@ -98,8 +98,6 @@ return {
         ["gra"] = false,
         ["grr"] = false,
         ["grn"] = false,
-
-        -- ["<Leader>gg"] = { "<cmd>LazyGit<cr>", desc = "Lazygit" },
       },
       v = {
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
