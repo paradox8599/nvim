@@ -49,7 +49,6 @@ return {
   -- { import = "astrocommunity/scrolling/vim-smoothie", cond = not vim.g.neovide },
   -- { import = "astrocommunity/scrolling/neoscroll-nvim", cond = not vim.g.neovide },
 
-
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
   { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
