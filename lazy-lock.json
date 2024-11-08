@@ -10,7 +10,6 @@
   "astrolsp": { "branch": "main", "commit": "2f6b0a4059775a1dac011d2944dd41fd4a8fe7a8" },
   "astrotheme": { "branch": "main", "commit": "b1405cc96823d5f6cdd5a2f7ebeb137183220840" },
   "astroui": { "branch": "main", "commit": "7adeb60d76939d3cd66c9852e0e8621bd42014dd" },
-  "awesome-nvim-colorschemes": { "branch": "main", "commit": "aa2050efd210d04557e6369d7aee5553726f3859" },
   "better-escape.nvim": { "branch": "master", "commit": "7619e1e582d8ae43c8860dfc183455374a11aa85" },
   "ccc.nvim": { "branch": "main", "commit": "7c639042583c7bdc7ce2e37e5a0e0aa6d0659c6a" },
   "clangd_extensions.nvim": { "branch": "main", "commit": "8f7b72100883e0e34400d9518d40a03f21e4d0a6" },

@@ -82,18 +82,14 @@ return {
     end,
   },
 
-  {
-    "AbdelrahmanDwedar/awesome-nvim-colorschemes",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup {
-        flavour = "mocha",
-        integrations = { telescope = true },
-      }
-      ---@diagnostic disable-next-line: missing-fields
-      require("notify").setup { background_colour = "#000000" }
-    end,
-  },
+  -- {
+  --   "AbdelrahmanDwedar/awesome-nvim-colorschemes",
+  --   priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup {}
+  --     vim.cmd.colorscheme "catppuccin"
+  --   end,
+  -- },
 
   {
     "HiPhish/rainbow-delimiters.nvim",
@@ -103,6 +99,8 @@ return {
     config = function()
       -- This module contains a number of default definitions
       local rainbow_delimiters = require "rainbow-delimiters"
+
+      -- vim.api.nvim_set_hl(0, "iblWhite", { fg = "#ffffff" })
 
       -- @type rainbow_delimiters.config
       vim.g.rainbow_delimiters = {
@@ -119,27 +117,16 @@ return {
           lua = 210,
         },
         highlight = {
-          "iblYellow",
-          "iblBlue",
-          "iblOrange",
-          "iblViolet",
-          "iblCyan",
           -- "RainbowDelimiterRed",
-          -- "RainbowDelimiterYellow",
-          -- "RainbowDelimiterViolet",
-          -- "RainbowDelimiterBlue",
-          -- "RainbowDelimiterOrange",
+          "RainbowDelimiterYellow",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterOrange",
+          "RainbowDelimiterViolet",
           -- "RainbowDelimiterGreen",
-          -- "RainbowDelimiterCyan",
+          "RainbowDelimiterCyan",
         },
       }
     end,
-  },
-
-  {
-    "catppuccin/nvim",
-    optional = true,
-    opts = { integrations = { rainbow_delimiters = true } },
   },
 
   {
