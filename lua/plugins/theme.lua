@@ -1,6 +1,50 @@
 return {
   {
+    "shellRaining/hlchunk.nvim",
+    enabled = true,
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      chunk = {
+        enable = true,
+        duration = 25,
+        delay = 50,
+        style = {
+          { fg = "#86cecb" },
+          { fg = "#ff6699" },
+        },
+        textobject = "ic",
+      },
+      indent = {
+        enable = true,
+        delay = 50,
+        chars = {
+          "│",
+          "¦",
+          "┆",
+          "┊",
+        },
+        -- style = {
+        --   -- { fg = "#E06C75" },
+        --   { fg = "#E5C07B" },
+        --   { fg = "#61AFEF" },
+        --   { fg = "#D19A66" },
+        --   -- { fg = "#98C379" },
+        --   { fg = "#C678DD" },
+        --   { fg = "#56B6C2" },
+        -- },
+      },
+      line_num = {
+        enable = true,
+        duration = 25,
+        delay = 50,
+        style = "#a0a0a0",
+      },
+    },
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
     main = "ibl",
     event = "VeryLazy",
 
@@ -24,7 +68,7 @@ return {
         vim.api.nvim_set_hl(0, "iblYellow", { fg = "#E5C07B" })
         vim.api.nvim_set_hl(0, "iblBlue", { fg = "#61AFEF" })
         vim.api.nvim_set_hl(0, "iblOrange", { fg = "#D19A66" })
-        -- vim.api.nvim_set_hl(0, "iblGreen", { fg = "#98C379" })
+        -- vim.api.nvim_set_hl(0, "iblGreen", {fg= "#98C379" })
         vim.api.nvim_set_hl(0, "iblViolet", { fg = "#C678DD" })
         vim.api.nvim_set_hl(0, "iblCyan", { fg = "#56B6C2" })
       end)
