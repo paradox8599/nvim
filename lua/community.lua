@@ -7,7 +7,6 @@ return {
   { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
 
-  -- { import = "astrocommunity/color/mini-hipatterns" }, -- highlight patterns（comments, colors
   { import = "astrocommunity/color/transparent-nvim" },
 
   { import = "astrocommunity/completion/cmp-cmdline" }, -- command auto completion
@@ -17,7 +16,6 @@ return {
   { import = "astrocommunity/docker/lazydocker" },
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
-  -- { import = "astrocommunity/git/diffview-nvim" }, -- git diff view
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
   { import = "astrocommunity/lsp/inc-rename-nvim" },

@@ -29,6 +29,7 @@ return {
   },
 
   {
+    -- NOTE:
     -- Added this plugin only for discord rich presence
     -- toggleterm lazygit won't be recognized
     "kdheepak/lazygit.nvim",
