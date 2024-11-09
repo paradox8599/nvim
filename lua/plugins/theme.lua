@@ -9,7 +9,7 @@ return {
         duration = 25,
         delay = 50,
         style = {
-          { fg = "#86cecb" },
+          { fg = "#99ddff" },
           { fg = "#ff6699" },
         },
         textobject = "ic",
