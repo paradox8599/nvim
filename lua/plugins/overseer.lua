@@ -15,6 +15,7 @@ return {
     "OverseerTaskAction ",
     "OverseerClearCache",
   },
+  ---@module 'overseer'
   ---@param opts overseer.Config
   opts = function(_, opts)
     local astrocore = require "astrocore"
@@ -57,7 +58,7 @@ return {
     {
       "catppuccin",
       optional = true,
-      opts = { integrations = { overseer = true }, },
+      opts = { integrations = { overseer = true } },
     },
   },
 }
