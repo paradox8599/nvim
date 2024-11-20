@@ -1,3 +1,5 @@
+-- https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/pack/typescript/init.lua
+
 local function decode_json(filename)
   -- Open the file in read mode
   local file = io.open(filename, "r")
@@ -28,7 +30,13 @@ local has_prettier = function(bufnr)
     lsp_rooter = rooter.resolve("lsp", {
       ignore = {
         servers = function(client)
-          return not vim.tbl_contains({ "vtsls", "typescript-tools", "volar", "eslint", "tsserver" }, client.name)
+          return not vim.tbl_contains({
+            -- "eslint",
+            "ts_ls",
+            "typescript-tools",
+            "volar",
+            "vtsls",
+          }, client.name)
         end,
       },
     })
@@ -73,7 +81,7 @@ end
 local conform_formatter = function(bufnr) return has_prettier(bufnr) and { "prettierd" } or {} end
 
 return {
-  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -247,66 +255,4 @@ return {
       table.insert(opts.adapters, require "neotest-jest"(require("astrocore").plugin_opts "neotest-jest"))
     end,
   },
-
-  --------------------------------
-  -- DAP
-  --------------------------------
-
-  "mfussenegger/nvim-dap",
-  optional = true,
-  config = function()
-    local dap = require "dap"
-    if not dap.adapters["pwa-node"] then
-      dap.adapters["pwa-node"] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = "node",
-          args = {
-            require("mason-registry").get_package("js-debug-adapter"):get_install_path()
-              .. "/js-debug/src/dapDebugServer.js",
-            "${port}",
-          },
-        },
-      }
-    end
-    if not dap.adapters.node then
-      dap.adapters.node = function(cb, config)
-        if config.type == "node" then config.type = "pwa-node" end
-        local pwa_adapter = dap.adapters["pwa-node"]
-        if type(pwa_adapter) == "function" then
-          pwa_adapter(cb, config)
-        else
-          cb(pwa_adapter)
-        end
-      end
-    end
-
-    local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
-    local js_config = {
-      {
-        type = "pwa-node",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        cwd = "${workspaceFolder}",
-      },
-      {
-        type = "pwa-node",
-        request = "attach",
-        name = "Attach",
-        processId = require("dap.utils").pick_process,
-        cwd = "${workspaceFolder}",
-      },
-    }
-
-    for _, language in ipairs(js_filetypes) do
-      if not dap.configurations[language] then dap.configurations[language] = js_config end
-    end
-
-    local vscode_filetypes = require("dap.ext.vscode").type_to_filetypes
-    vscode_filetypes["node"] = js_filetypes
-    vscode_filetypes["pwa-node"] = js_filetypes
-  end,
 }
