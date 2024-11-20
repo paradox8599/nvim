@@ -87,6 +87,7 @@ return {
     priority = 1000,
     lazy = false,
     keys = {
+      { "<leader>uD", function() require("snacks.notifier").hide() end, desc = "Dismiss all Snacks Notifications" },
       { "<leader>gb", function() require("snacks").git.blame_line() end, desc = "Git blame line" },
       { "<leader>gf", function() require("snacks").lazygit.log_file() end, desc = "Lazygit Current File History" },
       { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Log (cwd)" },
@@ -102,10 +103,10 @@ return {
     },
 
     opts = {
+      notifier = { enabled = true },
       bigfile = { enabled = true },
       git = { enabled = true },
       lazygit = { enabled = true },
-      notifier = { enabled = true },
       quickfile = { enabled = true },
       words = { enabled = true },
       terminal = { enabled = true },
@@ -126,7 +127,7 @@ return {
         -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
         sections = {
           { section = "header" },
-          -- { section = "keys", gap = 1, padding = 2 },
+          { section = "keys", gap = 1, padding = 2 },
           {
             pane = 1,
             gap = 1,
@@ -166,6 +167,7 @@ return {
 
   {
     "keaising/im-select.nvim",
+    event = "VeryLazy",
     opts = {
       default_im_select = utils.is_win and "3081" or nil,
     },

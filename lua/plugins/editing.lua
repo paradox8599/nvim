@@ -2,6 +2,7 @@ local utils = require "utils"
 return {
   {
     "Exafunction/codeium.nvim",
+    event = "VeryLazy",
     opts = {
       enable_cmp_source = false,
       virtual_text = {
