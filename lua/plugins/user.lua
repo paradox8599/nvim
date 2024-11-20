@@ -1,5 +1,4 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
+local utils = require "utils"
 
 ---@type LazySpec
 return {
@@ -162,6 +161,13 @@ return {
           { section = "startup" },
         },
       },
+    },
+  },
+
+  {
+    "keaising/im-select.nvim",
+    opts = {
+      default_im_select = utils.is_win and "3081" or nil,
     },
   },
 }
