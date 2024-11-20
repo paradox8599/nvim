@@ -167,6 +167,7 @@ return {
 
   {
     "keaising/im-select.nvim",
+    enabled = utils.is_win,
     event = "VeryLazy",
     opts = {
       default_im_select = utils.is_win and "3081" or nil,
