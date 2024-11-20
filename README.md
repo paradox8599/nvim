@@ -2,7 +2,7 @@
 
 A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-## 🛠️ Installation
+## Installation
 
 ### Install Dependencies
 
