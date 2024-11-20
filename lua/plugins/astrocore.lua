@@ -106,8 +106,8 @@ return {
       },
 
       i = {
-        ["jk"] = { "<Esc>", desc = "Exit insert mode" },
-        ["jj"] = { "<Esc>", desc = "Exit insert mode" },
+        -- ["jk"] = { "<Esc>", desc = "Exit insert mode" },
+        -- ["jj"] = { "<Esc>", desc = "Exit insert mode" },
       },
     },
   },

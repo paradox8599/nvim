@@ -3,34 +3,20 @@
 
 ---@type LazySpec
 return {
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        -- " █████  ███████ ████████ ██████   ██████",
-        -- "██   ██ ██         ██    ██   ██ ██    ██",
-        -- "███████ ███████    ██    ██████  ██    ██",
-        -- "██   ██      ██    ██    ██   ██ ██    ██",
-        -- "██   ██ ███████    ██    ██   ██  ██████",
-        -- "",
-        -- "███    ██ ██    ██ ██ ███    ███",
-        -- "████   ██ ██    ██ ██ ████  ████",
-        -- "██ ██  ██ ██    ██ ██ ██ ████ ██",
-        -- "██  ██ ██  ██  ██  ██ ██  ██  ██",
-        -- "██   ████   ████   ██ ██      ██",
-        "",
-        "██    ██ ███████  ██████  ██████  ██████  ███████",
-        "██    ██ ██      ██      ██    ██ ██   ██ ██     ",
-        "██    ██ ███████ ██      ██    ██ ██   ██ █████  ",
-        " ██  ██       ██ ██      ██    ██ ██   ██ ██     ",
-        "  ████   ███████  ██████  ██████  ██████  ███████",
-      }
-      return opts
-    end,
-  },
-
-  { "max397574/better-escape.nvim", enabled = false },
+  -- {
+  --   "goolord/alpha-nvim",
+  --   opts = function(_, opts)
+  --     -- customize the dashboard header
+  --     opts.section.header.val = {
+  --       "██    ██ ███████  ██████  ██████  ██████  ███████",
+  --       "██    ██ ██      ██      ██    ██ ██   ██ ██     ",
+  --       "██    ██ ███████ ██      ██    ██ ██   ██ █████  ",
+  --       " ██  ██       ██ ██      ██    ██ ██   ██ ██     ",
+  --       "  ████   ███████  ██████  ██████  ██████  ███████",
+  --     }
+  --     return opts
+  --   end,
+  -- },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
@@ -94,5 +80,88 @@ return {
         -- status.component.mode { surround = { separator = "right" } },
       }
     end,
+  },
+
+  {
+    "folke/snacks.nvim",
+    dependencies = { { "goolord/alpha-nvim", enabled = false } },
+    priority = 1000,
+    lazy = false,
+    keys = {
+      { "<leader>gb", function() require("snacks").git.blame_line() end, desc = "Git blame line" },
+      { "<leader>gf", function() require("snacks").lazygit.log_file() end, desc = "Lazygit Current File History" },
+      { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Log (cwd)" },
+      { "<leader>br", function() require("snacks").rename.rename_file() end, desc = "Rename File" },
+      { "<leader>h", function() require("snacks").dashboard() end, desc = "Git blame line" },
+      { "]]", function() require("snacks").words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+      {
+        "[[",
+        function() require("snacks").words.jump(-vim.v.count1) end,
+        desc = "Prev Reference",
+        mode = { "n", "t" },
+      },
+    },
+
+    opts = {
+      bigfile = { enabled = true },
+      git = { enabled = true },
+      lazygit = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      words = { enabled = true },
+      terminal = { enabled = true },
+      dashboard = {
+        enabled = true,
+        preset = {
+          header = [[
+
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+]],
+        },
+
+        -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
+        sections = {
+          { section = "header" },
+          -- { section = "keys", gap = 1, padding = 2 },
+          {
+            pane = 1,
+            gap = 1,
+            icon = " ",
+            title = " Recent",
+            section = "recent_files",
+            indent = 4,
+            padding = 1,
+          },
+          {
+            pane = 1,
+            gap = 1,
+            icon = " ",
+            title = " Projects",
+            section = "projects",
+            indent = 4,
+            padding = 4,
+          },
+          -- {
+          --   pane = 1,
+          --   icon = " ",
+          --   title = " Git Status",
+          --   section = "terminal",
+          --   enabled = vim.fn.isdirectory ".git" == 1,
+          --   cmd = "git status --short --branch --renames",
+          --   height = 9,
+          --   gap = 1,
+          --   padding = 1,
+          --   ttl = 3 * 60,
+          --   indent = 4,
+          -- },
+          { section = "startup" },
+        },
+      },
+    },
   },
 }

@@ -86,8 +86,9 @@ return {
   --   "AbdelrahmanDwedar/awesome-nvim-colorschemes",
   --   priority = 1000,
   --   config = function()
-  --     require("catppuccin").setup {}
-  --     vim.cmd.colorscheme "catppuccin"
+  --     local theme = "catppuccin"
+  --     require(theme).setup {}
+  --     vim.cmd.colorscheme(theme)
   --   end,
   -- },
 
