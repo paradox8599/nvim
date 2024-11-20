@@ -1,3 +1,5 @@
+local utils = require "plugins.utils"
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
@@ -34,7 +36,7 @@ return {
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
-  -- { import = "astrocommunity/pack/nix" },
+  { import = "astrocommunity/pack/nix", enabled = utils.is_linux },
   -- { import = "astrocommunity/pack/bash" },
   -- { import = "astrocommunity/pack/dart" },
 
