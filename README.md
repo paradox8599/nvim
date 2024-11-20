@@ -23,7 +23,7 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
--Windows
+- Windows
 
 ```powershell
 mv ~\AppData\Local\nvim ~\AppData\Local\nvim.bak
