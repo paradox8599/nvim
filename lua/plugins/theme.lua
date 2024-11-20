@@ -147,14 +147,4 @@ return {
       "rcarriga/nvim-notify",
     },
   },
-
-  {
-    "folke/twilight.nvim",
-    keys = { { "<leader>uW", "<cmd>Twilight<cr>", desc = "Toggle Twilight" } },
-    cmd = {
-      "Twilight",
-      "TwilightEnable",
-      "TwilightDisable",
-    },
-  },
 }
