@@ -1,5 +1,6 @@
 return {
   "karb94/neoscroll.nvim",
+  event = "VeryLazy",
   enabled = not vim.g.neovide,
   opts = {
     hide_cursor = true, -- Hide cursor while scrolling
