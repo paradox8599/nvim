@@ -167,10 +167,10 @@ return {
 
   {
     "keaising/im-select.nvim",
-    enabled = utils.is_win,
+    enabled = not utils.is_linux,
     event = "VeryLazy",
     opts = {
-      default_im_select = utils.is_win and "3081" or nil,
+      default_im_select = utils.is_win and "3081" or utils.is_mac and "com.apple.keylayout.Australian" or "us",
     },
   },
 }
