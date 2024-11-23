@@ -1,4 +1,4 @@
-local utils = require "plugins.utils"
+local utils = require "utils"
 
 ---@type LazySpec
 return {
@@ -32,7 +32,7 @@ return {
   -- { import = "astrocommunity/pack/html-css" },
   { import = "astrocommunity/pack/python" },
   { import = "astrocommunity/pack/docker" },
-  { import = "astrocommunity/pack/markdown" },
+  -- { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
