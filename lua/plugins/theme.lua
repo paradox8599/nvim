@@ -1,3 +1,4 @@
+local utils = require "utils"
 return {
   {
     "shellRaining/hlchunk.nvim",
@@ -132,8 +133,7 @@ return {
 
   {
     "folke/noice.nvim",
-    -- enabled = false,
-    cond = not vim.g.started_by_firenvim,
+    cond = not vim.g.started_by_firenvim and not utils.is_linux,
     event = "VeryLazy",
     opts = {
       lsp = { hover = { enabled = false }, signature = { enabled = false } },
