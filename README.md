@@ -19,15 +19,15 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 - Linux & MacOS
 
-```shell
-mv ~/.config/nvim ~/.config/nvim.bak
-```
+  ```shell
+  mv ~/.config/nvim ~/.config/nvim.bak
+  ```
 
 - Windows
 
-```powershell
-mv ~\AppData\Local\nvim ~\AppData\Local\nvim.bak
-```
+  ```powershell
+  mv ~\AppData\Local\nvim ~\AppData\Local\nvim.bak
+  ```
 
 ### Clone the repository
 
