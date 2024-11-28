@@ -3,7 +3,7 @@ return {
   -- firenvim
   {
     "glacambre/firenvim",
-    enabled = true,
+    cond = not utils.is_linux,
     lazy = not vim.g.started_by_firenvim,
     build = ":call firenvim#install(0)",
     config = function()
