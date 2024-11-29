@@ -1,3 +1,4 @@
+if true then return {} end
 -- https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/pack/typescript/init.lua
 
 local function decode_json(filename)
