@@ -31,7 +31,7 @@ local has_prettier = function(bufnr)
       ignore = {
         servers = function(client)
           return not vim.tbl_contains({
-            -- "eslint",
+            "eslint",
             "ts_ls",
             "typescript-tools",
             "volar",
@@ -146,7 +146,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "vtsls",
-        -- "eslint",
+        "eslint",
       })
     end,
   },
@@ -188,7 +188,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "vtsls",
-        -- "eslint-lsp",
+        "eslint-lsp",
         "prettierd",
         "js-debug-adapter",
       })
