@@ -17,10 +17,12 @@ require("lazy").setup({
   -- Configure any other `lazy.nvim` configuration options here
 
   concurrency = (vim.uv.available_parallelism() * 2),
-  install = { colorscheme = { "astrotheme", "habamax" } },
+  install = { colorscheme = { "astrotheme" } },
   ui = { backdrop = 100 },
   performance = {
     rtp = {
+      -- Prevent Lazy.nvim from resetting packpath which is needed for Nix-installed plugins
+      -- reset = false,
       -- disable some rtp plugins, add more to your liking
       disabled_plugins = {
         "gzip",
