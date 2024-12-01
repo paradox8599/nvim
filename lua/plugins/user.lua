@@ -110,11 +110,12 @@ return {
       quickfile = { enabled = true },
       words = { enabled = true },
       terminal = { enabled = true },
+
+      -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
       dashboard = {
         enabled = true,
         preset = {
           header = [[
-
 ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
 ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
 ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
@@ -123,8 +124,6 @@ return {
 ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]],
         },
-
-        -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
         sections = {
           { section = "header" },
           { section = "keys", gap = 1, padding = 2 },
