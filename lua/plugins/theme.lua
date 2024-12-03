@@ -1,4 +1,3 @@
-local utils = require "utils"
 return {
   {
     "shellRaining/hlchunk.nvim",
