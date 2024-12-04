@@ -1,9 +1,8 @@
-local is_win = require("utils").is_win
 -- https://github.com/vyfor/cord.nvim
 return {
   {
     "vyfor/cord.nvim",
-    build = is_win and "build" or "./build",
+    build = require("utils").is_win and "build" or "./build",
     enabled = true,
     event = "VeryLazy",
     opts = {
