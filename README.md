@@ -2,9 +2,9 @@
 
 A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-## Installation
+## Getting Started
 
-### Install Dependencies
+### Extra Dependencies
 
 - bottom
 - fd-find
@@ -14,6 +14,9 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - ripgrep
 - sad
 - yazi
+- lazygit
+- lazydocker
+- deno
 
 ### Make a backup of your current nvim configs
 
@@ -34,11 +37,11 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - Linux & MacOS
 
   ```shell
-  git clone https://github.com/paradox8599/nvim ~/.config/nvim
+  git clone git@github.com:paradox8599/nvim.git ~/.config/nvim
   ```
 
 - Windows
 
   ```powershell
-  git clone https://github.com/paradox8599/nvim ~/AppData/Local/nvim
+  git clone git@github.com:paradox8599/nvim.git ~/AppData/Local/nvim
   ```
