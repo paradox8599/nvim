@@ -175,6 +175,7 @@ return {
 
   {
     "mistricky/codesnap.nvim",
+    cond = not utils.is_win,
     build = "make",
     keys = {
       {
