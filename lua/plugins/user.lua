@@ -172,4 +172,39 @@ return {
       default_im_select = utils.is_win and "3081" or utils.is_mac and "com.apple.keylayout.Australian" or "us",
     },
   },
+
+  {
+    "mistricky/codesnap.nvim",
+    build = "make",
+    keys = {
+      {
+        "<leader>cc",
+        "<Esc><cmd>CodeSnap<cr>",
+        mode = { "x", "v" },
+        desc = "Save selected [C]ode snapshot into clipboard",
+      },
+      {
+        "<leader>ca",
+        "<Esc><cmd>CodeSnapASCII<cr>",
+        mode = { "x", "v" },
+        desc = "Save selected code snapshot in [A]SCII",
+      },
+      {
+        "<leader>ch",
+        "<Esc><cmd>CodeSnapHighlight<cr>",
+        mode = { "x", "v" },
+        desc = "Save selected code snapshot [H]ighlighted",
+      },
+    },
+    opts = {
+      mac_window_bar = false,
+      title = "",
+      code_font_family = "JetBrainsMonoNL Nerd Font",
+      watermark = "",
+      bg_theme = "default",
+      has_breadcrumbs = false,
+      has_line_number = true,
+      show_workspace = false,
+    },
+  },
 }
