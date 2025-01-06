@@ -2,8 +2,9 @@ local utils = require "utils"
 return {
   {
     "Exafunction/codeium.nvim",
-    event = "VeryLazy",
+    enabled = false,
     opts = {
+      -- enable_chat = true,
       enable_cmp_source = false,
       virtual_text = {
         enabled = true,
@@ -26,7 +27,7 @@ return {
         accept_fallback = nil,
         -- Key bindings for managing completions in virtual text mode.
         key_bindings = {
-          accept = "<C-g>",
+          accept = "<C-k>",
           accept_word = "<C-w>",
           accept_line = "<C-l>",
           clear = "<C-x>",
