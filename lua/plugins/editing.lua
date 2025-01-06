@@ -2,7 +2,7 @@ local utils = require "utils"
 return {
   {
     "Exafunction/codeium.nvim",
-    enabled = false,
+    enabled = not utils.is_linux,
     opts = {
       -- enable_chat = true,
       enable_cmp_source = false,
