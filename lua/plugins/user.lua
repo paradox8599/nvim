@@ -81,6 +81,7 @@ return {
     end,
   },
 
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
   {
     "folke/snacks.nvim",
     dependencies = { { "goolord/alpha-nvim", enabled = false } },
@@ -92,7 +93,7 @@ return {
       { "<leader>gf", function() require("snacks").lazygit.log_file() end, desc = "Lazygit Current File History" },
       { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Log (cwd)" },
       { "<leader>br", function() require("snacks").rename.rename_file() end, desc = "Rename File" },
-      { "<leader>h", function() require("snacks").dashboard() end, desc = "Git blame line" },
+      { "<leader>h", function() require("snacks").dashboard() end, desc = "Dashboard" },
       { "]]", function() require("snacks").words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
       {
         "[[",
@@ -103,13 +104,22 @@ return {
     },
 
     opts = {
-      -- notifier = { enabled = true },
       bigfile = { enabled = true },
       git = { enabled = true },
       lazygit = { enabled = true },
       quickfile = { enabled = true },
       words = { enabled = true },
       terminal = { enabled = true },
+      indent = {
+        enabled = true,
+        animate = {
+          enabled = true,
+          style = "down",
+          druation = { step = 20, total = 200 },
+        },
+        scope = { enabled = false, underline = true },
+        chunk = { enabled = true },
+      },
 
       -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
       dashboard = {
