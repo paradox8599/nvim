@@ -2,7 +2,8 @@ local utils = require "utils"
 return {
   {
     "Exafunction/codeium.nvim",
-    enabled = not utils.is_linux,
+    -- enabled = not utils.is_linux,
+    enabled = false,
     opts = {
       -- enable_chat = true,
       enable_cmp_source = false,
@@ -36,6 +37,40 @@ return {
         },
       },
     },
+  },
+
+  {
+    "Exafunction/codeium.vim",
+    enabled = true,
+    event = "BufEnter",
+    config = function()
+      vim.keymap.set("i", "<C-k>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
+      vim.keymap.set(
+        "i",
+        "<C-l>",
+        function() return vim.fn["codeium#AcceptNextLine"]() end,
+        { expr = true, silent = true }
+      )
+      vim.keymap.set(
+        "i",
+        "<C-g>",
+        function() return vim.fn["codeium#AcceptNextWord"]() end,
+        { expr = true, silent = true }
+      )
+      vim.keymap.set(
+        "i",
+        "<A-.>",
+        function() return vim.fn["codeium#CycleCompletions"](1) end,
+        { expr = true, silent = true }
+      )
+      vim.keymap.set(
+        "i",
+        "<A-,>",
+        function() return vim.fn["codeium#CycleCompletions"](-1) end,
+        { expr = true, silent = true }
+      )
+      vim.keymap.set("i", "<C-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true, silent = true })
+    end,
   },
 
   -- nvim-surround
