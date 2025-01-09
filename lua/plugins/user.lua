@@ -111,13 +111,14 @@ return {
     },
 
     opts = {
-      bigfile = { enabled = true },
+      bigfile = { notify = true, size = 1 * 1024 * 1024 },
       git = { enabled = true },
       lazygit = { enabled = true },
       quickfile = { enabled = true },
       words = { enabled = true },
-      terminal = { enabled = true },
+      terminal = { enabled = false },
       scratch = {},
+
       indent = {
         enabled = true,
         animate = {
