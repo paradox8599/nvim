@@ -106,6 +106,8 @@ return {
         desc = "Prev Reference",
         mode = { "n", "t" },
       },
+      { "<leader>.", function() require("snacks").scratch() end, desc = "Toggle Scratch Buffer" },
+      { "<leader>,", function() require("snacks").scratch.select() end, desc = "Select Scratch Buffer" },
     },
 
     opts = {
@@ -115,6 +117,7 @@ return {
       quickfile = { enabled = true },
       words = { enabled = true },
       terminal = { enabled = true },
+      scratch = {},
       indent = {
         enabled = true,
         animate = {
