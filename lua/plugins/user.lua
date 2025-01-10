@@ -99,7 +99,12 @@ return {
       { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Log (cwd)" },
       { "<leader>br", function() require("snacks").rename.rename_file() end, desc = "Rename File" },
       { "<leader>h", function() require("snacks").dashboard() end, desc = "Dashboard" },
-      { "]]", function() require("snacks").words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+      {
+        "]]",
+        function() require("snacks").words.jump(vim.v.count1) end,
+        desc = "Next Reference",
+        mode = { "n", "t" },
+      },
       {
         "[[",
         function() require("snacks").words.jump(-vim.v.count1) end,
