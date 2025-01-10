@@ -225,6 +225,7 @@ return {
       has_breadcrumbs = false,
       has_line_number = true,
       show_workspace = false,
+      bg_padding = 20,
     },
   },
 }
