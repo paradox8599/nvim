@@ -86,12 +86,19 @@ return {
     end,
   },
 
-  { "lukas-reineke/indent-blankline.nvim", enabled = false },
   {
     "folke/snacks.nvim",
-    dependencies = { { "goolord/alpha-nvim", enabled = false } },
+
+    dependencies = {
+      -- disables duplicate plugins
+      { "goolord/alpha-nvim", enabled = false },
+      { "lukas-reineke/indent-blankline.nvim", enabled = false },
+      { "RRethy/vim-illuminate", enabled = false },
+    },
+
     priority = 1000,
     lazy = false,
+
     keys = {
       -- { "<leader>uD", function() require("snacks.notifier").hide() end, desc = "Dismiss all Snacks Notifications" },
       { "<leader>gb", function() require("snacks").git.blame_line() end, desc = "Git blame line" },
@@ -120,7 +127,15 @@ return {
       git = { enabled = true },
       lazygit = { enabled = true },
       quickfile = { enabled = true },
-      words = { enabled = true },
+      words = {
+        enabled = true,
+        debounce = 200, -- time in ms to wait before updating
+        notify_jump = false, -- show a notification when jumping
+        notify_end = true, -- show a notification when reaching the end
+        foldopen = true, -- open folds after jumping
+        jumplist = true, -- set jump point before jumping
+        modes = { "n", "i", "c" }, -- modes to show references
+      },
       terminal = { enabled = false },
       scratch = {},
 
@@ -129,7 +144,7 @@ return {
         animate = {
           enabled = true,
           style = "down",
-          druation = { step = 20, total = 200 },
+          druation = { step = 20, total = 120 },
         },
         scope = { enabled = false, underline = true },
         chunk = { enabled = true },
