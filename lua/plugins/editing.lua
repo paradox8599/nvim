@@ -44,7 +44,7 @@ return {
     enabled = true,
     event = "BufEnter",
     config = function()
-      vim.keymap.set("i", "<C-k>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
+      vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
       vim.keymap.set(
         "i",
         "<C-l>",
@@ -53,7 +53,7 @@ return {
       )
       vim.keymap.set(
         "i",
-        "<C-g>",
+        "<C-w>",
         function() return vim.fn["codeium#AcceptNextWord"]() end,
         { expr = true, silent = true }
       )
