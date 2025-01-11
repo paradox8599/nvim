@@ -19,9 +19,7 @@ return {
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
 
-  -- { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
-
-  -- { import = "astrocommunity/pack/cs", enabled = utils.is_win, ft = { "cs", "csproj", "sln" } },
+  utils.is_win and { import = "astrocommunity/pack/cs", ft = { "cs", "csproj", "sln" } } or {},
   { import = "astrocommunity/pack/lua" },
   { import = "astrocommunity/pack/cpp" },
   { import = "astrocommunity/pack/rust" },
