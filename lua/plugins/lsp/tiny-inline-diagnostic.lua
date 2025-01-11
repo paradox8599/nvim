@@ -1,3 +1,5 @@
+-- fancy diagnostic
+
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
   event = "LspAttach",

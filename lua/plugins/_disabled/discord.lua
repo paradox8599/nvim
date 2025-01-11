@@ -4,6 +4,26 @@ return {
     "vyfor/cord.nvim",
     build = require("utils").is_win and "build" or "./build",
     event = "VeryLazy",
+
+    dependencies = {
+      {
+        -- this is only for discord rich presence
+        -- toggleterm lazygit won't be recognized
+        -- lazygit is not enabled by this plugin
+        "kdheepak/lazygit.nvim",
+        cmd = {
+          "LazyGit",
+          "LazyGitConfig",
+          "LazyGitCurrentFile",
+          "LazyGitFilter",
+          "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+        },
+      },
+    },
     opts = {
       usercmds = true, -- Enable user commands
       log_level = "off", -- One of 'trace', 'debug', 'info', 'warn', 'error', 'off'

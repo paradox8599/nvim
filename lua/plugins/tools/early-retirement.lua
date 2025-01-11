@@ -1,3 +1,4 @@
+-- auto close inactive files
 return {
   "chrisgrieser/nvim-early-retirement",
   event = "VeryLazy",
