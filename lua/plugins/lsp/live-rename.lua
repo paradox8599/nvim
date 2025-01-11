@@ -1,5 +1,6 @@
 return {
   "saecki/live-rename.nvim",
+  keys = { "<Leader>lr", desc = "Rename current symbol" },
   dependencies = {
     {
       "AstroNvim/astrolsp",

@@ -46,7 +46,7 @@ return {
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
-  { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
+  -- { import = "astrocommunity/terminal-integration/flatten-nvim" }, -- flatten file buffer opened in terminal
 
   -- { import = "astrocommunity/test/neotest" },
 }

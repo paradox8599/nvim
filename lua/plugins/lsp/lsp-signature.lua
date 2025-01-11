@@ -1,3 +1,7 @@
 -- show function signature
 
-return { "ray-x/lsp_signature.nvim", event = "BufRead", opts = {} }
+return {
+  "ray-x/lsp_signature.nvim",
+  event = "LspAttach",
+  opts = {},
+}

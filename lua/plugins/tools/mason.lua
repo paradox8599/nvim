@@ -35,6 +35,6 @@ return {
         -- add more arguments for adding more debuggers
       },
     },
-    config = function() require("overseer").enable_dap() end,
+    -- config = function() require("overseer").enable_dap() end,
   },
 }

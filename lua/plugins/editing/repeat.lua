@@ -1,5 +1,5 @@
 return {
   "tpope/vim-repeat",
-  event = "User AstroFile",
+  event = "VeryLazy",
   config = function() end,
 }

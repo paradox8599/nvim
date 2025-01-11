@@ -76,8 +76,6 @@ return {
         ["<Leader>k"] = { "<cmd>b#<cr>", desc = "Last buffer" },
         ["<Leader>lc"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
 
-        ["<Leader>uB"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
-
         -- navigate buffer tabs
         ["<tab>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<S-tab>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
