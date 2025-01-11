@@ -12,12 +12,12 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - gdu-go
 - jq
 - ripgrep
-- sad
 - yazi
 - lazygit
 - lazydocker
-- deno
-- diff-so-fancy
+  <!-- - sad -->
+  <!-- - deno -->
+  <!-- - diff-so-fancy -->
 
 ### Make a backup of your current nvim configs
 
