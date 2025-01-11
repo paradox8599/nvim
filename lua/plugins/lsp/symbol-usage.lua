@@ -1,3 +1,5 @@
+-- show counts of references, definitions, implementations, etc.
+
 -- local SymbolKind = vim.lsp.protocol.SymbolKind
 
 local function h(name) return vim.api.nvim_get_hl(0, { name = name }) end

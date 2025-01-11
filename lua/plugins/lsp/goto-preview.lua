@@ -1,3 +1,5 @@
+-- preview definition/references/... in a floating window
+
 return {
   "rmagatti/goto-preview",
   event = "BufEnter",
