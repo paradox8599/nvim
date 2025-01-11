@@ -1,4 +1,4 @@
-local utils = require "utils"
+local utils = require "./utils"
 
 ---@type LazySpec
 return {
@@ -18,7 +18,6 @@ return {
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
-  -- { import = "astrocommunity/lsp/inc-rename-nvim" },
 
   -- { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 

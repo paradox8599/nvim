@@ -1,5 +1,5 @@
 -- https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/pack/cs/init.lua
-local utils = require "utils"
+local utils = require "../../utils"
 if not utils.is_win then return {} end
 
 return {
