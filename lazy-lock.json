@@ -105,6 +105,7 @@
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "d850f21b5bd1e3978ada68c441e156674459a3a5" },
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
+  "transparent.nvim": { "branch": "main", "commit": "8a2749a2fa74f97fe6557f61b89ac7fd873f3c21" },
   "treesj": { "branch": "main", "commit": "ec234a9a13d61a7b95900abdb02fabaea1afd9f3" },
   "tsc.nvim": { "branch": "main", "commit": "59abb6f3f24a3ca80708f694af4e2b727a1a3211" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "9e3209190c22953566ae4e6436ad2b4ff4dabb95" },
