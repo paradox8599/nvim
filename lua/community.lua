@@ -4,10 +4,9 @@ local utils = require "./utils"
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" }, -- line max characters indicator
-  { import = "astrocommunity/color/ccc-nvim" }, -- color picker
   { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
 
-  -- { import = "astrocommunity/color/transparent-nvim" },
+  { import = "astrocommunity/color/transparent-nvim" },
 
   { import = "astrocommunity/completion/cmp-cmdline" }, -- command auto completion
   -- { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
