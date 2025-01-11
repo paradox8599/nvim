@@ -1,3 +1,5 @@
+-- local SymbolKind = vim.lsp.protocol.SymbolKind
+
 local function h(name) return vim.api.nvim_get_hl(0, { name = name }) end
 
 -- hl-groups can have any name
@@ -104,10 +106,23 @@ return {
     "Wansmer/symbol-usage.nvim",
     -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
     event = "LspAttach",
+    keys = {
+      {
+        "<leader>ux",
+        function() require("symbol-usage").toggle() end,
+        desc = "Toggle symbol usage for current buffer",
+      },
+      {
+        "<leader>uX",
+        function() require("symbol-usage").toggle_globally() end,
+        desc = "Toggle symbol usage globally",
+      },
+    },
     opts = {
       text_format = text_format,
       ---@type 'above'|'end_of_line'|'textwidth'|'signcolumn' `above` by default
       vt_position = "above",
+      request_pending_text = "loading...",
       references = { enabled = true, include_declaration = false },
       definition = { enabled = true },
       implementation = { enabled = true },
