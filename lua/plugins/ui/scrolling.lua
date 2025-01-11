@@ -1,6 +1,7 @@
 return {
   {
     "gen740/SmoothCursor.nvim",
+    event = "VeryLazy",
     enabled = true and not vim.g.neovim,
     opts = {
       type = "default", -- default, exp, matrix

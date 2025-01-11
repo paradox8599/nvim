@@ -1,7 +1,7 @@
 -- auto close inactive files
 return {
   "chrisgrieser/nvim-early-retirement",
-  event = "VeryLazy",
+  event = "BufEnter",
   opts = {
     -- If a buffer has been inactive for this many minutes, close it.
     retirementAgeMins = 30,

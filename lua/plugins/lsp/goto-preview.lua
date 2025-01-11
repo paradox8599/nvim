@@ -2,7 +2,7 @@
 
 return {
   "rmagatti/goto-preview",
-  event = "BufEnter",
+  -- event = "BufEnter",
   keys = {
     { "gpd", function() require("goto-preview").goto_preview_definition {} end, desc = "Goto Preview [D]efinition" },
     {
