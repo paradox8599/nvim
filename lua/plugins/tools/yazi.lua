@@ -27,6 +27,6 @@ return {
     -- if you want to open yazi instead of netrw, see below for more info
     open_for_directories = false,
     log_level = vim.log.levels.OFF,
-    keymaps = { show_help = "<f1>", },
+    keymaps = { show_help = "<f1>" },
   },
 }
