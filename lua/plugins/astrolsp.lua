@@ -43,34 +43,13 @@ return {
     config = {
       -- https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-9848843
       tailwindcss = {
-        settings = {
-          tailwindCSS = {
-            lint = {
-              invalidApply = "warning",
-            },
-          },
-        },
+        settings = { tailwindCSS = { lint = { invalidApply = "warning" } } },
       },
       cssls = {
         settings = {
-          css = {
-            validate = true,
-            lint = {
-              unknownAtRules = "ignore",
-            },
-          },
-          less = {
-            validate = true,
-            lint = {
-              unknownAtRules = "ignore",
-            },
-          },
-          scss = {
-            validate = true,
-            lint = {
-              unknownAtRules = "ignore",
-            },
-          },
+          css = { validate = true, lint = { unknownAtRules = "ignore" } },
+          less = { validate = true, lint = { unknownAtRules = "ignore" } },
+          scss = { validate = true, lint = { unknownAtRules = "ignore" } },
         },
       },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
