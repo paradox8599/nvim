@@ -85,6 +85,7 @@
   "overseer.nvim": { "branch": "master", "commit": "2a2b6fe1e04dec2c2e5b6b4deec2894153002778" },
   "package-info.nvim": { "branch": "master", "commit": "3de4f3569ce60e248707df042b72769b3ec343b8" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "precognition.nvim": { "branch": "main", "commit": "531971e6d883e99b1572bf47294e22988d8fbec0" },
   "promise-async": { "branch": "main", "commit": "38a4575da9497326badd3995e768b4ccf0bb153e" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "5578ca6709e0e9a0c76fc7c484b9951b428cbb71" },
   "rainbow_csv.nvim": { "branch": "main", "commit": "7f3fddfe813641035fac2cdf94c2ff69bb0bf0b9" },
