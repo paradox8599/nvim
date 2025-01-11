@@ -3,7 +3,6 @@ return {
   {
     "vyfor/cord.nvim",
     build = require("utils").is_win and "build" or "./build",
-    enabled = false,
     event = "VeryLazy",
     opts = {
       usercmds = true, -- Enable user commands
