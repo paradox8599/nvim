@@ -76,7 +76,6 @@ return {
         ["<Leader>k"] = { "<cmd>b#<cr>", desc = "Last buffer" },
         ["<Leader>lc"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
 
-        ["<Leader>bm"] = { "<cmd>PeekOpen<cr>", desc = "Toggle Markdown preview" },
         ["<Leader>uB"] = { "<cmd>HexToggle<cr>", desc = "Toggle Hex Editor" },
 
         -- navigate buffer tabs
