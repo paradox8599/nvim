@@ -6,18 +6,19 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ### Extra Dependencies
 
-- bottom
 - fd-find
 - fzf
-- gdu-go
 - jq
 - ripgrep
 - yazi
 - lazygit
 - lazydocker
-  <!-- - sad -->
-  <!-- - deno -->
-  <!-- - diff-so-fancy -->
+
+<!-- - bottom -->
+<!-- - gdu-go -->
+<!-- - sad -->
+<!-- - deno -->
+<!-- - diff-so-fancy -->
 
 ### Make a backup of your current nvim configs
 
