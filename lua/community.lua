@@ -20,7 +20,7 @@ return {
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
   -- { import = "astrocommunity/lsp/inc-rename-nvim" },
 
-  { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
+  -- { import = "astrocommunity/markdown-and-latex/peek-nvim" }, -- markdown preview window, requires [ deno ]
 
   -- { import = "astrocommunity/pack/cs", enabled = utils.is_win, ft = { "cs", "csproj", "sln" } },
   { import = "astrocommunity/pack/lua" },
