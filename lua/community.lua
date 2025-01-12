@@ -1,4 +1,4 @@
-local utils = require "./utils"
+local os = require "lib.os_detect"
 
 ---@type LazySpec
 return {
@@ -18,7 +18,7 @@ return {
 
   -- { import = "astrocommunity/lsp/garbage-day-nvim" },
 
-  utils.is_win and { import = "astrocommunity/pack/cs", ft = { "cs", "csproj", "sln" } } or {},
+  os.is_win and { import = "astrocommunity/pack/cs", ft = { "cs", "csproj", "sln" } } or {},
   { import = "astrocommunity/pack/lua" },
   { import = "astrocommunity/pack/cpp" },
   { import = "astrocommunity/pack/rust" },
@@ -32,7 +32,7 @@ return {
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
-  { import = "astrocommunity/pack/nix", enabled = utils.is_linux },
+  { import = "astrocommunity/pack/nix", enabled = os.is_linux },
   -- { import = "astrocommunity/pack/bash" },
   -- { import = "astrocommunity/pack/dart" },
 

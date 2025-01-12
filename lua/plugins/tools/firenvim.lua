@@ -1,8 +1,8 @@
-local utils = require "../../utils"
+local os = require "lib.os_detect"
 
 return {
   "glacambre/firenvim",
-  cond = not utils.is_linux,
+  cond = not os.is_linux,
   lazy = not vim.g.started_by_firenvim,
   build = ":call firenvim#install(0)",
   config = function()
