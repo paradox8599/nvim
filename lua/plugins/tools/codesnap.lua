@@ -1,10 +1,10 @@
 -- take code snapshots
 
-local utils = require "../../utils"
+local os = require "lib.os_detect"
 
 return {
   "mistricky/codesnap.nvim",
-  cond = not utils.is_win,
+  cond = not os.is_win,
   build = "make",
   keys = {
     {

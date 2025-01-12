@@ -1,8 +1,11 @@
 -- https://github.com/vyfor/cord.nvim
+
+local os = require "lib.os_detect"
+
 return {
   {
     "vyfor/cord.nvim",
-    build = require("utils").is_win and "build" or "./build",
+    build = os.is_win and "build" or "./build",
     event = "VeryLazy",
 
     dependencies = {

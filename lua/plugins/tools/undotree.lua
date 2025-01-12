@@ -1,4 +1,5 @@
-local utils = require "../../utils"
+local os = require "lib.os_detect"
+
 return {
   "mbbill/undotree",
   keys = {
@@ -9,7 +10,7 @@ return {
     },
   },
   config = function()
-    if utils.is_win then
+    if os.is_win then
       vim.opt.undodir = os.getenv "UserProfile" .. "/.vim/undodir"
     else
       vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
