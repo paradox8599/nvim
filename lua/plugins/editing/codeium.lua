@@ -1,7 +1,6 @@
 return {
   {
     "Exafunction/codeium.nvim",
-    -- enabled = not utils.is_linux,
     enabled = false,
     opts = {
       -- enable_chat = true,
