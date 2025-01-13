@@ -47,3 +47,7 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
   ```powershell
   git clone git@github.com:paradox8599/nvim.git ~/AppData/Local/nvim
   ```
+
+## Empty Keys
+
+- `<leader>`: `ah` `ABDFGH`
