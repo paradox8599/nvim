@@ -17,10 +17,15 @@ return {
     local augend = require "dial.augend"
     require("dial.config").augends:register_group {
       default = {
-        augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
-        augend.constant.alias.bool, -- boolean value (true <-> false)
-        augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
-        -- dates
+        augend.constant.new { elements = { "and", "or" } },
+        augend.constant.new { elements = { "&&", "||" }, word = false },
+        augend.constant.new { elements = { "==", "!=" }, word = false },
+        augend.constant.new { elements = { "===", "!==" }, word = false },
+
+        augend.integer.alias.decimal_int,
+        augend.constant.alias.bool,
+        augend.integer.alias.hex,
+        augend.semver.alias.semver,
         augend.date.alias["%Y/%m/%d"],
         augend.date.alias["%Y-%m-%d"],
         augend.date.alias["%d/%m/%Y"],
