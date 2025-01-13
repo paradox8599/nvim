@@ -8,7 +8,7 @@ return {
     },
 
     keys = {
-      { "<leader>E", function() require("nvim-navbuddy").open() end, desc = "Navbuddy" },
+      { "<leader>a", function() require("nvim-navbuddy").open() end, desc = "Navbuddy" },
     },
 
     opts = { lsp = { auto_attach = true } },
