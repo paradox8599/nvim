@@ -1,5 +1,6 @@
 return {
   "roobert/search-replace.nvim",
+
   config = function()
     -- g: global
     -- c: confirm
@@ -11,7 +12,7 @@ return {
     }
 
     -- show the effects of a search / replace in a live preview window
-    vim.o.inccommand = "split"
+    -- vim.o.inccommand = "split"
   end,
 
   keys = {
@@ -32,7 +33,12 @@ return {
       "<CMD>SearchReplaceMultiBufferSelections<CR>",
       desc = "Search Replace: Multi Buffer Selections",
     },
-    { mode = "n", "<leader>rbo", "<CMD>SearchReplaceMultiBufferOpen<CR>", desc = "Search Replace: Multi Buffer Open" },
+    {
+      mode = "n",
+      "<leader>rbo",
+      "<CMD>SearchReplaceMultiBufferOpen<CR>",
+      desc = "Search Replace: Multi Buffer Open",
+    },
     {
       mode = "n",
       "<leader>rbw",
