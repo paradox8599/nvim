@@ -16,8 +16,6 @@ return {
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
 
-  -- { import = "astrocommunity/lsp/garbage-day-nvim" },
-
   os.is_win and { import = "astrocommunity/pack/cs", ft = { "cs", "csproj", "sln" } } or {},
   { import = "astrocommunity/pack/lua" },
   { import = "astrocommunity/pack/cpp" },
@@ -38,10 +36,6 @@ return {
 
   { import = "astrocommunity/programming-language-support/csv-vim" },
   { import = "astrocommunity/programming-language-support/nvim-jqx" }, -- json, requires [ jq ]
-
-  -- { import = "astrocommunity/scrolling/satellite-nvim" }, -- scrollbar
-  -- { import = "astrocommunity/scrolling/vim-smoothie", cond = not vim.g.neovide },
-  -- { import = "astrocommunity/scrolling/neoscroll-nvim", cond = not vim.g.neovide },
 
   { import = "astrocommunity/search/nvim-hlslens" }, -- seach reuslt index
 
