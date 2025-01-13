@@ -64,7 +64,7 @@ return {
       -- first key is the mode
       n = {
         ["<Esc>"] = { "<cmd>nohlsearch<CR>", desc = "No Highlight" },
-        ["<Leader>z"] = { desc = "Color" },
+        ["<Leader>z"] = { desc = "Utils" },
         ["<Leader>i"] = { desc = "Toggle word under cursor" },
         ["<Leader><Leader>"] = { desc = "Other" },
 
