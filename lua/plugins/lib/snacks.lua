@@ -16,7 +16,7 @@ return {
     { "<leader>gf", function() require("snacks").lazygit.log_file() end, desc = "Lazygit Current File History" },
     { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Log (cwd)" },
     { "<leader>br", function() require("snacks").rename.rename_file() end, desc = "Rename File" },
-    { "<leader>h", function() require("snacks").dashboard() end, desc = "Dashboard" },
+    -- { "<leader>h", function() require("snacks").dashboard() end, desc = "Dashboard" },
     {
       "]]",
       function() require("snacks").words.jump(vim.v.count1) end,
