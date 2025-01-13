@@ -50,6 +50,6 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ## Empty Keys
 
-- `<leader>`: `ahisv` `ABDFGHIJKLMNORTUVWXYZ`
+- `<leader>`: `ahiv` `ABDFGHIJKLMNORTUVWXYZ`
 - `<leader>r`: ~`bcdip`
 
