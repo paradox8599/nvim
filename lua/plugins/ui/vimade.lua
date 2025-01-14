@@ -11,7 +11,7 @@ return {
       ncmode = "windows",
 
       -- any value between 0 and 1. 0 is hidden and 1 is opaque.
-      fadelevel = 0.8,
+      fadelevel = 0.7,
 
       tint = {
         -- bg = { rgb = { 0, 0, 0 }, intensity = 0.1 },
