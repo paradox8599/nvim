@@ -80,5 +80,11 @@ return {
     references = { enabled = true, include_declaration = false },
     definition = { enabled = true },
     implementation = { enabled = true },
+    disable = {
+      filetypes = {
+        "dockerfile",
+        "markdown",
+      },
+    },
   },
 }
