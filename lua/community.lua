@@ -4,7 +4,6 @@ local os = require "lib.os_detect"
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" }, -- line max characters indicator
-  { import = "astrocommunity/color/tint-nvim" }, -- dim inactive window
 
   { import = "astrocommunity/color/transparent-nvim" },
 
