@@ -1,5 +1,6 @@
 return {
   "MagicDuck/grug-far.nvim",
+
   -- config = function()
   --   require("grug-far").setup {
   --     -- options, see Configuration section below
@@ -7,9 +8,11 @@ return {
   --     -- engine = 'ripgrep' is default, but 'astgrep' can be specified
   --   }
   -- end,
+
   opts = {},
 
   keys = {
+    { "<leader>s", desc = "Search and Replace" },
     {
       mode = { "n", "x" },
       "<leader>ss",
@@ -21,7 +24,7 @@ return {
           },
         }
       end,
-      desc = "[F]ile Search and Replace",
+      desc = "File Search and Replace",
     },
 
     {
@@ -32,7 +35,7 @@ return {
           transient = true,
         }
       end,
-      desc = "[G]lobal Search and Replace",
+      desc = "Global Search and Replace",
     },
 
     {
@@ -47,7 +50,7 @@ return {
           },
         }
       end,
-      desc = "File Search [C]ursor Word",
+      desc = "File Search Cursor Word",
     },
 
     {
@@ -61,7 +64,7 @@ return {
           },
         }
       end,
-      desc = "Global Search Cursor [W]ord",
+      desc = "Global Search Cursor Word",
     },
   },
 }
