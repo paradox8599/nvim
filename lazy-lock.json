@@ -29,6 +29,7 @@
   "colortils.nvim": { "branch": "main", "commit": "948d4eddbd20c3e9eac79368dc50c7929d4fb823" },
   "crates.nvim": { "branch": "main", "commit": "bd35b13e94a292ee6e32c351e05ca2202dc9f070" },
   "csv.vim": { "branch": "master", "commit": "44aeb7e26e8b42f7c14c328f16ac4744ae53b22c" },
+  "decipher.nvim": { "branch": "master", "commit": "d77fe3ae256944f5036c9d194572cfa58eaf765f" },
   "dial.nvim": { "branch": "master", "commit": "34bbd9c387c358190e61ce71017faad3dffa7a74" },
   "dressing.nvim": { "branch": "master", "commit": "3a45525bb182730fe462325c99395529308f431e" },
   "firenvim": { "branch": "master", "commit": "f8a5fa6f1ed42536490acf0840497c40331c184f" },
