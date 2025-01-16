@@ -2,7 +2,6 @@ return {
   {
     "gen740/SmoothCursor.nvim",
     event = "BufEnter",
-    enabled = true and not vim.g.neovim,
     opts = {
       type = "default", -- default, exp, matrix
       fancy = {
