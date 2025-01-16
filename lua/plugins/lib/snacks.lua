@@ -57,8 +57,8 @@ return {
         style = "down",
         druation = { step = 20, total = 120 },
       },
-      scope = { enabled = false, underline = true },
-      chunk = { enabled = true },
+      scope = { enabled = true, underline = false },
+      chunk = { enabled = false },
     },
 
     -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
