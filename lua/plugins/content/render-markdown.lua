@@ -6,7 +6,7 @@ return {
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {},
-  event = "User AstroFile",
+  ft = { "markdown" },
   keys = {
     { "<leader>um", function() require("render-markdown").toggle() end, desc = "Toggle Render Markdown" },
   },
