@@ -31,6 +31,7 @@
   "decipher.nvim": { "branch": "master", "commit": "d77fe3ae256944f5036c9d194572cfa58eaf765f" },
   "dial.nvim": { "branch": "master", "commit": "34bbd9c387c358190e61ce71017faad3dffa7a74" },
   "dressing.nvim": { "branch": "master", "commit": "3a45525bb182730fe462325c99395529308f431e" },
+  "eyeliner.nvim": { "branch": "main", "commit": "8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6" },
   "firenvim": { "branch": "master", "commit": "f8a5fa6f1ed42536490acf0840497c40331c184f" },
   "flash.nvim": { "branch": "main", "commit": "34c7be146a91fec3555c33fe89c7d643f6ef5cf1" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
