@@ -3,8 +3,6 @@ local os = require "lib.os_detect"
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity/bars-and-lines/smartcolumn-nvim" }, -- line max characters indicator
-
   { import = "astrocommunity/completion/cmp-cmdline" }, -- command auto completion
   -- { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
