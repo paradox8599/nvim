@@ -96,6 +96,20 @@ return {
         ["gra"] = false,
         ["grr"] = false,
         ["grn"] = false,
+
+        ["<Leader>td"] = {
+          function()
+            local Terminal = require("toggleterm.terminal").Terminal
+            local lazydocker = Terminal:new {
+              cmd = "lazydocker",
+              dir = ".",
+              direction = "float",
+              float_opts = { border = "curved" },
+            }
+            lazydocker:open()
+          end,
+          desc = "ToggleTerm lazydocker",
+        },
       },
       v = {
         ["<Leader>c"] = { desc = "[C]odeSnap" },
