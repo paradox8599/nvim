@@ -110,6 +110,20 @@ return {
           end,
           desc = "ToggleTerm lazydocker",
         },
+
+        ["<Leader>tw"] = {
+          function()
+            local Terminal = require("toggleterm.terminal").Terminal
+            local yazi = Terminal:new {
+              cmd = "yazi",
+              dir = ".",
+              direction = "float",
+              float_opts = { border = "curved" },
+            }
+            yazi:open()
+          end,
+          desc = "Yazi",
+        },
       },
       v = {
         ["<Leader>c"] = { desc = "[C]odeSnap" },
