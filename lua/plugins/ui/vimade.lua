@@ -1,3 +1,5 @@
+-- dim inactive windows
+
 return {
   {
     "tadaa/vimade",
