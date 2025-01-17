@@ -1,3 +1,5 @@
+-- show fFtT unique key highlights
+
 return {
   "jinh0/eyeliner.nvim",
   config = function()

@@ -1,3 +1,5 @@
+-- columns limit highlighter
+
 return {
   "m4xshen/smartcolumn.nvim",
 
