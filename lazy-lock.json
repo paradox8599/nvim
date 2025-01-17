@@ -116,6 +116,5 @@
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "vimade": { "branch": "master", "commit": "29f6c292e5373f129b872ac39d0d1f936d650388" },
-  "which-key.nvim": { "branch": "main", "commit": "8ab96b38a2530eacba5be717f52e04601eb59326" },
-  "yazi.nvim": { "branch": "main", "commit": "f57e1eed86b13eaf51f42a4ef68dbb19bc8d77a4" }
+  "which-key.nvim": { "branch": "main", "commit": "8ab96b38a2530eacba5be717f52e04601eb59326" }
 }
