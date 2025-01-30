@@ -23,6 +23,7 @@ return {
   -- { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
+  -- { import = "astrocommunity/pack/vue" },
   { import = "astrocommunity/pack/yaml" },
   { import = "astrocommunity/pack/nix", enabled = os.is_linux },
   -- { import = "astrocommunity/pack/bash" },
