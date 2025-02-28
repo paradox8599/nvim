@@ -1,11 +1,11 @@
+local osd = require "lib.os_detect"
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   version = "*", -- set this to "*" if you want to always pull the latest change, false to update on release
 
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  -- build = "make",
-  build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false", -- for windows
+  build = osd.is_win and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or "make",
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
