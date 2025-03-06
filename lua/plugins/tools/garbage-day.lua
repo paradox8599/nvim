@@ -8,7 +8,7 @@ return {
     -- Ensures the maximum RAM save.
     aggressive_mode = false,
     -- Seconds to wait before stopping all LSP clients after neovim loses focus
-    grace_period = 60 * 15,
+    grace_period = 60 * 60,
     -- Milliseconds to wait before restoring LSP after the mouse re-enters nvim. Useful to avoid waking up the LSP clients by accident when passing the mouse over it.
     wakeup_delay = 3000,
   },
