@@ -59,7 +59,7 @@ end
 return {
   "Wansmer/symbol-usage.nvim",
   -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
-  event = "LspAttach",
+  -- event = "LspAttach",
   keys = {
     {
       "<leader>ux",
