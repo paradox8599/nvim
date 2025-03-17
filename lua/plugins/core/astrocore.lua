@@ -116,6 +116,7 @@ return {
             local Terminal = require("toggleterm.terminal").Terminal
             local yazi = Terminal:new {
               cmd = "yazi",
+              display_name = "yazi",
               dir = ".",
               direction = "float",
               float_opts = { border = "curved" },
@@ -123,6 +124,35 @@ return {
             yazi:open()
           end,
           desc = "Yazi",
+        },
+        ["<Leader>ta"] = {
+          function()
+            require("toggleterm").setup { size = 100 }
+            local Terminal = require("toggleterm.terminal").Terminal
+            local aider = Terminal:new {
+              cmd = "aider",
+              display_name = "aider",
+              dir = ".",
+              direction = "vertical",
+            }
+            aider:open()
+          end,
+          desc = "Aider",
+        },
+        ["<Leader>tA"] = {
+          function()
+            require("toggleterm").setup { size = 100 }
+            local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
+            local Terminal = require("toggleterm.terminal").Terminal
+            local aider = Terminal:new {
+              cmd = "aider " .. filepath,
+              display_name = "aider",
+              dir = ".",
+              direction = "vertical",
+            }
+            aider:open()
+          end,
+          desc = "Aider with current file",
         },
       },
       v = {
