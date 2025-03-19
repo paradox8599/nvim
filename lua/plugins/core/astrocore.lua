@@ -143,6 +143,7 @@ return {
           function()
             require("toggleterm").setup { size = 100 }
             local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
+            filepath = '"' .. filepath .. '"'
             local Terminal = require("toggleterm.terminal").Terminal
             local aider = Terminal:new {
               cmd = "aider " .. filepath,
