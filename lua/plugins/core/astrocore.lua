@@ -157,7 +157,6 @@ return {
         },
       },
       v = {
-        ["<Leader>c"] = { desc = "[C]odeSnap" },
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
         ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
       },
