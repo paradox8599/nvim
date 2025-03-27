@@ -1,3 +1,5 @@
+if true then return {} end
+
 -- preview definition/references/... in a floating window
 
 return {
