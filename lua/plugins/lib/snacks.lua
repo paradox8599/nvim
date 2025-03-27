@@ -4,6 +4,7 @@ return {
   dependencies = {
     -- disables duplicate plugins
     { "RRethy/vim-illuminate", enabled = false, optional = true },
+    { "akinsho/toggleterm.nvim", enabled = false, optional = true },
   },
 
   priority = 1000,
@@ -27,8 +28,61 @@ return {
       desc = "Prev Reference",
       mode = { "n", "t" },
     },
+
     { "<leader>.", function() require("snacks").scratch() end, desc = "Toggle Scratch Buffer" },
     { "<leader>,", function() require("snacks").scratch.select() end, desc = "Select Scratch Buffer" },
+
+    -- [[Terminals]]
+
+    -- hide active terminal
+    { "<C-h>", function() vim.cmd "hide" end, mode = { "t" } },
+
+    {
+      "<leader>gg",
+      function() require("snacks").terminal.toggle "lazygit" end,
+      desc = "LazyGit",
+      mode = { "n" },
+    },
+
+    {
+      "<leader>td",
+      function() require("snacks").terminal.toggle "lazydocker" end,
+      desc = "LazyDocker",
+    },
+
+    {
+      "<leader>tw",
+      function() require("snacks").terminal.toggle "yazi" end,
+      desc = "Yazi",
+    },
+
+    {
+      "<leader>tb",
+      function() require("snacks").terminal.toggle "btm" end,
+      desc = "Btm",
+    },
+
+    {
+      "<leader>ta",
+      function()
+        require("snacks").terminal.toggle("aider", {
+          win = { position = "right", width = 0.4 },
+        })
+      end,
+      desc = "Aider",
+    },
+
+    {
+      "<Leader>tA",
+      function()
+        local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
+        filepath = '"' .. filepath .. '"'
+        require("snacks").terminal.toggle("aider " .. filepath, {
+          win = { position = "right", width = 0.4 },
+        })
+      end,
+      desc = "Aider with current file",
+    },
   },
 
   opts = {
@@ -45,7 +99,7 @@ return {
       jumplist = true, -- set jump point before jumping
       modes = { "n", "i", "c" }, -- modes to show references
     },
-    terminal = { enabled = false },
+    terminal = { enabled = true },
     scratch = {},
 
     indent = {
