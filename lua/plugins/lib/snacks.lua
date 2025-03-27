@@ -3,9 +3,7 @@ return {
 
   dependencies = {
     -- disables duplicate plugins
-    { "goolord/alpha-nvim", enabled = false },
-    { "lukas-reineke/indent-blankline.nvim", enabled = false },
-    { "RRethy/vim-illuminate", enabled = false },
+    { "RRethy/vim-illuminate", enabled = false, optional = true },
   },
 
   priority = 1000,

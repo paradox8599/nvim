@@ -11,7 +11,7 @@ return {
     { "<Leader>zp", vim.cmd.CccPick, desc = "Pick color" },
   },
 
-  specs = { { "NvChad/nvim-colorizer.lua", enabled = false } },
+  specs = { { "NvChad/nvim-colorizer.lua", enabled = false, optional = true } },
 
   config = function(_, opts)
     require("ccc").setup(opts)

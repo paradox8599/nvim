@@ -1,7 +1,7 @@
 return {
   {
     "chrisgrieser/nvim-recorder",
-    dependencies = "rcarriga/nvim-notify", -- optional
+    -- dependencies = "rcarriga/nvim-notify", -- optional
     opts = {
       -- Named registers where macros are saved (single lowercase letters only).
       -- The first register is the default register used as macro-slot after
