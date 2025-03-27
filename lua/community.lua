@@ -1,5 +1,3 @@
--- if true then return {} end
-
 local os = require "lib.os_detect"
 
 ---@type LazySpec
