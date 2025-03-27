@@ -31,7 +31,6 @@ return {
       cmdline = {
         keymap = {
           ["<Tab>"] = { "show", "accept" },
-          ["<CR>"] = { "accept_and_enter", "fallback" },
         },
         completion = {
           ghost_text = { enabled = true },
