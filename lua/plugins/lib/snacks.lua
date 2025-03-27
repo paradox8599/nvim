@@ -39,7 +39,10 @@ return {
 
     {
       "<leader>gg",
-      function() require("snacks").terminal.toggle "lazygit" end,
+      function()
+        -- require("snacks").terminal.toggle "lazygit"
+        require("snacks").lazygit()
+      end,
       desc = "LazyGit",
       mode = { "n" },
     },
