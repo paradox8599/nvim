@@ -1,91 +1,62 @@
 -- https://github.com/vyfor/cord.nvim
-
-local os = require "lib.os_detect"
+-- if true then return {} end
 
 return {
   {
     "vyfor/cord.nvim",
-    build = os.is_win and "build" or "./build",
+    build = ":Cord update",
     event = "VeryLazy",
 
-    dependencies = {
-      {
-        -- this is only for discord rich presence
-        -- toggleterm lazygit won't be recognized
-        -- lazygit is not enabled by this plugin
-        "kdheepak/lazygit.nvim",
-        cmd = {
-          "LazyGit",
-          "LazyGitConfig",
-          "LazyGitCurrentFile",
-          "LazyGitFilter",
-          "LazyGitFilterCurrentFile",
-        },
-        -- optional for floating window border decoration
-        dependencies = {
-          "nvim-lua/plenary.nvim",
-        },
-      },
-    },
+    -- https://github.com/vyfor/cord.nvim/blob/master/.github/wiki/Configuration.md
     opts = {
-      usercmds = true, -- Enable user commands
-      log_level = "off", -- One of 'trace', 'debug', 'info', 'warn', 'error', 'off'
-      timer = {
-        interval = 1000, -- Interval between presence updates in milliseconds (min 500)
-        reset_on_idle = false, -- Reset start timestamp on idle
-        reset_on_change = false, -- Reset start timestamp on presence change
-      },
       editor = {
-        image = nil, -- Image ID or URL in case a custom client id is provided
-        client = "neovim", -- vim, neovim, lunarvim, nvchad, astronvim or your application's client id
-        tooltip = "I use Neovim btw", -- Text to display when hovering over the editor's image
+        client = "neovim",
+        tooltip = "I use neovim btw",
+        icon = nil,
       },
+
       display = {
-        show_time = true, -- Display start timestamp
-        show_repository = true, -- Display 'View repository' button linked to repository url, if any
-        show_cursor_position = true, -- Display line and column number of cursor's position
-        swap_fields = false, -- If enabled, workspace is displayed first
-        swap_icons = false, -- If enabled, editor is displayed on the main image
-        workspace_blacklist = {}, -- List of workspace names to hide
+        theme = "default",
+        flavor = "dark",
+        swap_fields = false,
+        swap_icons = false,
       },
-      lsp = {
-        show_problem_count = true, -- Display number of diagnostics problems
-        severity = 4, -- 1 = Error, 2 = Warning, 3 = Info, 4 = Hint
-        scope = "buffer", -- buffer or workspace
+
+      timestamp = {
+        enabled = true,
+        reset_on_idle = false,
+        reset_on_change = false,
       },
+
       idle = {
-        enable = true, -- Enable idle status
-        show_status = true, -- Display idle status, disable to hide the rich presence on idle
-        timeout = 5 * 60 * 1000, -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
-        disable_on_focus = false, -- Do not display idle status when neovim is focused
-        text = "Idle", -- Text to display when idle
-        tooltip = "💤", -- Text to display when hovering over the idle image
+        enabled = true,
+        timeout = 300000, -- milliseconds
+        show_status = true,
+        ignore_focus = true,
+        unidle_on_focus = true,
+        smart_idle = true,
+        details = "Idling",
+        state = nil,
+        tooltip = "💤",
       },
+
       text = {
-        viewing = "Viewing {}", -- Text to display when viewing a readonly file
-        editing = "Editing {}", -- Text to display when editing a file
-        file_browser = "Browsing files in {}", -- Text to display when browsing files (Empty string to disable)
-        plugin_manager = "Managing plugins in {}", -- Text to display when managing plugins (Empty string to disable)
-        lsp_manager = "Configuring LSP in {}", -- Text to display when managing LSP servers (Empty string to disable)
-        vcs = "Committing changes in {}", -- Text to display when using Git or Git-related plugin (Empty string to disable)
-        workspace = "In {}", -- Text to display when in a workspace (Empty string to disable)
+        editing = function(opts)
+          return string.format("Editing %s - %s:%s, %s problems", opts.filename, opts.cursor_line, opts.cursor_char)
+        end,
+        terminal = "Terminal: ${filename}",
       },
-      buttons = {
-        {
-          label = "View Repository", -- Text displayed on the button
-          url = "git", -- URL where the button leads to ('git' = automatically fetch Git repository URL)
-        },
+      variables = true,
+
+      hooks = {},
+
+      plugins = {
+        -- scope: workspace | buffer
+        ["cord.plugins.diagnostics"] = { scope = "buffer", override = true },
+        ["cord.plugins.scoped_timestamps"] = { scope = "workspace", pause = true },
       },
-      -- Custom file icons, see the wiki*
-      -- assets = {
-      --   lazy = { -- Vim filetype or file name or file extension = table or string
-      --     name = "Lazy", -- Optional override for the icon name, redundant for language types
-      --     icon = "https://example.com/lazy.png", -- Rich Presence asset name or URL
-      --     tooltip = "lazy.nvim", -- Text to display when hovering over the icon
-      --     type = 2, -- 0 = language, 1 = file browser, 2 = plugin manager, 3 = lsp manager, 4 = vcs; defaults to language
-      --   },
-      --   ["Cargo.toml"] = "crates",
-      -- },
+
+      advanced = {},
     },
   },
 }
