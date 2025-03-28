@@ -66,7 +66,7 @@ return {
     },
 
     {
-      "<leader>ta",
+      "<leader>tA",
       function()
         require("snacks").terminal.toggle("aider", {
           win = { position = "right", width = 0.4 },
@@ -76,7 +76,7 @@ return {
     },
 
     {
-      "<Leader>tA",
+      "<Leader>ta",
       function()
         local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
         filepath = '"' .. filepath .. '"'
