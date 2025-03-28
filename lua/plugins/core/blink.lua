@@ -3,6 +3,9 @@
 return {
   {
     "Saghen/blink.cmp",
+
+    build = "cargo build --release",
+
     opts = {
       keymap = {
         preset = "none",
