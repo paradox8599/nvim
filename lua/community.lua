@@ -3,7 +3,6 @@ local os = require "lib.os_detect"
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  -- { import = "astrocommunity/completion/cmp-cmdline" }, -- command auto completion (nvim-cmp)
   -- { import = "astrocommunity/diagnostics/trouble-nvim" }, -- diagnostic UI
   -- { import = "astrocommunity/editing-support/nvim-regexplainer" }, -- explain regex
 
@@ -17,16 +16,16 @@ return {
   { import = "astrocommunity/pack/typescript" },
   { import = "astrocommunity/pack/tailwindcss" },
   { "js-everts/cmp-tailwind-colors", enabled = false, optional = true },
-  -- { import = "astrocommunity/pack/svelte" },
-  -- { import = "astrocommunity/pack/html-css" },
-  -- { import = "astrocommunity/pack/python" }, -- depends on telescope
   { import = "astrocommunity/pack/docker" },
-  -- { import = "astrocommunity/pack/markdown" },
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
-  -- { import = "astrocommunity/pack/vue" },
   { import = "astrocommunity/pack/yaml" },
   { import = "astrocommunity/pack/nix", enabled = os.is_linux },
+  -- { import = "astrocommunity/pack/python" }, -- depends on telescope
+  -- { import = "astrocommunity/pack/svelte" },
+  -- { import = "astrocommunity/pack/html-css" },
+  -- { import = "astrocommunity/pack/markdown" },
+  -- { import = "astrocommunity/pack/vue" },
   -- { import = "astrocommunity/pack/bash" },
   -- { import = "astrocommunity/pack/dart" },
 
