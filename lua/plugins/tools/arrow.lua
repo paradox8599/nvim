@@ -1,3 +1,5 @@
+-- bookmark files and lines
+
 return {
   "otavioschwanck/arrow.nvim",
   dependencies = {
