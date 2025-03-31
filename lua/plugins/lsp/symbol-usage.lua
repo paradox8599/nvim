@@ -56,6 +56,8 @@ local function text_format(symbol)
   return res
 end
 
+vim.diagnostic.config { virtual_text = true }
+
 return {
   "Wansmer/symbol-usage.nvim",
   -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
