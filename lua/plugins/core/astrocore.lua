@@ -51,6 +51,8 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        H = { "<cmd>bprev<cr>", desc = "Previous buffer" },
+        L = { "<cmd>bnext<cr>", desc = "Next buffer" },
         ["<esc>"] = { "<cmd>nohlsearch<cr>", desc = "Clear search highlights" },
         -- second key is the lefthand side of the map
         J = { "mzJ`z", desc = "Keep cursor position when J" },
@@ -77,7 +79,6 @@ return {
         ["gra"] = false,
         ["grr"] = false,
         ["grn"] = false,
-
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
