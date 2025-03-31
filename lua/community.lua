@@ -16,7 +16,6 @@ return {
   { import = "astrocommunity/pack/typescript" },
   { import = "astrocommunity/pack/tailwindcss" },
   { "js-everts/cmp-tailwind-colors", enabled = false, optional = true },
-  { import = "astrocommunity/pack/docker" },
   { import = "astrocommunity/pack/toml" },
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
