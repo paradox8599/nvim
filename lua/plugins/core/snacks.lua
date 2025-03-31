@@ -40,14 +40,11 @@ return {
     -- [[Terminals]]
 
     -- hide active terminal
-    { "<C-h>", function() vim.cmd "hide" end, mode = { "t" } },
+    { "<C-i>", function() vim.cmd "hide" end, mode = { "t" } },
 
     {
       "<leader>gg",
-      function()
-        -- require("snacks").terminal.toggle "lazygit"
-        require("snacks").lazygit()
-      end,
+      function() require("snacks").lazygit() end,
       desc = "LazyGit",
       mode = { "n" },
     },
