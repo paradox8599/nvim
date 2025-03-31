@@ -20,7 +20,8 @@ return {
   { import = "astrocommunity/pack/json" },
   { import = "astrocommunity/pack/yaml" },
   { import = "astrocommunity/pack/nix", enabled = os.is_linux },
-  -- { import = "astrocommunity/pack/python" }, -- depends on telescope
+  { import = "astrocommunity/pack/python" },
+  { "linux-cultist/venv-selector.nvim", enabled = false, optional = true }, -- depends on telescope
   -- { import = "astrocommunity/pack/svelte" },
   -- { import = "astrocommunity/pack/html-css" },
   -- { import = "astrocommunity/pack/markdown" },
