@@ -91,6 +91,10 @@ return {
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
         ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
       },
+      t = {
+        ["<Tab>"] = { "<Tab>" },
+        ["<C-i>"] = { "<cmd>hide<cr>" },
+      },
     },
   },
 }
