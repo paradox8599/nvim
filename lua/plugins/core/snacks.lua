@@ -112,7 +112,16 @@ return {
         druation = { step = 20, total = 120 },
       },
       scope = { enabled = true, underline = false },
-      chunk = { enabled = false },
+      chunk = {
+        enabled = true,
+        char = {
+          corner_top = "╭", -- "┌"
+          corner_bottom = "╰", -- "└"
+          horizontal = "─",
+          vertical = "│",
+          arrow = ">",
+        },
+      },
     },
 
     -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
