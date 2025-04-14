@@ -113,7 +113,7 @@ return {
       },
       scope = { enabled = true, underline = false },
       chunk = {
-        enabled = true,
+        enabled = false,
         char = {
           corner_top = "╭", -- "┌"
           corner_bottom = "╰", -- "└"
