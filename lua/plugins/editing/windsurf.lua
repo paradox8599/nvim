@@ -1,6 +1,6 @@
 return {
   {
-    "Exafunction/codeium.nvim",
+    "Exafunction/windsurf.nvim",
     enabled = false,
     optional = true,
     opts = {
@@ -39,7 +39,7 @@ return {
   },
 
   {
-    "Exafunction/codeium.vim",
+    "Exafunction/windsurf.vim",
     enabled = true,
     event = "BufRead",
     config = function()
