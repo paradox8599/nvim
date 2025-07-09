@@ -67,7 +67,7 @@ return {
     {
       "<leader>tA",
       function()
-        require("snacks").terminal.toggle("aider", {
+        require("snacks").terminal.toggle("aider --watch-files", {
           win = { position = "right", width = 0.4 },
         })
       end,
@@ -79,7 +79,7 @@ return {
       function()
         local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
         filepath = '"' .. filepath .. '"'
-        require("snacks").terminal.toggle("aider " .. filepath, {
+        require("snacks").terminal.toggle("aider --watch-files " .. filepath, {
           win = { position = "right", width = 0.4 },
         })
       end,
