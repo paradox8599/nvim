@@ -90,7 +90,7 @@ return {
       "<Leader>ga",
       function()
         require("snacks").terminal.toggle("git add . && aider --commit && read", {
-          win = { position = "right", width = 0.4 },
+          win = { position = "float", width = 0.4, height = 0.4 },
         })
       end,
       desc = "Aider commit",
