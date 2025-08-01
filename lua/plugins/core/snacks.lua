@@ -11,11 +11,21 @@ return {
   lazy = false,
 
   keys = {
-    { "<leader>f;", function() require("snacks.picker").pickers() end, desc = "Picker Sources" },
-    { "<leader>fp", function() require("snacks.picker").projects() end, desc = "Projects" },
-    { "<leader>fi", function() require("snacks.picker").icons() end, desc = "Icons" },
-    { "<leader>fm", function() require("snacks.picker").marks() end, desc = "Marks" },
-    { "<leader>fd", function() require("snacks.picker").diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+    { "<leader>f;", function() require("snacks.picker").pickers() end, desc = "Find Picker Sources" },
+    { "<leader>fp", function() require("snacks.picker").projects() end, desc = "Find Projects" },
+    { "<leader>fi", function() require("snacks.picker").icons() end, desc = "Find Icons" },
+    {
+      "<leader>ft",
+      function()
+        if not package.loaded["todo-comments"] then require("lazy").load { plugins = { "todo-comments.nvim" } } end
+        ---@diagnostic disable-next-line: undefined-field
+        require("snacks.picker").todo_comments()
+      end,
+      desc = "Find TODOs",
+    },
+    { "<leader>fT", function() require("snacks.picker").colorschemes() end, desc = "Find Themes" },
+    { "<leader>fm", function() require("snacks.picker").marks() end, desc = "Find Marks" },
+    { "<leader>fd", function() require("snacks.picker").diagnostics_buffer() end, desc = "Find Buffer Diagnostics" },
     { "<leader>gb", function() require("snacks").git.blame_line() end, desc = "Git blame line" },
     { "<leader>gf", function() require("snacks").lazygit.log_file() end, desc = "Lazygit Current File History" },
     { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Log (cwd)" },
