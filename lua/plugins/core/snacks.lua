@@ -75,6 +75,26 @@ return {
     },
 
     {
+      "<leader>tg",
+      function()
+        require("snacks").terminal.toggle("gemini", {
+          win = { position = "right", width = 0.4 },
+        })
+      end,
+      desc = "Gemini Cli",
+    },
+
+    {
+      "<leader>tc",
+      function()
+        require("snacks").terminal.toggle("ccr code", {
+          win = { position = "right", width = 0.4 },
+        })
+      end,
+      desc = "Claude Code",
+    },
+
+    {
       "<leader>tA",
       function()
         require("snacks").terminal.toggle("aider --watch-files", {
