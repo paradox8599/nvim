@@ -95,6 +95,16 @@ return {
     },
 
     {
+      "<leader>tq",
+      function()
+        require("snacks").terminal.toggle("lazysql", {
+          win = { position = "right", width = 0.4 },
+        })
+      end,
+      desc = "LazySQL",
+    },
+
+    {
       "<leader>tA",
       function()
         require("snacks").terminal.toggle("aider --watch-files", {
