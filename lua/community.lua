@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity/editing-support/refactoring-nvim" }, -- refactoring, https://github.com/ThePrimeagen/refactoring.nvim
   { import = "astrocommunity/editing-support/ultimate-autopair-nvim" }, -- autopair
 
+  { import = "astrocommunity/pack/astro" },
   os.is_win and { import = "astrocommunity/pack/cs", ft = { "cs", "csproj", "sln" } } or {},
   { import = "astrocommunity/pack/lua" },
   { import = "astrocommunity/pack/cpp" },
