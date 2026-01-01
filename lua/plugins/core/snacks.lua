@@ -75,26 +75,6 @@ return {
     },
 
     {
-      "<leader>tg",
-      function()
-        require("snacks").terminal.toggle("gemini", {
-          win = { position = "right", width = 0.4 },
-        })
-      end,
-      desc = "Gemini Cli",
-    },
-
-    {
-      "<leader>tc",
-      function()
-        require("snacks").terminal.toggle("ccr code", {
-          win = { position = "right", width = 0.4 },
-        })
-      end,
-      desc = "Claude Code",
-    },
-
-    {
       "<leader>tq",
       function()
         require("snacks").terminal.toggle("lazysql", {
@@ -105,25 +85,13 @@ return {
     },
 
     {
-      "<leader>tA",
+      "<leader>ta",
       function()
-        require("snacks").terminal.toggle("aider --watch-files", {
+        require("snacks").terminal.toggle("pnpx opencode-ai", {
           win = { position = "right", width = 0.4 },
         })
       end,
-      desc = "Aider",
-    },
-
-    {
-      "<Leader>ta",
-      function()
-        local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
-        filepath = '"' .. filepath .. '"'
-        require("snacks").terminal.toggle("aider --watch-files " .. filepath, {
-          win = { position = "right", width = 0.4 },
-        })
-      end,
-      desc = "Aider with current file",
+      desc = "opencode",
     },
 
     {
