@@ -37,8 +37,8 @@ return {
       text = {
         editing = function(opts)
           local text = "Editing " .. opts.filename
-          local line = vim.fn.line(".")
-          local col = vim.fn.col(".")
+          local line = vim.fn.line "."
+          local col = vim.fn.col "."
           text = text .. " @ " .. line .. ":" .. col
           local problems = #vim.diagnostic.get(0)
           if problems > 0 then text = text .. " ⚠️ " .. problems end
@@ -46,8 +46,9 @@ return {
         end,
         viewing = "Viewing ${filename}",
         workspace = function()
-          local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
-          return "On branch: " .. (branch or "unknown")
+          local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null"):gsub("\n", "")
+          if branch == "" or branch:match "fatal" then branch = "unknown" end
+          return "On branch: " .. branch
         end,
         file_browser = "Browsing files in ${name}",
         plugin_manager = "Managing plugins in ${name}",
