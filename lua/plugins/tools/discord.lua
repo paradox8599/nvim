@@ -37,6 +37,9 @@ return {
       text = {
         editing = function(opts)
           local text = "Editing " .. opts.filename
+          local line = vim.fn.line(".")
+          local col = vim.fn.col(".")
+          text = text .. " @ " .. line .. ":" .. col
           local problems = #vim.diagnostic.get(0)
           if problems > 0 then text = text .. " ⚠️ " .. problems end
           return text
