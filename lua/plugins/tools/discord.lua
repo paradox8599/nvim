@@ -38,13 +38,14 @@ return {
         editing = function(opts)
           local text = "Editing " .. opts.filename
           local problems = #vim.diagnostic.get(0)
-          if problems > 0 then
-            text = text .. " ⚠️ " .. problems
-          end
+          if problems > 0 then text = text .. " ⚠️ " .. problems end
           return text
         end,
         viewing = "Viewing ${filename}",
-        workspace = "Working on ${workspace}",
+        workspace = function()
+          local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
+          return "On branch: " .. (branch or "unknown")
+        end,
         file_browser = "Browsing files in ${name}",
         plugin_manager = "Managing plugins in ${name}",
         lsp = "Configuring LSP in ${name}",
