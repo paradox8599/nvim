@@ -12,6 +12,7 @@ return {
         always_show = {
           ".env",
           ".env.local",
+          ".env.example",
           ".env.prod",
           ".env.dev",
           ".env.test",
