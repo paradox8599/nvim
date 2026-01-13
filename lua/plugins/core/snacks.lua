@@ -127,7 +127,7 @@ return {
       animate = {
         enabled = true,
         style = "down",
-        druation = { step = 20, total = 120 },
+        duration = { step = 20, total = 120 },
       },
       scope = { enabled = true, underline = false },
       chunk = {
