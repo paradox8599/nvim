@@ -11,6 +11,10 @@ return {
         hide_by_pattern = {},
         always_show = {
           ".env",
+          ".env.production",
+          ".env.development",
+          ".env.prod",
+          ".env.dev",
           ".env.local",
           ".env.example",
           ".env.prod",
