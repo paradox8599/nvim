@@ -24,7 +24,7 @@ return {
       },
       idle = {
         enabled = true,
-        timeout = 300000,
+        timeout = 3600000,
         show_status = true,
         ignore_focus = true,
         unidle_on_focus = true,
