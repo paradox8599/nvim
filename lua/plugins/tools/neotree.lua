@@ -15,6 +15,8 @@ return {
           ".env.development",
           ".env.prod",
           ".env.dev",
+          ".env.staging",
+          ".env.preview",
           ".env.local",
           ".env.example",
           ".env.prod",
