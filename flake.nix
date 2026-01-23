@@ -37,7 +37,7 @@
               toolchain: toolchain.default.override { inherit extensions; }
             )
           else
-            pkgs.rust-bin.stable."1.85.0".default.override {
+            pkgs.rust-bin.stable.latest.default.override {
               inherit extensions;
             };
       in
