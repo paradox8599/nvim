@@ -2,7 +2,7 @@
 
 return {
   {
-    "Saghen/blink.cmp",
+    "saghen/blink.cmp",
 
     build = "cargo build --release",
 

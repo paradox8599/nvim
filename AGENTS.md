@@ -1,6 +1,6 @@
 # AGENTS.md - Neovim Configuration
 
-This is an AstroNvim v5 configuration written in Lua. It uses lazy.nvim as the plugin manager.
+This is an AstroNvim v6 configuration written in Lua. It uses lazy.nvim as the plugin manager.
 
 ## Project Structure
 
@@ -58,8 +58,8 @@ selene lua/plugins/core/astrocore.lua
 :Lazy sync         " Update all plugins
 :Mason             " LSP/tool installer UI
 :checkhealth       " Diagnose configuration issues
-:LspInfo           " Show active LSP clients
-:LspRestart        " Restart LSP servers
+:checkhealth vim.lsp  " Show active LSP clients (replaces :LspInfo)
+:lsp restart *     " Restart LSP servers (replaces :LspRestart)
 ```
 
 ## Code Style Guidelines

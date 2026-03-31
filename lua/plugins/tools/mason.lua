@@ -25,7 +25,7 @@ return {
   },
 
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
 
     -- https://www.reddit.com/r/AstroNvim/comments/1hcktn5/disable_emmet_from_packtypescript/

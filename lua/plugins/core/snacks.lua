@@ -3,7 +3,6 @@ return {
 
   dependencies = {
     -- disables duplicate plugins
-    { "RRethy/vim-illuminate", enabled = false, optional = true },
     { "akinsho/toggleterm.nvim", enabled = false, optional = true },
   },
 
