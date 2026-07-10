@@ -13,6 +13,7 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - yazi
 - lazygit
 - lazydocker
+- jupytext
 
 <!-- - bottom -->
 <!-- - gdu-go -->
