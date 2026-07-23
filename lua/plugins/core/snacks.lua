@@ -84,16 +84,6 @@ return {
     },
 
     {
-      "<leader>ta",
-      function()
-        require("snacks").terminal.toggle("pnpx opencode-ai", {
-          win = { position = "right", width = 0.4 },
-        })
-      end,
-      desc = "opencode",
-    },
-
-    {
       "<Leader>ga",
       function()
         require("snacks").terminal.toggle("git add . && aider --commit && read", {
