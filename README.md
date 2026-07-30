@@ -9,6 +9,7 @@ A personal configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - fd-find
 - fzf
 - jq
+- yq
 - ripgrep
 - yazi
 - lazygit
