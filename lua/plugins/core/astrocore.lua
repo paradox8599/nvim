@@ -16,6 +16,16 @@ return {
       notifications = true, -- enable notifications at start
       resession_enabled = true,
     },
+    autocmds = {
+      wrap_markdown_text = {
+        {
+          event = "FileType",
+          pattern = { "markdown", "text" },
+          desc = "Enable wrap for markdown and text",
+          callback = function() vim.opt_local.wrap = true end,
+        },
+      },
+    },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
