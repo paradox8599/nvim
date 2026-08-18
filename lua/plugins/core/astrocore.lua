@@ -68,7 +68,7 @@ return {
         ["<Leader>p"] = { '"_dP', desc = "Paste without yank" },
         ["<Leader>y"] = { '"+y', desc = "Yank to system clipboard" },
         ["<Leader>k"] = { "<cmd>b#<cr>", desc = "Last buffer" },
-        ["<Leader>lc"] = { "<cmd>lsp restart *<cr>", desc = "Restart LSP" },
+        ["<Leader>lc"] = { "<cmd>lsp restart<cr>", desc = "Restart LSP" },
 
         -- navigate buffer tabs
         ["<tab>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },

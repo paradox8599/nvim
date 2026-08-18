@@ -59,7 +59,7 @@ selene lua/plugins/core/astrocore.lua
 :Mason             " LSP/tool installer UI
 :checkhealth       " Diagnose configuration issues
 :checkhealth vim.lsp  " Show active LSP clients (replaces :LspInfo)
-:lsp restart *     " Restart LSP servers (replaces :LspRestart)
+:lsp restart       " Restart LSP servers for current buffer (replaces :LspRestart)
 ```
 
 ## Code Style Guidelines
