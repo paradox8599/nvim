@@ -56,6 +56,7 @@ return {
     },
     -- customize how language servers are attached
     handlers = {
+      prefly = false
       -- the default handler is keyed with `["*"]` and uses `vim.lsp.enable` by default
       -- ["*"] = function(server, opts) vim.lsp.enable(server) end
 

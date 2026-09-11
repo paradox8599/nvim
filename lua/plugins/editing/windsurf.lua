@@ -40,7 +40,7 @@ return {
 
   {
     "Exafunction/windsurf.vim",
-    enabled = true,
+    enabled = false,
     event = "BufRead",
     config = function()
       vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
