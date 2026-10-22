@@ -86,11 +86,24 @@ return {
     {
       "<Leader>ga",
       function()
-        require("snacks").terminal.toggle("git add . && aider --commit && read", {
-          win = { position = "float", width = 0.4, height = 0.4 },
-        })
+        local prompt = [[
+Inspect git status and the staged diff first.
+If there are staged changes:
+- Check whether they form a coherent, self-contained commit with no missing required changes.
+- If suitable, commit only the staged changes. Do not stage, unstage, or modify files, or include unstaged changes.
+- Otherwise, refuse and explain why, leaving the index and working tree unchanged.
+If there are no staged changes, commit the working tree changes in logical groups.
+Non-interactive: never ask questions or use interactive tools.
+Commit, or refuse with a reason if clarification is needed or committing is unsafe.
+Do not preflight Git identity or hooks; investigate only if the commit fails. Never bypass hooks.
+Do not push.
+]]
+        require("snacks").terminal.toggle(
+          "opencode run --auto --model o/deepseek-v4.1-flash " .. vim.fn.shellescape(prompt) .. " && read",
+          { win = { position = "float", width = 0.4, height = 0.4 } }
+        )
       end,
-      desc = "Aider commit",
+      desc = "OpenCode commit",
     },
   },
 
